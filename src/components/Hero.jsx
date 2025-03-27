@@ -5,22 +5,31 @@ import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
+      {/* Background Image */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black">
+        <div 
+          className="absolute inset-0 bg-cover bg-center opacity-60"
+          style={{ backgroundImage: "url('/lovable-uploads/8110fcf7-97d7-48e8-a491-b6510a8f1f71.png')" }}
+        >
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+      </div>
       <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
       
-      <div className="container mx-auto px-6 py-12 md:py-24">
+      <div className="container mx-auto px-6 py-12 md:py-24 relative z-10">
         <div className="flex flex-col-reverse md:flex-row md:items-center">
           <div className="md:w-2/3 space-y-8 mt-10 md:mt-0 animate-slideRight" style={{ animationDelay: '0.2s' }}>
             <div className="space-y-2">
               <p className="font-mono text-primary">Hello, I'm</p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white">
                 John Developer
               </h1>
-              <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
+              <p className="text-2xl md:text-3xl font-mono mt-2 text-white/90">
                 Software Engineer <span className="text-primary animate-blink">|</span>
               </p>
             </div>
             
-            <p className="text-lg text-foreground/70 max-w-xl">
+            <p className="text-lg text-white/80 max-w-xl">
               I craft elegant solutions through clean code. Specializing in building 
               exceptional digital experiences that combine form and function.
             </p>
@@ -29,7 +38,7 @@ export default function Hero() {
               <a href="#projects" className="pixel-btn bg-primary text-primary-foreground">
                 View Projects
               </a>
-              <a href="#contact" className="pixel-btn bg-background">
+              <a href="#contact" className="pixel-btn border border-white/30 bg-black/30 backdrop-blur-sm text-white hover:bg-white/10">
                 Contact Me
               </a>
             </div>
@@ -39,7 +48,7 @@ export default function Hero() {
                 href="https://github.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="text-white/80 hover:text-primary transition-colors"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -47,7 +56,7 @@ export default function Hero() {
                 href="https://linkedin.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="text-white/80 hover:text-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
               </a>
@@ -55,7 +64,7 @@ export default function Hero() {
                 href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="text-white/80 hover:text-primary transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -63,7 +72,7 @@ export default function Hero() {
           </div>
           
           <div className="md:w-1/3 flex justify-end">
-            <div className="relative border-2 border-foreground p-1 w-56 h-56 md:w-72 md:h-72 rounded-md bg-muted/50 animate-float">
+            <div className="relative border-2 border-primary/70 p-1 w-56 h-56 md:w-72 md:h-72 rounded-md bg-black/40 backdrop-blur-sm animate-float">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
                 <div className="pixel-art-avatar h-full w-full bg-cover bg-center" style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22300%22%20viewBox%3D%220%200%2030%2030%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2230%22%20height%3D%2230%22%20fill%3D%22%23F97316%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2218%22%20width%3D%223%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2214%22%20width%3D%229%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%226%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%223%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%226%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2210%22%20height%3D%2210%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%228%22%20height%3D%228%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Crect%20x%3D%2214%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3Crect%20x%3D%2214%22%20y%3D%2215%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3C%2Fsvg%3E')" }}></div>
               </div>
