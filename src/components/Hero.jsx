@@ -13,7 +13,7 @@ export default function Hero() {
             <div className="space-y-2">
               <p className="font-mono text-primary">Hello, I'm</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
-                John Developer
+                Benjamin Chan
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
                 Software Engineer <span className="text-primary animate-blink">|</span>

@@ -39,17 +39,13 @@ export default function About() {
           <div className="space-y-4 animate-slideUp" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-2xl font-mono font-bold">Who I Am</h3>
             <p className="text-foreground/80 leading-relaxed">
-              I'm a passionate software engineer with over 5 years of professional experience 
-              building web applications and solving complex problems through elegant code.
+              I'm a dedicated software engineer with a passion for creating efficient, scalable, and user-centric digital solutions. With a strong foundation in both front-end and back-end technologies, I deliver comprehensive software that addresses complex business challenges.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              My journey into programming began when I was 14, modifying game files to create 
-              custom experiences. This early curiosity evolved into a deep love for software engineering 
-              and a dedication to creating intuitive, efficient digital solutions.
+              As a freelance developer, I bring a consultative approach to each project, working closely with clients to understand their unique requirements and translate them into technical specifications. My commitment to clean code practices and continuous learning ensures that I implement the latest industry standards and best practices.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              When I'm not coding, you'll find me hiking in nature, experimenting with new 
-              programming languages, or contributing to open-source projects.
+              My goal is to be more than just a developer—I aim to be a trusted technology partner who understands your business objectives and delivers solutions that drive real value. Whether you need a complete web application, API integration, or performance optimization, I'm dedicated to exceeding expectations with every line of code.
             </p>
             <div className="pt-4">
               <a href="#contact" className="pixel-btn bg-primary text-primary-foreground">
