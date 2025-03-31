@@ -8,7 +8,7 @@ export default function About() {
       name: 'Front-end Development', 
       icon: <Layout className="h-6 w-6" />, 
       description: 'Building responsive and intuitive user interfaces with React, Vue, and modern CSS frameworks.',
-      techs: ['JavaScript', 'React', 'HTML/CSS', 'TypeScript', 'Tailwind CSS']
+      techs: ['JavaScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'Shadcn']
     },
     { 
       name: 'Back-end Development', 
@@ -20,13 +20,13 @@ export default function About() {
       name: 'Database Management', 
       icon: <Database className="h-6 w-6" />, 
       description: 'Designing and optimizing databases for performance and scalability.',
-      techs: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Supabase']
+      techs: ['MongoDB', 'MySQL', 'Firebase', 'Supabase']
     },
     { 
       name: 'Software Architecture', 
       icon: <Code className="h-6 w-6" />, 
       description: 'Designing scalable and maintainable software architectures.',
-      techs: ['System Design', 'Microservices', 'RESTful APIs', 'CI/CD', 'Version Control']
+      techs: ['System Design', 'Microservices', 'Figma', 'Git', 'RESTful APIs',  'Version Control']
     }
   ];
 
@@ -59,7 +59,7 @@ export default function About() {
             <div className="space-y-4">
               <div className="border-l-2 border-primary pl-4 pb-6">
                 <h4 className="font-bold">Freelance Full-Stack Developer</h4>
-                <p className="text-sm text-foreground/70 font-mono">Independent • 2021 - Present</p>
+                <p className="text-sm text-foreground/70 font-mono">Independent • 2024 - Present</p>
                 <p className="mt-2 text-foreground/80">Developing custom web applications and e-commerce solutions for small to medium-sized businesses. Specializing in React, Node.js, and modern web technologies.</p>
               </div>
               <div className="border-l-2 border-primary/80 pl-4 pb-6">
