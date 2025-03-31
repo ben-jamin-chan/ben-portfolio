@@ -13,20 +13,20 @@ export default function About() {
     { 
       name: 'Back-end Development', 
       icon: <Server className="h-6 w-6" />, 
-      description: 'Creating robust server-side applications using Node.js and Python.',
-      techs: ['Node.js', 'Express', 'Python', 'Django', 'GraphQL']
+      description: 'Creating robust server-side applications using Node.js and modern backend services.',
+      techs: ['Node.js', 'Express', 'Firebase', 'Supabase', 'REST APIs']
     },
     { 
       name: 'Database Management', 
       icon: <Database className="h-6 w-6" />, 
       description: 'Designing and optimizing databases for performance and scalability.',
-      techs: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Firebase']
+      techs: ['PostgreSQL', 'MongoDB', 'MySQL', 'Firebase', 'Supabase']
     },
     { 
       name: 'Software Architecture', 
       icon: <Code className="h-6 w-6" />, 
       description: 'Designing scalable and maintainable software architectures.',
-      techs: ['System Design', 'Microservices', 'RESTful APIs', 'Docker', 'AWS']
+      techs: ['System Design', 'Microservices', 'RESTful APIs', 'CI/CD', 'Version Control']
     }
   ];
 
