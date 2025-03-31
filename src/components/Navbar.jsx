@@ -41,22 +41,26 @@ export default function Navbar() {
         </a>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="font-mono text-sm hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-            >
-              {link.name}
-            </a>
-          ))}
-          <ThemeToggle />
-        </nav>
+        <div className="hidden md:flex items-center justify-center flex-1">
+          <nav className="flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="font-mono text-sm hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+          
+          {/* Theme Toggle in middle for desktop */}
+          <ThemeToggle className="ml-6 scale-110" />
+        </div>
 
         {/* Mobile Navigation Toggle */}
         <div className="flex items-center md:hidden">
-          <ThemeToggle className="mr-2" />
+          <ThemeToggle className="mr-4 scale-110" />
           <button
             onClick={toggleMenu}
             className="p-2 focus:outline-none"
