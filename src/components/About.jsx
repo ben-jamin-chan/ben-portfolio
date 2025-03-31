@@ -63,14 +63,14 @@ export default function About() {
                 <p className="mt-2 text-foreground/80">Developing custom web applications and e-commerce solutions for small to medium-sized businesses. Specializing in React, Node.js, and modern web technologies.</p>
               </div>
               <div className="border-l-2 border-primary/80 pl-4 pb-6">
-                <h4 className="font-bold">Web Development Consultant</h4>
-                <p className="text-sm text-foreground/70 font-mono">Various Clients • 2019 - 2021</p>
-                <p className="mt-2 text-foreground/80">Provided technical consultation and development services for startups and established businesses. Focused on performance optimization and responsive design.</p>
+                <h4 className="font-bold">Partner Resource Manager</h4>
+                <p className="text-sm text-foreground/70 font-mono">Technology Solutions Inc. • 2020 - 2024</p>
+                <p className="mt-2 text-foreground/80">Coordinated partnership initiatives and managed technical resource allocation across multiple client projects. Facilitated communication between development teams and business stakeholders to ensure project success.</p>
               </div>
               <div className="border-l-2 border-primary/60 pl-4">
-                <h4 className="font-bold">Frontend Developer</h4>
-                <p className="text-sm text-foreground/70 font-mono">Digital Agency • 2017 - 2019</p>
-                <p className="mt-2 text-foreground/80">Collaborated with design and development teams to create engaging user interfaces and interactive web experiences for agency clients.</p>
+                <h4 className="font-bold">Partner Resource Manager</h4>
+                <p className="text-sm text-foreground/70 font-mono">Global Tech Partners • 2020 - 2024</p>
+                <p className="mt-2 text-foreground/80">Oversaw strategic technology partnerships and managed resource allocation for enterprise clients. Developed and maintained partner relationships while ensuring technical alignment with business objectives.</p>
               </div>
             </div>
           </div>
