@@ -58,19 +58,19 @@ export default function About() {
             <h3 className="text-2xl font-mono font-bold mb-6">My Experience</h3>
             <div className="space-y-4">
               <div className="border-l-2 border-primary pl-4 pb-6">
-                <h4 className="font-bold">Senior Software Engineer</h4>
-                <p className="text-sm text-foreground/70 font-mono">Techlabs Inc. • 2021 - Present</p>
-                <p className="mt-2 text-foreground/80">Led development of cloud-native applications with microservices architecture.</p>
+                <h4 className="font-bold">Freelance Full-Stack Developer</h4>
+                <p className="text-sm text-foreground/70 font-mono">Independent • 2021 - Present</p>
+                <p className="mt-2 text-foreground/80">Developing custom web applications and e-commerce solutions for small to medium-sized businesses. Specializing in React, Node.js, and modern web technologies.</p>
               </div>
               <div className="border-l-2 border-primary/80 pl-4 pb-6">
-                <h4 className="font-bold">Software Developer</h4>
-                <p className="text-sm text-foreground/70 font-mono">WebSolutions • 2019 - 2021</p>
-                <p className="mt-2 text-foreground/80">Developed and maintained full-stack applications for various clients.</p>
+                <h4 className="font-bold">Web Development Consultant</h4>
+                <p className="text-sm text-foreground/70 font-mono">Various Clients • 2019 - 2021</p>
+                <p className="mt-2 text-foreground/80">Provided technical consultation and development services for startups and established businesses. Focused on performance optimization and responsive design.</p>
               </div>
               <div className="border-l-2 border-primary/60 pl-4">
-                <h4 className="font-bold">Junior Developer</h4>
-                <p className="text-sm text-foreground/70 font-mono">CodeWorks • 2017 - 2019</p>
-                <p className="mt-2 text-foreground/80">Started my career working on front-end projects and building UI components.</p>
+                <h4 className="font-bold">Frontend Developer</h4>
+                <p className="text-sm text-foreground/70 font-mono">Digital Agency • 2017 - 2019</p>
+                <p className="mt-2 text-foreground/80">Collaborated with design and development teams to create engaging user interfaces and interactive web experiences for agency clients.</p>
               </div>
             </div>
           </div>

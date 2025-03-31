@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowDown, Github, Linkedin, Twitter } from 'lucide-react';
+import { ArrowDown, Github, Instagram } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -44,20 +44,12 @@ export default function Hero() {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://instagram.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
               >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
-              >
-                <Twitter className="h-5 w-5" />
+                <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>
