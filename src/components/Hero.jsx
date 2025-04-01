@@ -36,7 +36,7 @@ export default function Hero() {
             
             <div className="flex items-center gap-4 pt-2">
               <a 
-                href="https://github.com" 
+                href="https://github.com/ben-jamin-chan/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"
@@ -44,7 +44,7 @@ export default function Hero() {
                 <Github className="h-5 w-5" />
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://instagram.com/neb.neb.neb.neb" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-primary transition-colors"

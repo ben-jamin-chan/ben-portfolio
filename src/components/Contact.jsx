@@ -113,7 +113,7 @@ export default function Contact() {
               <h3 className="text-lg font-mono font-bold mb-4">Connect With Me</h3>
               <div className="flex items-center gap-4">
                 <a 
-                  href="https://github.com" 
+                  href="https://github.com/ben-jamin-chan/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
@@ -124,7 +124,7 @@ export default function Contact() {
                   </svg>
                 </a>
                 <a 
-                  href="https://instagram.com" 
+                  href="https://www.instagram.com/neb.neb.neb.neb/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"

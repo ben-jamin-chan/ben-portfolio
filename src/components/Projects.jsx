@@ -10,22 +10,22 @@ export default function Projects() {
   const projects = [
     {
       title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with React, Node.js, and MongoDB.',
+      description: 'A full-stack e-commerce solution with for skincare and make-up products with React, and Firebase.',
       image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%233B82F6" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="100" height="100" fill="%23E5E7EB" /><rect x="200" y="130" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="160" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="190" width="120" height="20" fill="%23E5E7EB" /></svg>',
-      tags: ['Web', 'API'],
+      tags: ['Web', 'Mobile'],
       github: 'https://github.com',
       live: 'https://example.com',
     },
     {
-      title: 'Task Management App',
-      description: 'A React Native application for managing tasks with real-time updates.',
+      title: 'Trend Watcher App',
+      description: 'A React Native application for tracking Google trends with real-time updates.',
       image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%2310B981" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="155" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="180" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="205" width="240" height="15" fill="%23E5E7EB" /></svg>',
-      tags: ['Mobile'],
+      tags: ['Web', 'Mobile'],
       github: 'https://github.com',
       live: 'https://example.com',
     },
     {
-      title: 'Weather API Service',
+      title: "Florist's Service Website",
       description: 'A RESTful API for weather data built with Express and PostgreSQL.',
       image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23F59E0B" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><circle cx="120" cy="150" r="40" fill="%23E5E7EB" /><rect x="180" y="130" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="155" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="180" width="100" height="15" fill="%23E5E7EB" /></svg>',
       tags: ['API'],

@@ -64,13 +64,19 @@ export default function About() {
               </div>
               <div className="border-l-2 border-primary/80 pl-4 pb-6">
                 <h4 className="font-bold">Partner Resource Manager</h4>
-                <p className="text-sm text-foreground/70 font-mono">Technology Solutions Inc. • 2020 - 2024</p>
-                <p className="mt-2 text-foreground/80">Coordinated partnership initiatives and managed technical resource allocation across multiple client projects. Facilitated communication between development teams and business stakeholders to ensure project success.</p>
+                <p className="text-sm text-foreground/70 font-mono">Majorel Group • 2021 - 2024</p>
+                <p className="mt-2 text-foreground/80">Managed strategic technology partnerships and resource allocation for enterprise clients, ensuring technical alignment with business objectives. Facilitated collaboration between development teams and business stakeholders, overseeing partnership initiatives to drive project success.</p>
               </div>
-              <div className="border-l-2 border-primary/60 pl-4">
+              {/* Oversaw strategic technology partnerships and managed resource allocation for enterprise clients. Developed and maintained partner relationships while ensuring technical alignment with business objectives. */}
+              {/* <div className="border-l-2 border-primary/60 pl-4">
                 <h4 className="font-bold">Partner Resource Manager</h4>
                 <p className="text-sm text-foreground/70 font-mono">Global Tech Partners • 2020 - 2024</p>
                 <p className="mt-2 text-foreground/80">Oversaw strategic technology partnerships and managed resource allocation for enterprise clients. Developed and maintained partner relationships while ensuring technical alignment with business objectives.</p>
+              </div> */}
+              <div className="border-l-2 border-primary/60 pl-4">
+                <h4 className="font-bold">Resource Coordinator</h4>
+                <p className="text-sm text-foreground/70 font-mono">Majorel Group • 2020 - 2021</p>
+                <p className="mt-2 text-foreground/80">Optimized resource planning and distribution to support project timelines and business objectives. Collaborated with cross-functional teams to assess resource needs, streamline workflows, and enhance operational efficiency. Ensured effective communication between stakeholders to maximize productivity and project success.</p>
               </div>
             </div>
           </div>
