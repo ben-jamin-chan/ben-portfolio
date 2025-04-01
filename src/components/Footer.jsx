@@ -17,8 +17,8 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <a href="#home" className="font-pixel text-lg text-primary">
-              Benjamin Chan<span className="animate-blink">_</span>
+            <a href="#home" className="font-pixel text-[1.2rem] text-primary">
+            {"</>"} Benjamin Chan<span className="animate-blink">_</span>
             </a>
             <p className="text-sm text-foreground/60 mt-2">
               Crafting digital experiences through elegant code.
@@ -45,11 +45,11 @@ export default function Footer() {
         
         <div className="border-t border-border/50 mt-6 pt-6 text-center">
           <p className="text-sm text-foreground/60">
-            © {currentYear} John Developer. All rights reserved.
+            © {currentYear} Benjamin Chan. All rights reserved.
           </p>
-          <p className="text-xs text-foreground/50 mt-2 flex items-center justify-center">
+          {/* <p className="text-xs text-foreground/50 mt-2 flex items-center justify-center">
             Built with <Heart className="h-3 w-3 mx-1 text-red-500" /> and modern web technologies
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

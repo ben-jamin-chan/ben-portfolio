@@ -35,9 +35,9 @@ export default function Navbar() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <a 
           href="#home" 
-          className="font-pixel text-lg text-primary focus:outline-none"
+          className="font-pixel text-[1.2rem] text-primary focus:outline-none"
         >
-          Benjamin Chan<span className="animate-blink">_</span>
+          {"</>"} Benjamin Chan<span className="animate-blink">_</span>
         </a>
         
         {/* Desktop Navigation */}
@@ -47,7 +47,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="font-mono text-sm hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                className="font-mono text-base hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
               >
                 {link.name}
               </a>
