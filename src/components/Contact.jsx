@@ -27,16 +27,27 @@ export default function Contact() {
     // Initialize EmailJS with your User ID (Public Key)
     emailjs.init("YtV_Gb-sBV_edWDZV");
     
-    // Prepare template parameters
+    // Prepare template parameters - matching exact parameter names expected in EmailJS template
     const templateParams = {
-      to_email: "chanbenjamin.tl@gmail.com",
       from_name: formData.name,
-      from_email: formData.email,
-      message: formData.message
+      reply_to: formData.email,
+      message: formData.message,
+      to_name: "Benjamin Chan"
     };
     
-    // Send the email using EmailJS
+    // Send the message to you (admin notification)
     emailjs.send('default_service', 'template_yug4c13', templateParams)
+      .then(() => {
+        // Send auto-reply to the user
+        const autoReplyParams = {
+          to_email: formData.email,
+          to_name: formData.name,
+          from_name: "Benjamin Chan",
+          reply_message: "Thank you for contacting me! I'll review your message and get back to you as soon as possible."
+        };
+        
+        return emailjs.send('default_service', 'template_autoreply', autoReplyParams);
+      })
       .then(() => {
         setIsSubmitting(false);
         toast({
@@ -49,7 +60,7 @@ export default function Contact() {
         setIsSubmitting(false);
         console.error('EmailJS error:', error);
         toast({
-          title: "Error.",
+          title: "Error",
           description: "There was an error sending your message. Please try again.",
           variant: "destructive",
         });
