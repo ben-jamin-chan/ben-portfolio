@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#home" className="font-pixel text-lg text-primary">
-              DEV<span className="animate-blink">_</span>
+              Benjamin Chan<span className="animate-blink">_</span>
             </a>
             <p className="text-sm text-foreground/60 mt-2">
               Crafting digital experiences through elegant code.

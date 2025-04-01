@@ -37,7 +37,7 @@ export default function Navbar() {
           href="#home" 
           className="font-pixel text-lg text-primary focus:outline-none"
         >
-          DEV<span className="animate-blink">_</span>
+          Benjamin Chan<span className="animate-blink">_</span>
         </a>
         
         {/* Desktop Navigation */}

@@ -1,7 +1,7 @@
 
 import React, { useState, useRef } from 'react';
 import { MailIcon, PhoneIcon, MapPin, Send, Instagram } from 'lucide-react';
-import emailjs from 'emailjs-com';
+import emailjs from "emailjs-com";
 import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
