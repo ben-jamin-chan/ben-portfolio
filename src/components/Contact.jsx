@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { MailIcon, PhoneIcon, MapPin, Send, Instagram } from 'lucide-react';
 import emailjs from "emailjs-com";
@@ -27,26 +26,53 @@ export default function Contact() {
     // Initialize EmailJS with your User ID (Public Key)
     emailjs.init("YtV_Gb-sBV_edWDZV");
     
-    // Prepare template parameters - matching exact parameter names expected in EmailJS template
+    // Prepare template parameters
     const templateParams = {
+      to_email: "chanbenjamin.tl@gmail.com",
       from_name: formData.name,
-      reply_to: formData.email,
-      message: formData.message,
-      to_name: "Benjamin Chan"
+      from_email: formData.email,
+      message: formData.message
     };
     
-    // Send the message to you (admin notification)
-    emailjs.send('default_service', 'template_yug4c13', templateParams)
+    // Send the email using EmailJS
+    emailjs.send('service_iowu9ba', 'template_yug4c13', templateParams)
       .then(() => {
-        // Send auto-reply to the user
+        // After successful sending of the main email, send an auto-reply to the user
+        // Make sure these parameter names match EXACTLY what's in your EmailJS template
         const autoReplyParams = {
-          to_email: formData.email,
           to_name: formData.name,
+          user_email: formData.email, // Try using user_email instead of to_email
           from_name: "Benjamin Chan",
-          reply_message: "Thank you for contacting me! I'll review your message and get back to you as soon as possible."
+          reply_to: "chanbenjamin.tl@gmail.com",
+          subject: "Thank you for contacting me",
+          message_html: `Thank you for reaching out! I've received your message and will get back to you as soon as possible.
+
+Best regards,
+Benjamin Chan`
         };
         
-        return emailjs.send('default_service', 'template_autoreply', autoReplyParams);
+        console.log("Sending auto-reply with params:", autoReplyParams);
+        
+        // Try using different parameter values - this is a common issue with EmailJS templates
+        const fallbackParams = {
+          // Standard EmailJS parameters
+          from_name: "Benjamin Chan",
+          to_name: formData.name,
+          email: formData.email,
+          reply_to: "chanbenjamin.tl@gmail.com",
+          message: `Thank you for reaching out! I've received your message and will get back to you as soon as possible.
+
+Best regards,
+Benjamin Chan`
+        };
+        
+        // Send the auto-reply email - specify your service ID and template ID carefully
+        return emailjs.send('default_service', 'template_kc9ad7n', fallbackParams)
+          .catch(error => {
+            console.error('Auto-reply error details:', error);
+            // Continue with the success flow even if auto-reply fails
+            return Promise.resolve();
+          });
       })
       .then(() => {
         setIsSubmitting(false);
@@ -60,7 +86,7 @@ export default function Contact() {
         setIsSubmitting(false);
         console.error('EmailJS error:', error);
         toast({
-          title: "Error",
+          title: "Error.",
           description: "There was an error sending your message. Please try again.",
           variant: "destructive",
         });
