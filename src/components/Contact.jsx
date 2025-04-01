@@ -25,7 +25,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     // Initialize EmailJS with your User ID (Public Key)
-    emailjs.init("YOUR_EMAILJS_PUBLIC_KEY");
+    emailjs.init("YtV_Gb-sBV_edWDZV");
     
     // Prepare template parameters
     const templateParams = {
@@ -36,11 +36,11 @@ export default function Contact() {
     };
     
     // Send the email using EmailJS
-    emailjs.send('default_service', 'template_id', templateParams)
+    emailjs.send('default_service', 'template_yug4c13', templateParams)
       .then(() => {
         setIsSubmitting(false);
         toast({
-          title: "Message Sent",
+          title: "Message Sent!",
           description: "Your message has been sent successfully! I'll get back to you soon.",
         });
         setFormData({ name: '', email: '', message: '' });
@@ -49,7 +49,7 @@ export default function Contact() {
         setIsSubmitting(false);
         console.error('EmailJS error:', error);
         toast({
-          title: "Error",
+          title: "Error.",
           description: "There was an error sending your message. Please try again.",
           variant: "destructive",
         });
