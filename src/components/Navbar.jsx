@@ -54,13 +54,17 @@ export default function Navbar() {
             ))}
           </nav>
           
-          {/* Theme Toggle in middle for desktop */}
-          <ThemeToggle className="ml-6 scale-110" />
+          {/* Theme Toggle in middle for desktop with improved visibility */}
+          <div className="ml-6 animate-fade-in scale-110 hover:scale-125 transition-transform">
+            <ThemeToggle />
+          </div>
         </div>
 
-        {/* Mobile Navigation Toggle */}
+        {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <ThemeToggle className="mr-4 scale-110" />
+          <div className="animate-fade-in hover:scale-110 transition-transform mr-4">
+            <ThemeToggle />
+          </div>
           <button
             onClick={toggleMenu}
             className="p-2 focus:outline-none"
