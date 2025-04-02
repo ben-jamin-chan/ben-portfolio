@@ -8,7 +8,7 @@ export default function ThemeToggle({ className = '' }) {
   const { theme, toggleTheme } = useTheme();
   
   return (
-    <div className={`flex items-center gap-2 p-1.5 rounded-full border border-border/40 bg-background/80 backdrop-blur-sm shadow-sm ${className}`}>
+    <div className={`flex items-center gap-2 p-1.5 rounded-full border border-border/40 bg-background/80 backdrop-blur-sm shadow-sm hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full ${className}`}>
       <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-amber-400 animate-pulse' : 'text-muted-foreground'}`} />
       <Switch 
         checked={theme === 'dark'}
