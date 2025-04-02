@@ -60,7 +60,7 @@ export default function About() {
               <div className="border-l-2 border-primary pl-4 pb-6">
                 <h4 className="font-bold">Freelance Full-Stack Developer</h4>
                 <p className="text-sm text-foreground/70 font-mono">Independent • 2024 - Present</p>
-                <p className="mt-2 text-foreground/80">Developing custom web applications and e-commerce solutions for small to medium-sized businesses. Specializing in React, Node.js, and modern web technologies.</p>
+                <p className="mt-2 text-foreground/80">Design and developing custom web applications and digital solutions for SMEs using modern technologies including React, Node.js, and modern web technologies. Collaborating with clients to build tailored digital solutions that enhance business operations and drive growth.</p>
               </div>
               <div className="border-l-2 border-primary/80 pl-4 pb-6">
                 <h4 className="font-bold">Partner Resource Manager</h4>
