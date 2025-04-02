@@ -6,6 +6,8 @@ import About from '../components/About';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import ParticleBackground from '../components/ParticleBackground';
+import GradientBackground from '../components/GradientBackground';
 import { useTheme } from '../utils/useTheme';
 
 const Index = () => {
@@ -43,6 +45,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen overflow-hidden">
+      <GradientBackground />
+      <ParticleBackground />
       <Navbar />
       <Hero />
       <About />
