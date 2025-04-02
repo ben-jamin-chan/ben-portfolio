@@ -55,14 +55,14 @@ export default function Navbar() {
           </nav>
           
           {/* Theme Toggle in middle for desktop with improved visibility */}
-          <div className="ml-6 animate-fade-in">
+          <div className="ml-6 animate-fade-in scale-105">
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <div className="animate-fade-in mr-4">
+          <div className="animate-fade-in mr-4 scale-110">
             <ThemeToggle />
           </div>
           <button
@@ -77,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       <div
-        className={`md:hidden absolute w-full bg-background/95 backdrop-blur-lg shadow-lg transform transition-all duration-300 ease-in-out ${
+        className={`md:hidden absolute w-full bg-background/95 bacxkdrop-blur-lg shadow-lg transform transition-all duration-300 ease-in-out ${
           isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-[-100%] opacity-0'
         }`}
       >

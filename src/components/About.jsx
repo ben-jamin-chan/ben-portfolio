@@ -76,7 +76,7 @@ export default function About() {
               <div className="border-l-2 border-primary/60 pl-4">
                 <h4 className="font-bold">Resource Coordinator</h4>
                 <p className="text-sm text-foreground/70 font-mono">Majorel Group • 2020 - 2021</p>
-                <p className="mt-2 text-foreground/80">Optimized resource planning and distribution to support project timelines and business objectives. Collaborated with cross-functional teams to assess resource needs, streamline workflows, and enhance operational efficiency. Ensured effective communication between stakeholders to maximize productivity and project success.</p>
+                <p className="mt-2 text-foreground/80">Optimized resource planning for developers and distribution to support project timelines and business objectives. Collaborated with cross-functional teams to assess resource needs, streamline workflows, and enhance operational efficiency. Ensured effective communication between stakeholders to maximize productivity and project's deliveries.</p>
               </div>
             </div>
           </div>
