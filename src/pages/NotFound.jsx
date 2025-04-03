@@ -13,6 +13,9 @@ const NotFound = () => {
     );
   }, [location.pathname]);
 
+  // Get the base URL from the environment or use default
+  const baseUrl = import.meta.env.MODE === "production" ? "/ben-portfolio/" : "/";
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="max-w-md w-full glass-panel p-12 text-center">
@@ -22,7 +25,7 @@ const NotFound = () => {
           The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
         </p>
         <a 
-          href="/" 
+          href={baseUrl} 
           className="pixel-btn bg-primary text-primary-foreground inline-flex items-center"
         >
           <ArrowLeft className="h-4 w-4 mr-2" /> Return to Home

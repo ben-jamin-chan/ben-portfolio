@@ -36,6 +36,10 @@ export default function Navbar() {
         <a 
           href="#home" 
           className="font-pixel text-[1.2rem] text-primary focus:outline-none"
+          onClick={(e) => {
+            e.preventDefault();
+            document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+          }}
         >
           {"</>"} Benjamin Chan<span className="animate-blink">_</span>
         </a>
@@ -48,6 +52,11 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="font-mono text-base hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                  closeMenu();
+                }}
               >
                 {link.name}
               </a>
@@ -55,14 +64,14 @@ export default function Navbar() {
           </nav>
           
           {/* Theme Toggle in middle for desktop with improved visibility */}
-          <div className="ml-6 animate-fade-in scale-110">
+          <div className="ml-6 animate-fade-in">
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <div className="animate-fade-in mr-4 scale-110">
+          <div className="animate-fade-in mr-4">
             <ThemeToggle />
           </div>
           <button
@@ -87,7 +96,11 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                onClick={closeMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                  closeMenu();
+                }}
                 className="font-mono py-2 hover:text-primary transition-colors"
               >
                 {link.name}
