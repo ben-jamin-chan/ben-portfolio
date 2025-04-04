@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
@@ -19,11 +18,23 @@ export default function Navbar() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
+  // Function to handle smooth scrolling to anchors
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+      closeMenu();
+    }
+  };
+
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '#home', targetId: 'home' },
+    { name: 'About', href: '#about', targetId: 'about' },
+    { name: 'Projects', href: '#projects', targetId: 'projects' },
+    { name: 'Contact', href: '#contact', targetId: 'contact' },
   ];
 
   return (
@@ -36,10 +47,7 @@ export default function Navbar() {
         <a 
           href="#home" 
           className="font-pixel text-[1.2rem] text-primary focus:outline-none"
-          onClick={(e) => {
-            e.preventDefault();
-            document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-          }}
+          onClick={(e) => scrollToSection(e, 'home')}
         >
           {"</>"} Benjamin Chan<span className="animate-blink">_</span>
         </a>
@@ -52,11 +60,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 className="font-mono text-base hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
-                  closeMenu();
-                }}
+                onClick={(e) => scrollToSection(e, link.targetId)}
               >
                 {link.name}
               </a>
@@ -64,20 +68,31 @@ export default function Navbar() {
           </nav>
           
           {/* Theme Toggle in middle for desktop with improved visibility */}
-          <div className="ml-6 animate-fade-in">
+          <div className="ml-6 animate-fade-in" onClick={(e) => e.stopPropagation()}>
             <ThemeToggle />
           </div>
         </div>
 
         {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <div className="animate-fade-in mr-4">
+          <div 
+            className="animate-fade-in mr-4" 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+          >
             <ThemeToggle />
           </div>
           <button
-            onClick={toggleMenu}
-            className="p-2 focus:outline-none"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMenu();
+            }}
+            className="p-2 focus:outline-none z-50"
             aria-label="Toggle menu"
+            type="button"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -85,30 +100,33 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation Menu */}
-      <div
-        className={`md:hidden absolute w-full bg-background/95 backdrop-blur-lg shadow-lg transform transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-[-100%] opacity-0'
-        }`}
-      >
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex flex-col space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
-                  closeMenu();
-                }}
-                className="font-mono py-2 hover:text-primary transition-colors"
-              >
-                {link.name}
-              </a>
-            ))}
+      {isMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 bg-background/90 backdrop-blur-xl z-40 flex items-start justify-center pt-20"
+          onClick={(e) => {
+            e.preventDefault();
+            closeMenu();
+          }}
+        >
+          <div 
+            className="container mx-auto px-6 py-6 bg-card shadow-lg rounded-lg border border-border"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex flex-col space-y-6">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={(e) => scrollToSection(e, link.targetId)}
+                  className="font-mono py-3 px-4 text-lg hover:text-primary transition-colors hover:bg-accent/50 rounded-md flex items-center"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </header>
   );
 }
