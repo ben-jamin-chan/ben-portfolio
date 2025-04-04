@@ -49,7 +49,7 @@ export default function Navbar() {
           className="font-pixel text-[1.2rem] text-primary focus:outline-none"
           onClick={(e) => scrollToSection(e, 'home')}
         >
-          {"</>"} Benjamin Chan<span className="animate-blink">_</span>
+          {"</>"} Benjamin Chan(陳)<span className="animate-blink">_</span>
         </a>
         
         {/* Desktop Navigation */}

@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <a href="#home" className="font-pixel text-[1.2rem] text-primary">
-            {"</>"} Benjamin Chan<span className="animate-blink">_</span>
+            {"</>"} Benjamin Chan(陳)<span className="animate-blink">_</span>
             </a>
             <p className="text-sm text-foreground/60 mt-2">
               Crafting digital experiences through elegant code.
@@ -45,7 +45,7 @@ export default function Footer() {
         
         <div className="border-t border-border/50 mt-6 pt-6 text-center">
           <p className="text-sm text-foreground/60">
-            © {currentYear} Ben 陳. All rights reserved.
+            © {currentYear} Benjamin Chan. All rights reserved.
           </p>
           {/* <p className="text-xs text-foreground/50 mt-2 flex items-center justify-center">
             Built with <Heart className="h-3 w-3 mx-1 text-red-500" /> and modern web technologies
