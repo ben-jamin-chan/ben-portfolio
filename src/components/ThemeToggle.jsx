@@ -30,7 +30,8 @@ export default function ThemeToggle({ className = '' }) {
         }}
         className="data-[state=checked]:bg-primary/90"
         aria-label="Toggle theme"
-        onClick={(e) => e.stopPropagation()} // Prevent double toggle when clicking directly on the switch
+        onClick={handleToggle}
+        // onClick={(e) => e.stopPropagation()} -> Prevent double toggle when clicking directly on the switch
       />
       <Moon className={`h-5 w-5 ${theme === 'dark' ? 'text-primary animate-pulse' : 'text-primary animate-pulse'}`} />
       <span className="sr-only md:not-sr-only md:inline-block text-xs font-mono ml-1 whitespace-nowrap">
