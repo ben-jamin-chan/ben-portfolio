@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 
@@ -7,8 +6,11 @@ export const useTheme = () => {
   const savedTheme = localStorage.getItem('theme');
   
   // Use the saved theme, or use the system preference, or fallback to 'light'
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  const defaultTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // const defaultTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  
+  // Always default to 'light' if no saved preference exists
+  const defaultTheme = savedTheme || 'light';
   
   const [theme, setTheme] = useState(defaultTheme);
   
