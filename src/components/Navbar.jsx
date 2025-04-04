@@ -43,7 +43,7 @@ export default function Navbar() {
         isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm py-3' : 'py-5'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto px-4 flex justify-between items-center">
         <a 
           href="#home" 
           className="font-pixel text-[1.2rem] text-primary focus:outline-none"
