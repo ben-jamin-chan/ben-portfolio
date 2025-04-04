@@ -16,7 +16,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const toggleMenu = (e) => {
+    if (e) e.stopPropagation();
+    setIsMenuOpen(!isMenuOpen);
+  };
+  
   const closeMenu = () => setIsMenuOpen(false);
 
   const scrollToSection = (id) => {
@@ -78,11 +82,17 @@ export default function Navbar() {
 
         {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <div className="animate-fade-in mr-4" onClick={(e) => e.stopPropagation()}>
+          <div 
+            className="animate-fade-in mr-4" 
+            onClick={(e) => {
+              e.stopPropagation(); 
+              // Don't do anything else here, let ThemeToggle handle it
+            }}
+          >
             <ThemeToggle />
           </div>
           <button
-            onClick={toggleMenu}
+            onClick={(e) => toggleMenu(e)}
             className="p-2 focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -105,6 +115,7 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
+                  e.stopPropagation();
                   scrollToSection(link.id);
                 }}
                 className="font-mono py-2 hover:text-primary transition-colors"
