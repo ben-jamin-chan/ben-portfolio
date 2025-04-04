@@ -42,7 +42,7 @@ export default function About() {
               I'm a dedicated software engineer with a passion for creating efficient, scalable, and user-centric digital solutions. With a strong foundation in both front-end and back-end technologies, I deliver comprehensive software that addresses complex business challenges.
             </p>
             <p className="text-foreground/80 leading-relaxed">
-              As a freelance developer, I bring a consultative approach to each project, working closely with clients to understand their unique requirements and translate them into technical specifications. My commitment to clean code practices and continuous learning ensures that I implement the latest industry standards and best practices.
+              As an independent freelance developer, I bring a consultative approach to each project, working closely with clients to understand their unique requirements and translate them into technical specifications. My commitment to clean code practices and continuous learning ensures that I implement the latest industry standards and best practices.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               My goal is to be more than just a developer—I aim to be a trusted technology partner who understands your business objectives and delivers solutions that drive real value. Whether you need a complete web application, API integration, or performance optimization, I'm dedicated to exceeding expectations with every line of code.
@@ -58,7 +58,7 @@ export default function About() {
             <h3 className="text-2xl font-mono font-bold mb-6">My Experience</h3>
             <div className="space-y-4">
               <div className="border-l-2 border-primary pl-4 pb-6">
-                <h4 className="font-bold">Freelance Full-Stack Developer</h4>
+                <h4 className="font-bold">Full-Stack Developer</h4>
                 <p className="text-sm text-foreground/70 font-mono">Independent • 2024 - Present</p>
                 <p className="mt-2 text-foreground/80">Design and developing custom web applications and digital solutions for SMEs using modern technologies including React, Node.js, and modern web technologies. Collaborating with clients to build tailored digital solutions that enhance business operations and drive growth.</p>
               </div>

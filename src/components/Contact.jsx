@@ -149,15 +149,23 @@ Benjamin Chan`
             <div className="pt-6">
               <h3 className="text-lg font-mono font-bold mb-4">Connect With Me</h3>
               <div className="flex items-center gap-4">
-                <a 
-                  href="https://github.com/ben-jamin-chan/" 
-                  target="_blank" 
+                <a
+                  href="https://github.com/ben-jamin-chan/"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
                   aria-label="GitHub"
                 >
-                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2C6.477 2 2 6.477 2 12C2 16.419 4.865 20.166 9 21.547V18.5C9 17.837 9.337 17.2 9.875 16.788C7.01 16.346 5 14.986 5 12C5 9.239 7.239 7 10 7C12.761 7 15 9.239 15 12C15 14.986 12.99 16.346 10.125 16.788C10.663 17.2 11 17.837 11 18.5V21.547C15.135 20.166 18 16.419 18 12C18 6.477 13.523 2 8 2H12Z" fill="currentColor"/>
+                  <svg
+                    className="h-5 w-5"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
+                      fill="currentColor"
+                    />
                   </svg>
                 </a>
                 <a 
