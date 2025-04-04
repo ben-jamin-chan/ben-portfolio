@@ -16,26 +16,14 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = (e) => {
-    if (e) e.stopPropagation();
-    setIsMenuOpen(!isMenuOpen);
-  };
-  
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
   const closeMenu = () => setIsMenuOpen(false);
 
-  const scrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      closeMenu();
-    }
-  };
-
   const navLinks = [
-    { name: 'Home', href: '#home', id: 'home' },
-    { name: 'About', href: '#about', id: 'about' },
-    { name: 'Projects', href: '#projects', id: 'projects' },
-    { name: 'Contact', href: '#contact', id: 'contact' },
+    { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -50,7 +38,7 @@ export default function Navbar() {
           className="font-pixel text-[1.2rem] text-primary focus:outline-none"
           onClick={(e) => {
             e.preventDefault();
-            scrollToSection('home');
+            document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
           }}
         >
           {"</>"} Benjamin Chan<span className="animate-blink">_</span>
@@ -66,7 +54,8 @@ export default function Navbar() {
                 className="font-mono text-base hover:text-primary transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:w-0 after:bg-primary after:transition-all hover:after:w-full"
                 onClick={(e) => {
                   e.preventDefault();
-                  scrollToSection(link.id);
+                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                  closeMenu();
                 }}
               >
                 {link.name}
@@ -82,17 +71,11 @@ export default function Navbar() {
 
         {/* Mobile Navigation Toggle with highlighted theme toggle */}
         <div className="flex items-center md:hidden">
-          <div 
-            className="animate-fade-in mr-4" 
-            onClick={(e) => {
-              e.stopPropagation(); 
-              // Don't do anything else here, let ThemeToggle handle it
-            }}
-          >
+          <div className="animate-fade-in mr-4">
             <ThemeToggle />
           </div>
           <button
-            onClick={(e) => toggleMenu(e)}
+            onClick={toggleMenu}
             className="p-2 focus:outline-none"
             aria-label="Toggle menu"
           >
@@ -115,8 +98,8 @@ export default function Navbar() {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  e.stopPropagation();
-                  scrollToSection(link.id);
+                  document.getElementById(link.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                  closeMenu();
                 }}
                 className="font-mono py-2 hover:text-primary transition-colors"
               >
