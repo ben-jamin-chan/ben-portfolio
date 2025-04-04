@@ -35,7 +35,7 @@ export default function ThemeToggle({ className = '' }) {
         }}
       />
       <Moon className={`h-5 w-5 ${theme === 'dark' ? 'text-primary animate-pulse' : 'text-primary animate-pulse'}`} />
-      <span className="sr-only md:not-sr-only md:inline-block text-xs font-mono ml-1 whitespace-nowrap">
+      <span className="sr-only md:not-sr-only md:inline-block text-base font-mono ml-1 whitespace-nowrap">
         {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
       </span>
     </button>
