@@ -18,14 +18,14 @@ export default function Projects() {
     },
     {
       title: 'Trend Watcher App',
-      description: 'A React Native application for tracking and comparing Google trends with real-time updates and in app notifications.',
+      description: 'A React Native application for users to track and compare Google trends with real-time updates and in app notifications using APIs, Firebase, and MongoDB Atlas.',
       image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%2310B981" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="155" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="180" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="205" width="240" height="15" fill="%23E5E7EB" /></svg>',
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
       live: 'https://example.com',
     },
     {
-      title: "Florist's Service Website",
+      title: "Florist's Service Platform",
       description: 'An online platform for florists to showcase their services, manage bookings, and interact with customers using APIs for seamless transactions and updates.',
       image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23F59E0B" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><circle cx="120" cy="150" r="40" fill="%23E5E7EB" /><rect x="180" y="130" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="155" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="180" width="100" height="15" fill="%23E5E7EB" /></svg>',
       tags: ['Web', 'Mobile', 'API'],
