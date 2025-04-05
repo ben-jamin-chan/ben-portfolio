@@ -10,6 +10,16 @@ export default function Footer() {
     });
   };
   
+  // Function to handle smooth scrolling to anchors
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  
   const currentYear = new Date().getFullYear();
 
   return (
@@ -17,7 +27,11 @@ export default function Footer() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <a href="#home" className="font-pixel text-[1.2rem] text-primary">
+            <a 
+              href="#home" 
+              className="font-pixel text-[1.2rem] text-primary"
+              onClick={(e) => scrollToSection(e, 'home')}
+            >
             {"</>"} Benjamin Chan(陳)<span className="animate-blink">_</span>
             </a>
             <p className="text-sm text-foreground/60 mt-2">
@@ -27,10 +41,26 @@ export default function Footer() {
           
           <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
             <nav className="flex space-x-6">
-              <a href="#home" className="text-sm hover:text-primary transition-colors">Home</a>
-              <a href="#about" className="text-sm hover:text-primary transition-colors">About</a>
-              <a href="#projects" className="text-sm hover:text-primary transition-colors">Projects</a>
-              <a href="#contact" className="text-sm hover:text-primary transition-colors">Contact</a>
+              <a 
+                href="#home" 
+                className="text-sm hover:text-primary transition-colors"
+                onClick={(e) => scrollToSection(e, 'home')}
+              >Home</a>
+              <a 
+                href="#about" 
+                className="text-sm hover:text-primary transition-colors"
+                onClick={(e) => scrollToSection(e, 'about')}
+              >About</a>
+              <a 
+                href="#projects" 
+                className="text-sm hover:text-primary transition-colors"
+                onClick={(e) => scrollToSection(e, 'projects')}
+              >Projects</a>
+              <a 
+                href="#contact" 
+                className="text-sm hover:text-primary transition-colors"
+                onClick={(e) => scrollToSection(e, 'contact')}
+              >Contact</a>
             </nav>
             
             <button 

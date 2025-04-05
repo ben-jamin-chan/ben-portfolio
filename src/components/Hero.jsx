@@ -8,6 +8,16 @@ import ben4 from "../asset/ben4.jpeg"
 import ben5 from "../asset/ben5.jpeg"
 
 export default function Hero() {
+  // Function to handle smooth scrolling
+  const scrollToSection = (e, targetId) => {
+    e.preventDefault();
+    
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center relative overflow-hidden pt-20">
       <div className="absolute top-0 left-0 w-full h-full bg-grid-pattern opacity-[0.03] pointer-events-none"></div>
@@ -31,10 +41,18 @@ export default function Hero() {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#projects" className="pixel-btn bg-primary text-primary-foreground">
+              <a 
+                href="#projects" 
+                className="pixel-btn bg-primary text-primary-foreground"
+                onClick={(e) => scrollToSection(e, 'projects')}
+              >
                 View Projects
               </a>
-              <a href="#contact" className="pixel-btn bg-background">
+              <a 
+                href="#contact" 
+                className="pixel-btn bg-background"
+                onClick={(e) => scrollToSection(e, 'contact')}
+              >
                 Contact Me
               </a>
             </div>
@@ -59,11 +77,9 @@ export default function Hero() {
             </div>
           </div>
           
-          <div className="md:w-2/4 flex justify-end">
-          {/* w-56 h-56 md:w-72 md:h-72 */}
+          <div className="md:w-2/4 flex justify-center md:justify-end">
             <div className="relative border-2 border-foreground p-1 rounded-md bg-muted/50 animate-float w-56 h-56 md:w-72 md:h-72">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
-              {/* <img src={ben3} className='w-full h-full object-cover' /> */}
                 <div className="pixel-art-avatar h-full w-full bg-cover bg-center" style={{ backgroundImage: "url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22300%22%20viewBox%3D%220%200%2030%2030%22%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%2230%22%20height%3D%2230%22%20fill%3D%22%23F97316%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2218%22%20width%3D%223%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2214%22%20width%3D%229%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2215%22%20y%3D%2210%22%20width%3D%226%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2214%22%20width%3D%223%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%226%22%20y%3D%2210%22%20width%3D%226%22%20height%3D%223%22%20fill%3D%22%23FFFFFF%22%3E%3C%2Frect%3E%3Crect%20x%3D%2210%22%20y%3D%2210%22%20width%3D%2210%22%20height%3D%2210%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3Crect%20x%3D%2211%22%20y%3D%2211%22%20width%3D%228%22%20height%3D%228%22%20fill%3D%22%23EEEEEE%22%3E%3C%2Frect%3E%3Crect%20x%3D%2214%22%20y%3D%2211%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3Crect%20x%3D%2214%22%20y%3D%2215%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%3E%3C%2Frect%3E%3C%2Fsvg%3E')" }}></div>
               </div>
             </div>
@@ -71,7 +87,11 @@ export default function Hero() {
         </div>
         
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#about" aria-label="Scroll down">
+          <a 
+            href="#about" 
+            onClick={(e) => scrollToSection(e, 'about')}
+            aria-label="Scroll down"
+          >
             <ArrowDown className="h-6 w-6 text-primary" />
           </a>
         </div>
