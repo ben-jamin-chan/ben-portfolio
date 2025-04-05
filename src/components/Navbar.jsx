@@ -31,7 +31,7 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
+const navLinks = [
     { name: 'Home', href: '#home', targetId: 'home' },
     { name: 'About', href: '#about', targetId: 'about' },
     { name: 'Projects', href: '#projects', targetId: 'projects' },
