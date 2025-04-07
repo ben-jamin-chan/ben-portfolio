@@ -1,6 +1,9 @@
-
 import React, { useState } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
+import trend from "../asset/trend.png"
+import holo from "../asset/holo.png"
+import petal from "../asset/petal.png"
+import portfolio from "../asset/portfolio.avif"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -11,7 +14,8 @@ export default function Projects() {
     {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution with for skincare and make-up products with React, and Firebase.',
-      image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%233B82F6" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="100" height="100" fill="%23E5E7EB" /><rect x="200" y="130" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="160" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="190" width="120" height="20" fill="%23E5E7EB" /></svg>',
+      // image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%233B82F6" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="100" height="100" fill="%23E5E7EB" /><rect x="200" y="130" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="160" width="120" height="20" fill="%23E5E7EB" /><rect x="200" y="190" width="120" height="20" fill="%23E5E7EB" /></svg>',
+      image: holo,
       tags: ['Web', 'Mobile'],
       github: 'https://github.com',
       live: 'https://example.com',
@@ -19,7 +23,8 @@ export default function Projects() {
     {
       title: 'Trend Watcher App',
       description: 'A React Native application for users to track and compare Google trends with real-time updates and in app notifications using APIs, Firebase, and MongoDB Atlas.',
-      image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%2310B981" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="155" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="180" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="205" width="240" height="15" fill="%23E5E7EB" /></svg>',
+      // image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%2310B981" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><rect x="80" y="130" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="155" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="180" width="240" height="15" fill="%23E5E7EB" /><rect x="80" y="205" width="240" height="15" fill="%23E5E7EB" /></svg>',
+      image: trend,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
       live: 'https://example.com',
@@ -27,7 +32,8 @@ export default function Projects() {
     {
       title: "Florist's Service Platform",
       description: 'An online platform for florists to showcase their services, manage bookings, and interact with customers using APIs for seamless transactions and updates.',
-      image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23F59E0B" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><circle cx="120" cy="150" r="40" fill="%23E5E7EB" /><rect x="180" y="130" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="155" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="180" width="100" height="15" fill="%23E5E7EB" /></svg>',
+      // image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%238B5CF6" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="70" y="70" width="100" height="100" fill="%23E5E7EB" /><rect x="180" y="70" width="150" height="20" fill="%23E5E7EB" /><rect x="180" y="100" width="150" height="10" fill="%23E5E7EB" /><rect x="180" y="120" width="150" height="10" fill="%23E5E7EB" /><rect x="70" y="180" width="260" height="50" fill="%23E5E7EB" /></svg>',
+      image: petal,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
       live: 'https://example.com',
@@ -35,8 +41,9 @@ export default function Projects() {
     {
       title: 'Portfolio Website',
       description: 'A responsive portfolio website built with React and Tailwind CSS.',
-      image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%238B5CF6" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="70" y="70" width="100" height="100" fill="%23E5E7EB" /><rect x="180" y="70" width="150" height="20" fill="%23E5E7EB" /><rect x="180" y="100" width="150" height="10" fill="%23E5E7EB" /><rect x="180" y="120" width="150" height="10" fill="%23E5E7EB" /><rect x="70" y="180" width="260" height="50" fill="%23E5E7EB" /></svg>',
-      tags: ['Web'],
+      // image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300"><rect width="400" height="300" fill="%23F59E0B" /><rect x="50" y="50" width="300" height="200" fill="%23FFFFFF" /><rect x="80" y="80" width="240" height="30" fill="%23E5E7EB" /><circle cx="120" cy="150" r="40" fill="%23E5E7EB" /><rect x="180" y="130" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="155" width="140" height="15" fill="%23E5E7EB" /><rect x="180" y="180" width="100" height="15" fill="%23E5E7EB" /></svg>',
+      image: portfolio,
+      tags: ['Web', 'Mobile'],
       github: 'https://github.com',
       live: 'https://example.com',
     },
