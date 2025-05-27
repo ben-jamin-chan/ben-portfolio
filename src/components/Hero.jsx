@@ -6,6 +6,8 @@ import ben2 from "../asset/benn.jpeg"
 import ben3 from "../asset/ben3.jpeg"
 import ben4 from "../asset/ben4.jpeg"
 import ben5 from "../asset/ben5.jpeg"
+import ben6 from "../asset/IMG_6863.jpeg"
+import ben7 from "../asset/ben6.jpeg"
 
 export default function Hero() {
   // Function to handle smooth scrolling

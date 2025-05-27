@@ -8,7 +8,7 @@ export default function About() {
       name: 'Front-end Development', 
       icon: <Layout className="h-6 w-6" />, 
       description: 'Building responsive and intuitive user interfaces with React, Vue, and modern CSS frameworks.',
-      techs: ['JavaScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'Shadcn']
+      techs: ['JavaScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'shadcn/ui', 'React Native', 'Expo']
     },
     { 
       name: 'Back-end Development', 
