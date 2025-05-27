@@ -28,7 +28,7 @@ export default function Hero() {
         <div className="flex flex-col-reverse md:flex-row md:items-center">
           <div className="md:w-2/3 space-y-8 mt-10 md:mt-0 animate-slideRight" style={{ animationDelay: '0.2s' }}>
             <div className="space-y-2">
-              <p className="font-mono text-primary">Hello, I'm</p>
+              <p className="font-mono text-primary text-xl">Hello, I'm</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                 Benjamin Chan(陳)
               </h1>

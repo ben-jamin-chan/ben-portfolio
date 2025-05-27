@@ -183,7 +183,7 @@ Benjamin Chan`
           
           <div className="animate-slideUp" style={{ animationDelay: '0.3s' }}>
             <div className="glass-panel p-8 rounded-xl">
-              <h3 className="text-xl font-mono font-bold mb-6">Send Me a Message</h3>
+              <h3 className="text-xl font-mono font-bold mb-6">Send Me a Message!</h3>
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div>
