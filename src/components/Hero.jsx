@@ -48,14 +48,14 @@ export default function Hero() {
                 className="pixel-btn bg-primary text-primary-foreground"
                 onClick={(e) => scrollToSection(e, 'projects')}
               >
-                View Projects
+                🚀 View Projects
               </a>
               <a 
                 href="#contact" 
-                className="pixel-btn bg-background"
+                className="pixel-btn bg-primary text-primary-foreground"
                 onClick={(e) => scrollToSection(e, 'contact')}
               >
-                Contact Me
+                💬 Contact Me
               </a>
             </div>
             
