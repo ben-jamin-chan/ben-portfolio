@@ -64,7 +64,7 @@ export default function Hero() {
                 href="https://github.com/ben-jamin-chan/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -72,7 +72,7 @@ export default function Hero() {
                 href="https://instagram.com/neb.neb.neb.neb" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="hover:text-primary transition-colors"
+                className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
