@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -25,7 +25,7 @@
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 30 100% 60%;
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -58,6 +58,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 
   html {
@@ -66,8 +67,43 @@
 }
 
 @layer components {
-  .pixel-border {
-    @apply border-2 border-solid border-foreground relative before:absolute before:w-full before:h-full before:border-[6px] before:border-dotted before:border-foreground/20 before:top-0 before:left-0;
+  .modern-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl p-8 
+           hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/20
+           transition-all duration-500 hover:-translate-y-2 
+           relative overflow-hidden;
+  }
+  
+  .modern-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 
+           opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none;
+  }
+  
+  .modern-card input,
+  .modern-card textarea,
+  .modern-card button {
+    @apply relative pointer-events-auto;
+  }
+  
+  .modern-btn-primary {
+    @apply relative inline-flex items-center justify-center px-8 py-4 font-medium text-primary-foreground
+           bg-gradient-to-r from-primary to-primary/90 rounded-xl shadow-lg shadow-primary/25
+           hover:shadow-xl hover:shadow-primary/30 hover:scale-105 
+           transition-all duration-300 transform overflow-hidden;
+  }
+  
+  .modern-btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
+           translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700;
+  }
+  
+  .modern-btn-secondary {
+    @apply relative inline-flex items-center justify-center px-8 py-4 font-medium
+           text-foreground bg-card border border-border rounded-xl shadow-md
+           hover:shadow-lg hover:border-primary/30 hover:bg-primary/5 hover:scale-105
+           transition-all duration-300 transform;
   }
   
   .pixel-btn {
@@ -85,11 +121,112 @@
            transition-all duration-300 hover:-translate-y-1 backdrop-blur-sm;
   }
   
-  .section-heading {
-    @apply text-3xl md:text-4xl font-mono font-bold mb-8 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-16 after:h-1 after:bg-primary after:mt-2 after:mb-2;
+  .glass-panel {
+    @apply backdrop-blur-xl bg-card/60 border border-border/30 rounded-2xl shadow-xl
+           hover:bg-card/70 hover:border-border/50 transition-all duration-300;
   }
   
-  .glass-panel {
-    @apply backdrop-blur-lg bg-foreground/5 border border-foreground/10 rounded-xl shadow-lg;
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  .section-heading {
+    @apply text-4xl md:text-5xl font-bold mb-4 relative;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute -bottom-2 left-0 w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full;
+  }
+  
+  .nav-link {
+    @apply relative font-medium text-foreground/80 hover:text-primary transition-all duration-300
+           after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 
+           after:bg-gradient-to-r after:from-primary after:to-accent after:rounded-full
+           after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .project-card {
+    @apply bg-card/80 backdrop-blur-xl border border-border/50 rounded-2xl overflow-hidden
+           hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/30
+           transition-all duration-500 hover:-translate-y-3;
+  }
+  
+  .skill-tag {
+    @apply inline-flex items-center px-3 py-1.5 text-xs font-medium 
+           bg-primary/10 text-primary border border-primary/20 rounded-full
+           hover:bg-primary/20 hover:border-primary/30 transition-colors duration-200;
+  }
+  
+  .hero-gradient {
+    @apply bg-gradient-to-br from-background via-primary/5 to-accent/5;
+  }
+  
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-up.animate {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .stagger-delay-1 { animation-delay: 100ms; }
+  .stagger-delay-2 { animation-delay: 200ms; }
+  .stagger-delay-3 { animation-delay: 300ms; }
+  .stagger-delay-4 { animation-delay: 400ms; }
+  .stagger-delay-5 { animation-delay: 500ms; }
+}
+
+/* Mobile-first responsive design for consistent layout across all devices */
+@layer utilities {
+  .hero-mobile-consistent {
+    /* Force consistent mobile layout */
+    @apply w-full;
+  }
+  
+  /* Ensure consistent mobile hero image sizing */
+  @media (max-width: 768px) {
+    .hero-mobile-consistent {
+      max-width: 280px !important;
+      margin: 0 auto;
+    }
+    
+    /* Force consistent aspect ratio on mobile */
+    .hero-image-container {
+      aspect-ratio: 3/4 !important;
+      width: 100% !important;
+      height: auto !important;
+    }
+    
+    /* Ensure buttons wrap properly on small screens */
+    .hero-buttons-mobile {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    /* Consistent spacing on mobile */
+    .hero-content-mobile {
+      text-align: center;
+      padding: 1rem;
+    }
+  }
+  
+  /* For very small devices */
+  @media (max-width: 375px) {
+    .hero-mobile-consistent {
+      max-width: 260px !important;
+    }
+  }
+  
+  /* For larger mobile devices */
+  @media (min-width: 375px) and (max-width: 768px) {
+    .hero-mobile-consistent {
+      max-width: 300px !important;
+    }
   }
 }

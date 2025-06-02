@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { MailIcon, PhoneIcon, MapPin, Send, Instagram } from 'lucide-react';
+import { MailIcon, PhoneIcon, MapPin, Send, Instagram, Github, MessageCircle, Clock, CheckCircle, Mail } from 'lucide-react';
 import emailjs from "emailjs-com";
 import { useToast } from "@/hooks/use-toast";
 
@@ -79,6 +79,7 @@ Benjamin Chan`
         toast({
           title: "Message Sent!",
           description: "Your message has been sent successfully! I'll get back to you soon.",
+          variant: "success",
         });
         setFormData({ name: '', email: '', message: '' });
       })
@@ -98,126 +99,207 @@ Benjamin Chan`
       icon: <MailIcon className="h-5 w-5" />,
       label: 'Email',
       value: 'chanbenjamin.tl@gmail.com',
-      href: 'mailto:chanbenjamin.tl@gmail.com'
+      href: 'mailto:chanbenjamin.tl@gmail.com',
+      description: 'Send me an email'
     },
     {
       icon: <PhoneIcon className="h-5 w-5" />,
       label: 'Phone',
       value: '+6017-338-0511',
-      href: 'tel:+60173380511'
+      href: 'tel:+60173380511',
+      description: 'Call me directly'
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: 'Location',
       value: 'Kuala Lumpur, Malaysia',
-      href: null
+      href: null,
+      description: 'Based in Malaysia'
+    }
+  ];
+
+  const benefits = [
+    {
+      icon: <Clock className="h-5 w-5" />,
+      title: "Quick Response",
+      description: "I typically respond within 24 hours"
+    },
+    {
+      icon: <MessageCircle className="h-5 w-5" />,
+      title: "Free Consultation", 
+      description: "Let's discuss your project requirements"
+    },
+    {
+      icon: <CheckCircle className="h-5 w-5" />,
+      title: "Professional Service",
+      description: "Quality work with attention to detail"
     }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <h2 className="section-heading pb-4">Get In Touch</h2>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-12">
-          <div className="space-y-6 animate-slideUp" style={{ animationDelay: '0.1s' }}>
-            <p className="text-foreground/80">
-              Have a project in mind or want to discuss potential opportunities? 
-              Feel free to reach out through the form or using my contact information.
-            </p>
-            
-            <div className="space-y-4 mt-8">
-              {contactInfo.map((info) => (
-                <div key={info.label} className="flex items-center space-x-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    {info.icon}
-                  </div>
-                  <div>
-                    <p className="text-sm text-foreground/60 font-mono">{info.label}</p>
-                    {info.href ? (
-                      <a href={info.href} className="hover:text-primary transition-colors">
-                        {info.value}
-                      </a>
-                    ) : (
-                      <p>{info.value}</p>
-                    )}
-                  </div>
-                </div>
-              ))}
+    <section  className="py-10 relative">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-[0.02]">
+        <div className="absolute top-20 left-10 w-80 h-80 bg-accent rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-64 h-64 bg-primary rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Section Header */}
+          <div className='container mx-auto px-6'>
+          <h2 className="section-heading pb-4 font-mono">Let's Work Together!</h2>
+          </div>
+        <div className="text-center mb-8 fade-in-up animate">
+          <p className="text-lg text-foreground/70 mt-6 max-w-3xl mx-auto">
+            Ready to bring your ideas to life? Let's discuss your project and explore how we can create something amazing together.
+          </p>
+        </div>
+
+        {/* Benefits Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 fade-in-up animate stagger-delay-1">
+          {benefits.map((benefit, index) => (
+            <div key={index} className="modern-card text-center">
+              <div id="get-in-touch" className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+                {benefit.icon}
+              </div>
+              <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
+              <p className="text-foreground/70 text-sm">{benefit.description}</p>
             </div>
-            
-            <div className="pt-6">
-              <h3 className="text-lg font-mono font-bold mb-4">Connect With Me</h3>
-              <div className="flex items-center gap-4">
-                <a
-                  href="https://github.com/ben-jamin-chan/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
-                  aria-label="GitHub"
-                >
-                  <svg
-                    className="h-5 w-5"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+          ))}
+        </div>
+        
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-12">
+          {/* Contact Information */}
+          <div className="xl:col-span-2 space-y-8 fade-in-up animate stagger-delay-2">
+            <div className="modern-card">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+                  <MailIcon className="h-5 w-5 text-accent" />
+                </div>
+                <h3 className="text-2xl font-bold">Get in Touch</h3>
+              </div>
+              
+              <p className="text-foreground/80 leading-relaxed mb-8">
+                Have a project in mind or want to discuss potential opportunities? 
+                I'd love to hear from you. Feel free to reach out through the form or using my contact information below.
+              </p>
+              
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => (
+                  <div key={info.label} className="group">
+                    <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors duration-300">
+                      <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center text-primary transition-colors duration-300">
+                        {info.icon}
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-sm text-foreground/60 font-medium mb-1">{info.label}</p>
+                        {info.href ? (
+                          <a 
+                            href={info.href} 
+                            className="font-medium hover:text-primary transition-colors duration-300 block"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="font-medium">{info.value}</p>
+                        )}
+                        <p className="text-xs text-foreground/60 mt-1">{info.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-border/20">
+                <h4 className="text-lg font-bold mb-4">Let's Connect:</h4>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://github.com/ben-jamin-chan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                             hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                             transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                    aria-label="GitHub"
                   >
-                    <path
-                      d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                </a>
-                <a 
-                  href="https://www.instagram.com/neb.neb.neb.neb/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
-                  aria-label="Instagram"
+                    <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
+                  </a>
+                  <a 
+                    href="https://www.instagram.com/neb.neb.neb.neb/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                             hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                             transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="h-5 w-5 group-hover:text-primary transition-colors" />
+                  </a>
+                  <a 
+                  href="mailto:chanbenjamin.tl@gmail.com" 
+                  className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                           hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                           transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                  aria-label="Email"
                 >
-                  <Instagram className="h-5 w-5" />
+                  <Mail className="h-5 w-5 group-hover:text-primary transition-colors" />
                 </a>
+                </div>
               </div>
             </div>
           </div>
           
-          <div className="animate-slideUp" style={{ animationDelay: '0.3s' }}>
-            <div className="glass-panel p-8 rounded-xl">
-              <h3 className="text-xl font-mono font-bold mb-6">Send Me a Message!</h3>
+          {/* Contact Form */}
+          <div className="xl:col-span-3 fade-in-up animate stagger-delay-3">
+            <div className="modern-card relative z-10">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+                  <Send className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-2xl font-bold">Send Me a Message</h3>
+              </div>
               
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-mono mb-1">
-                    Your Name <span className="text-primary">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    required
-                  />
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="relative">
+                    <label htmlFor="name" className="block text-sm font-medium mb-3 text-foreground/80">
+                      Your Name <span className="text-primary">*</span>
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-card/50 border border-border/50 rounded-xl 
+                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50
+                               transition-all duration-300 hover:border-primary/30 relative z-30"
+                      placeholder="John Doe"
+                      required
+                    />
+                  </div>
+                  
+                  <div className="relative">
+                    <label htmlFor="email" className="block text-sm font-medium mb-3 text-foreground/80">
+                      Email Address <span className="text-primary">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 bg-card/50 border border-border/50 rounded-xl 
+                               focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50
+                               transition-all duration-300 hover:border-primary/30 relative z-30"
+                      placeholder="john@example.com"
+                      required
+                    />
+                  </div>
                 </div>
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-mono mb-1">
-                    Your Email <span className="text-primary">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-sm font-mono mb-1">
+                <div className="relative">
+                  <label htmlFor="message" className="block text-sm font-medium mb-3 text-foreground/80">
                     Your Message <span className="text-primary">*</span>
                   </label>
                   <textarea
@@ -225,32 +307,40 @@ Benjamin Chan`
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    rows="5"
-                    className="w-full px-4 py-2 bg-background border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                    rows={6}
+                    className="w-full px-4 py-3 bg-card/50 border border-border/50 rounded-xl 
+                             focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary/50
+                             transition-all duration-300 hover:border-primary/30 resize-none relative z-30"
+                    placeholder="Tell me about your project, timeline, and any specific requirements..."
                     required
-                  ></textarea>
+                  />
                 </div>
                 
                 <button
                   type="submit"
-                  className="pixel-btn bg-primary text-primary-foreground w-full flex items-center justify-center"
                   disabled={isSubmitting}
+                  className="w-full modern-btn-primary disabled:opacity-50 disabled:cursor-not-allowed
+                           disabled:transform-none disabled:shadow-lg relative z-30"
                 >
                   {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="w-4 h-4 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin"></div>
                       Sending...
-                    </>
+                    </div>
                   ) : (
-                    <>
-                      Send Message <Send className="ml-2 h-4 w-4" />
-                    </>
+                    <div className="flex items-center justify-center gap-2">
+                      <Send className="h-5 w-5" />
+                      Send Message
+                    </div>
                   )}
                 </button>
               </form>
+              
+              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl relative z-20">
+                <p className="text-sm text-foreground/70 text-center">
+                  🔒 Your information is secure and will only be used to respond to your inquiry.
+                </p>
+              </div>
             </div>
           </div>
         </div>

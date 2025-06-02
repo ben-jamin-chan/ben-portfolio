@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Code, Server, Layout, Database } from 'lucide-react';
+import { Code, Server, Layout, Database, Send } from 'lucide-react';
 
 export default function About() {
   const skills = [
@@ -33,7 +32,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <h2 className="section-heading pb-4">About Me</h2>
+        <h2 className="section-heading pb-4 font-mono">About Me</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
           <div className="space-y-4 animate-slideUp" style={{ animationDelay: '0.1s' }}>
@@ -48,8 +47,8 @@ export default function About() {
               My goal is to be more than just a developer—I aim to be a trusted technology partner who understands your business objectives and delivers solutions that drive real value. Whether you need a complete web application, API integration, or performance optimization, I'm dedicated to exceeding expectations with every line of code.
             </p>
             <div className="pt-4">
-              <a href="#contact" className="pixel-btn bg-primary text-primary-foreground">
-                Get In Touch
+              <a href="#get-in-touch" className="modern-btn-primary font-mono" onClick={(e) => scrollToSection(e, 'get-in-touch')}>
+              <Send className="h-4 w-4 mr-2" />Get In Touch
               </a>
             </div>
           </div>
@@ -67,12 +66,6 @@ export default function About() {
                 <p className="text-sm text-foreground/70 font-mono">Majorel Group • 2021 - 2023</p>
                 <p className="mt-2 text-foreground/80">Managed strategic technology partnerships and resource allocation for enterprise clients, ensuring technical alignment with business objectives. Facilitated collaboration between development teams and business stakeholders, overseeing partnership initiatives to drive project success.</p>
               </div>
-              {/* Oversaw strategic technology partnerships and managed resource allocation for enterprise clients. Developed and maintained partner relationships while ensuring technical alignment with business objectives. */}
-              {/* <div className="border-l-2 border-primary/60 pl-4">
-                <h4 className="font-bold">Partner Resource Manager</h4>
-                <p className="text-sm text-foreground/70 font-mono">Global Tech Partners • 2020 - 2024</p>
-                <p className="mt-2 text-foreground/80">Oversaw strategic technology partnerships and managed resource allocation for enterprise clients. Developed and maintained partner relationships while ensuring technical alignment with business objectives.</p>
-              </div> */}
               <div className="border-l-2 border-primary/60 pl-4">
                 <h4 className="font-bold">Resource Coordinator</h4>
                 <p className="text-sm text-foreground/70 font-mono">Majorel Group • 2020 - 2021</p>

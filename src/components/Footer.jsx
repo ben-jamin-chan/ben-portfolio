@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Github, Instagram, Mail } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -63,6 +62,44 @@ export default function Footer() {
               >Contact</a>
             </nav>
             
+            {/* Let's Connect Section */}
+            {/* <div className="flex items-center gap-3">
+              <span className="text-sm text-foreground/60">Let's Connect:</span>
+              <div className="flex gap-3">
+                <a
+                  href="https://github.com/ben-jamin-chan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                           hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                           transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                  aria-label="GitHub"
+                >
+                  <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
+                </a>
+                <a 
+                  href="https://www.instagram.com/neb.neb.neb.neb/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                           hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                           transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="h-5 w-5 group-hover:text-primary transition-colors" />
+                </a>
+                <a 
+                  href="mailto:chanbenjamin.tl@gmail.com" 
+                  className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 
+                           hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center 
+                           transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                  aria-label="Email"
+                >
+                  <Mail className="h-5 w-5 group-hover:text-primary transition-colors" />
+                </a>
+              </div>
+            </div> */}
+            
             <button 
               onClick={scrollToTop}
               className="p-2 rounded-full bg-foreground/5 hover:bg-primary/10 text-primary transition-colors"
@@ -77,9 +114,6 @@ export default function Footer() {
           <p className="text-sm text-foreground/60">
             © {currentYear} Benjamin Chan. All rights reserved.
           </p>
-          {/* <p className="text-xs text-foreground/50 mt-2 flex items-center justify-center">
-            Built with <Heart className="h-3 w-3 mx-1 text-red-500" /> and modern web technologies
-          </p> */}
         </div>
       </div>
     </footer>
