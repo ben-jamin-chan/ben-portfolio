@@ -18,15 +18,15 @@ export default function Projects() {
       image: petal,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://github.com/',
     },
     {
-      title: 'Mobile Workout/Dating App',
+      title: 'Fitness Themed Dating App',
       description: 'A fitness-themed dating app built with React Native, Expo, and Firebase.',
       image: datingapp,
       tags: ['Mobile'],
       github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://github.com/',
     },
     {
       title: 'E-Commerce Platform',
@@ -34,7 +34,7 @@ export default function Projects() {
       image: holo,
       tags: ['Web', 'Mobile'],
       github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://github.com/',
     },
     {
       title: 'Trend Watcher App',
@@ -42,7 +42,7 @@ export default function Projects() {
       image: trend,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
-      live: 'https://example.com',
+      live: 'https://github.com/',
     },
   ];
   
