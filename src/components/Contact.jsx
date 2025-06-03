@@ -159,7 +159,7 @@ Benjamin Chan`
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 fade-in-up animate stagger-delay-1">
           {benefits.map((benefit, index) => (
             <div key={index} className="modern-card text-center">
-              <div id="get-in-touch" className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
+              <div  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
                 {benefit.icon}
               </div>
               <h3 className="font-bold text-lg mb-2">{benefit.title}</h3>
@@ -168,9 +168,9 @@ Benjamin Chan`
           ))}
         </div>
         
-        <div className="grid grid-cols-1 xl:grid-cols-5 gap-12">
+        <div id="get-in-touch" className="grid grid-cols-1 xl:grid-cols-5 gap-12">
           {/* Contact Information */}
-          <div className="xl:col-span-2 space-y-8 fade-in-up animate stagger-delay-2">
+          <div  className="xl:col-span-2 space-y-8 fade-in-up animate stagger-delay-2">
             <div className="modern-card">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">

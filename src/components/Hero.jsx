@@ -52,14 +52,14 @@ export default function Hero() {
             <div className="flex flex-row gap-3 sm:gap-3 pt-4">
   <a 
     href="#projects" 
-    className="font-mono modern-btn-primary px-4 py-4  text-base"
+    className="font-mono modern-btn-primary px-3 py-4 md:px-4 lg:px-4 xl:px-4 2xl:px-4 text-base"
     onClick={(e) => scrollToSection(e, 'projects')}
   >
     🚀 View Projects
   </a>
   <a 
     href="#get-in-touch" 
-    className="font-mono modern-btn-secondary px-4 py-4 text-base"
+    className="font-mono modern-btn-secondary px-3 md:px-4 lg:px-4 xl:px-4 2xl:px-4 py-4 text-base"
     onClick={(e) => scrollToSection(e, 'get-in-touch')}
   >
     💬 Contact Me
