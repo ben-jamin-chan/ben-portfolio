@@ -121,18 +121,18 @@ Benjamin Chan`
   const benefits = [
     {
       icon: <Clock className="h-5 w-5" />,
-      title: "Quick Response",
-      description: "I typically respond within 24 hours"
+      title: "Fast Replies",
+      description: "I usually get back to messages within a day. Don’t be shy — I’m just a message away!"
     },
     {
       icon: <MessageCircle className="h-5 w-5" />,
-      title: "Free Consultation", 
-      description: "Let's discuss your project requirements"
+      title: "Free Consultation & Coffee Chat!", 
+      description: "Got an idea or need help? I’d love to hear about it — no pressure, just a friendly chat."
     },
     {
       icon: <CheckCircle className="h-5 w-5" />,
-      title: "Professional Service",
-      description: "Quality work with attention to detail"
+      title: "Quality Without the Fuss",
+      description: "I care about doing things right. (and easy for you)!"
     }
   ];
 
