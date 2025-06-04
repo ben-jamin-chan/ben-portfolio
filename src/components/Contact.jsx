@@ -107,7 +107,7 @@ Benjamin Chan`
       label: 'Phone',
       value: '+6017-338-0511',
       href: 'tel:+60173380511',
-      description: 'Call me directly'
+      description: 'I am reachable via WhatsApp'
     },
     {
       icon: <MapPin className="h-5 w-5" />,
