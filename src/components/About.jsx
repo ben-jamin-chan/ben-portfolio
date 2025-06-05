@@ -38,13 +38,16 @@ export default function About() {
           <div className="space-y-4 animate-slideUp" style={{ animationDelay: '0.1s' }}>
             <h3 className="text-2xl font-mono font-bold">Who I Am</h3>
             <p className="text-foreground/80 leading-relaxed">
-              I'm a dedicated software engineer with a passion for creating efficient, scalable, and user-centric digital solutions. With a strong foundation in both front-end and back-end technologies, I deliver comprehensive software that addresses complex business challenges.
+              I'm a dedicated software engineer passionate about building efficient, scalable, and user-focused digital solutions. With experience in both front-end and back-end technologies, I help businesses solve complex problems with clean, modern software.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               As an independent developer, I bring a consultative approach to each project, working closely with clients to understand their unique requirements and translate them into technical specifications. My commitment to clean code practices and continuous learning ensures that I implement the latest industry standards and best practices.
             </p>
             <p className="text-foreground/80 leading-relaxed">
               My goal is to be more than just a developer—I aim to be a trusted technology partner who understands your business objectives and delivers solutions that drive real value. Whether you need a complete web application, API integration, or performance optimization, I'm dedicated to exceeding expectations with every line of code.
+            </p>
+            <p className="text-foreground/80 leading-relaxed">
+            Let’s chat! I’m always open to cool projects or just geeking out about tech.
             </p>
             <div className="pt-4">
               <a href="#get-in-touch" className="modern-btn-primary font-mono" onClick={(e) => scrollToSection(e, 'get-in-touch')}>

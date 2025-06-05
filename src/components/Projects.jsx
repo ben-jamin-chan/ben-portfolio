@@ -51,7 +51,7 @@ export default function Projects() {
     : projects.filter(project => project.tags.includes(activeFilter));
 
   return (
-    <section id="projects" className="py-10">
+    <section id="projects" className="py-0">
       <div className="container mx-auto px-6">
         <h2 className="section-heading pb-4 font-mono">My Projects</h2>
         <p className="text-lg text-foreground/70 mb-10 max-w-2xl">
