@@ -22,7 +22,7 @@ export default function Projects() {
     },
     {
       title: 'Fitness Themed Dating App',
-      description: 'A fitness-themed dating app built with React Native, Expo, and Firebase.',
+      description: 'A fitness-themed dating app to connect fitness enthusiasts and find their perfect match built with React Native, Expo, and Firebase.',
       image: datingapp,
       tags: ['Mobile'],
       github: 'https://github.com',
