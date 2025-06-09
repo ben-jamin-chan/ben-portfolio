@@ -18,7 +18,7 @@ export default function Projects() {
       image: petal,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
-      live: 'https://github.com/',
+      live: 'https://ben-jamin-chan.github.io/lynn-florist-website',
     },
     {
       title: 'Fitness Themed Dating App',
@@ -136,7 +136,7 @@ export default function Projects() {
                     href={project.live} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="flex items-center font-mono text-sm text-primary hover:underline mt-auto"
+                    className="flex items-center font-mono text-sm underline underline-offset-4 font-medium text-primary hover:underline mt-auto"
                   >
                     View Project <ArrowRight className="h-4 w-4 ml-1" />
                   </a>
