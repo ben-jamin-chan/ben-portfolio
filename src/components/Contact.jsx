@@ -177,7 +177,7 @@ Benjamin Chan`
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <MailIcon className="h-5 w-5 text-accent" />
                 </div>
-                <h3 className="text-2xl font-semibold font-mono">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold font-mono decoration-primary underline decoration-2 underline-offset-8">Get in Touch</h3>
               </div>
               
               <p className="text-foreground/80 leading-relaxed mb-8">
