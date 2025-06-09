@@ -168,6 +168,7 @@ Benjamin Chan`
           ))}
         </div>
         
+        {/* FIXME: */}
         <div id="get-in-touch" className="grid grid-cols-1 xl:grid-cols-5 gap-12">
           {/* Contact Information */}
           <div  className="xl:col-span-2 space-y-8 fade-in-up animate stagger-delay-2">
@@ -176,7 +177,7 @@ Benjamin Chan`
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
                   <MailIcon className="h-5 w-5 text-accent" />
                 </div>
-                <h3 className="text-2xl font-bold">Get in Touch</h3>
+                <h3 className="text-2xl font-semibold font-mono">Get in Touch</h3>
               </div>
               
               <p className="text-foreground/80 leading-relaxed mb-8">
@@ -249,6 +250,7 @@ Benjamin Chan`
             </div>
           </div>
           
+          {/* FIXME: */}
           {/* Contact Form */}
           <div className="xl:col-span-3 fade-in-up animate stagger-delay-3">
             <div className="modern-card relative z-10">
@@ -256,7 +258,7 @@ Benjamin Chan`
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Send className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold">Drop Me a Message!</h3>
+                <h3 className="text-[1.375rem] leading-[1.75rem] font-mono font-semibold decoration-primary underline decoration-2 underline-offset-8">Drop Me a Message!</h3>
               </div>
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-20">
