@@ -258,7 +258,7 @@ Benjamin Chan`
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Send className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-[1.375rem] leading-[1.75rem] font-mono font-semibold decoration-primary underline decoration-2 underline-offset-8">Drop Me a Message!</h3>
+                <h3 className="text-2xl leading-[1.75rem] font-mono font-semibold decoration-primary underline decoration-2 underline-offset-8">Let's Chat!</h3><span className="text-2xl"> 💬</span>
               </div>
               
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-20">
