@@ -330,7 +330,7 @@ Benjamin Chan`
                       Sending...
                     </div>
                   ) : (
-                    <div className="flex items-center justify-center gap-2">
+                    <div className="flex items-center justify-center gap-2 font-mono">
                       <Send className="h-5 w-5" />
                       Send Message
                     </div>

@@ -34,7 +34,7 @@ export default function Projects() {
       image: holo,
       tags: ['Web', 'Mobile'],
       github: 'https://github.com',
-      live: 'https://github.com/',
+      live: 'https://ben-jamin-chan.github.io/holobeauty/',
     },
     {
       title: 'Trend Watcher App',
