@@ -29,10 +29,11 @@ export default function Hero() {
       <div className="container mx-auto px-6 py-12 md:py-24">
         <div className="flex flex-col-reverse md:flex-row md:items-center">
           <div
-            className="md:w-2/3 space-y-8 mt-10 md:mt-0 animate-slideRight"
-            style={{ animationDelay: "0.2s" }}
+            className="md:w-2/3 space-y-8 mt-10 md:mt-0"
+            data-aos="fade-right"
+            data-aos-delay="200"
           >
-            <div className="space-y-2">
+            <div className="space-y-2" data-aos="fade-up" data-aos-delay="300">
               <p className="font-mono text-primary text-xl">👋 Hello, I'm</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                 Benjamin Chan(陳)
@@ -43,13 +44,13 @@ export default function Hero() {
               </p>
             </div>
 
-            <p className="text-lg text-foreground/70 max-w-xl">
+            <p className="text-lg text-foreground/70 max-w-xl" data-aos="fade-up" data-aos-delay="400">
               I craft elegant solutions through clean code. Specializing in
               building exceptional digital experiences that combine form and
               function.
             </p>
 
-            <div className="flex flex-row gap-3 sm:gap-3 pt-4">
+            <div className="flex flex-row gap-3 sm:gap-3 pt-4" data-aos="fade-up" data-aos-delay="500">
   <a 
     href="#projects" 
     className="font-mono modern-btn-primary px-2 py-4 md:px-4 lg:px-4 xl:px-4 2xl:px-4 text-base"
@@ -66,7 +67,7 @@ export default function Hero() {
   </a>
 </div>
 
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">
               <a
                 href="https://github.com/ben-jamin-chan/"
                 target="_blank"
@@ -93,7 +94,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="md:w-2/4 flex justify-center md:justify-end">
+          <div className="md:w-2/4 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="400">
             <div className="relative border-2 border-foreground p-1 rounded-md bg-muted/50 animate-float ">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
                 <img src={ben2} className="h-full w-full object-cover" />
@@ -102,7 +103,7 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="absolute bottom-3 lg:bottom-12 xl:bottom-12 2xl:bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-3 lg:bottom-12 xl:bottom-12 2xl:bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce" data-aos="fade-up" data-aos-delay="800">
           <a
             href="#about"
             onClick={(e) => scrollToSection(e, "about")}

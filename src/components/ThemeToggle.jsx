@@ -16,11 +16,18 @@ export default function ThemeToggle({ className = '' }) {
   };
   
   return (
-    <button 
+    <div 
       className={`flex items-center gap-2 hover:text-primary transition-colors cursor-pointer ${className}`}
       onClick={handleToggle}
-      type="button"
+      role="button"
+      tabIndex={0}
       aria-label="Toggle theme"
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleToggle(e);
+        }
+      }}
     >
       <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-amber-400 animate-pulse' : 'text-amber-400 animate-pulse'}`} />
       <Switch 
@@ -29,7 +36,7 @@ export default function ThemeToggle({ className = '' }) {
         className="data-[state=checked]:bg-primary/90"
         aria-label="Toggle theme"
         onClick={(e) => {
-          // Only stop propagation to prevent parent button click handler from firing
+          // Only stop propagation to prevent parent div click handler from firing
           // This allows the switch's own click handler to still work
           e.stopPropagation();
         }}
@@ -38,6 +45,6 @@ export default function ThemeToggle({ className = '' }) {
       <span className="sr-only md:not-sr-only md:inline-block text-base font-mono ml-1 whitespace-nowrap">
         {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
       </span>
-    </button>
+    </div>
   );
 }

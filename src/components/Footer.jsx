@@ -24,8 +24,8 @@ export default function Footer() {
   return (
     <footer className="py-8 bg-foreground/5 border-t border-border relative">
       <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+        <div className="flex flex-col md:flex-row justify-between items-center" data-aos="fade-up">
+          <div className="mb-4 md:mb-0" data-aos="fade-right" data-aos-delay="100">
             <a 
               href="#home" 
               className="font-pixel text-[1.2rem] text-primary"
@@ -38,7 +38,7 @@ export default function Footer() {
             </p>
           </div>
           
-          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8">
+          <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-8" data-aos="fade-left" data-aos-delay="200">
             <nav className="flex space-x-6">
               <a 
                 href="#home" 
@@ -110,7 +110,7 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-border/50 mt-6 pt-6 text-center">
+        <div className="border-t border-border/50 mt-6 pt-6 text-center" data-aos="fade-up" data-aos-delay="300">
           <p className="text-sm text-foreground/60">
             © {currentYear} Benjamin Chan. All rights reserved.
           </p>

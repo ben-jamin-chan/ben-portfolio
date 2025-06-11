@@ -53,12 +53,12 @@ export default function Projects() {
   return (
     <section id="projects" className="py-0">
       <div className="container mx-auto px-6">
-        <h2 className="section-heading pb-4 font-mono">My Projects</h2>
-        <p className="text-lg text-foreground/70 mb-10 max-w-2xl">
+        <h2 className="section-heading pb-4 font-mono" data-aos="fade-up">My Projects</h2>
+        <p className="text-lg text-foreground/70 mb-10 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
           A showcase of my recent work, featuring full-stack applications, mobile apps, and API integrations that solve real-world problems.
         </p>
         
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
           {filters.map(filter => (
             <button
               key={filter}
@@ -79,6 +79,8 @@ export default function Projects() {
             <div 
               key={project.title} 
               className="group h-full"
+              data-aos="fade-up"
+              data-aos-delay={100 * (index + 3)}
             >
               <div className="pixel-card h-full flex flex-col">
                 <div className="relative overflow-hidden rounded-md mb-4 aspect-video">
@@ -146,7 +148,7 @@ export default function Projects() {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
           <a 
             href="https://github.com" 
             target="_blank" 

@@ -122,12 +122,12 @@ Benjamin Chan`
     {
       icon: <Clock className="h-5 w-5" />,
       title: "Fast Replies",
-      description: "I usually get back to messages within a day. Don’t be shy — I’m just a message away!"
+      description: "I usually get back to messages within a day. Don't be shy — I'm just a message away!"
     },
     {
       icon: <MessageCircle className="h-5 w-5" />,
       title: "Free Consultation & Coffee Chat!", 
-      description: "Got an idea or need help? I’d love to hear about it — no pressure, just a friendly chat."
+      description: "Got an idea or need help? I'd love to hear about it — no pressure, just a friendly chat."
     },
     {
       icon: <CheckCircle className="h-5 w-5" />,
@@ -147,18 +147,18 @@ Benjamin Chan`
       <div className="container mx-auto px-6 py-2 relative z-10">
         {/* Section Header */}
           <div className='container mx-auto px-6'>
-          <h2 className="section-heading pb-4 font-mono">Let's Work Together!</h2>
+          <h2 className="section-heading pb-4 font-mono" data-aos="fade-up">Let's Work Together!</h2>
           </div>
-        <div className="text-center mb-8 fade-in-up animate">
+        <div className="text-center mb-8" data-aos="fade-up" data-aos-delay="100">
           <p className="text-lg text-foreground/70 mt-6 max-w-3xl mx-auto">
             Ready to bring your ideas to life? Let's discuss your project and explore how we can create something amazing together.
           </p>
         </div>
 
         {/* Benefits Section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 fade-in-up animate stagger-delay-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" data-aos="fade-up" data-aos-delay="200">
           {benefits.map((benefit, index) => (
-            <div key={index} className="modern-card text-center">
+            <div key={index} className="modern-card text-center" data-aos="fade-up" data-aos-delay={300 + (index * 100)}>
               <div  className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mx-auto mb-4">
                 {benefit.icon}
               </div>
@@ -171,7 +171,7 @@ Benjamin Chan`
         {/* FIXME: */}
         <div id="get-in-touch" className="grid grid-cols-1 xl:grid-cols-5 gap-12">
           {/* Contact Information */}
-          <div  className="xl:col-span-2 space-y-8 fade-in-up animate stagger-delay-2">
+          <div className="xl:col-span-2 space-y-8" data-aos="fade-right" data-aos-delay="400">
             <div className="modern-card">
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
@@ -187,7 +187,7 @@ Benjamin Chan`
               
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={info.label} className="group">
+                  <div key={info.label} className="group" data-aos="fade-up" data-aos-delay={500 + (index * 100)}>
                     <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors duration-300">
                       <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center text-primary transition-colors duration-300">
                         {info.icon}
@@ -211,7 +211,7 @@ Benjamin Chan`
                 ))}
               </div>
               
-              <div className="mt-8 pt-6 border-t border-border/20">
+              <div className="mt-8 pt-6 border-t border-border/20" data-aos="fade-up" data-aos-delay="800">
                 <h4 className="text-lg font-bold mb-4">Let's Connect:</h4>
                 <div className="flex items-center gap-3">
                   <a
@@ -252,7 +252,7 @@ Benjamin Chan`
           
           {/* FIXME: */}
           {/* Contact Form */}
-          <div className="xl:col-span-3 fade-in-up animate stagger-delay-3">
+          <div className="xl:col-span-3" data-aos="fade-left" data-aos-delay="600">
             <div className="modern-card relative z-10">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
@@ -261,7 +261,7 @@ Benjamin Chan`
                 <h3 className="text-2xl leading-[1.75rem] font-mono font-semibold decoration-primary underline decoration-2 underline-offset-8">Let's Chat!</h3><span className="text-2xl"> 💬</span>
               </div>
               
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-20">
+              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6 relative z-20" data-aos="fade-up" data-aos-delay="700">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="relative">
                     <label htmlFor="name" className="block text-sm font-medium mb-3 text-foreground/80">
@@ -338,7 +338,7 @@ Benjamin Chan`
                 </button>
               </form>
               
-              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl relative z-20">
+              <div className="mt-6 p-4 bg-primary/5 border border-primary/20 rounded-xl relative z-20" data-aos="fade-up" data-aos-delay="800">
                 <p className="text-sm text-foreground/70 text-center">
                   🔒 Your information is secure and will only be used to respond to your inquiry.
                 </p>
