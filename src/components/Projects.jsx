@@ -42,7 +42,7 @@ export default function Projects() {
       image: trend,
       tags: ['Web', 'Mobile', 'API'],
       github: 'https://github.com',
-      live: 'https://github.com/',
+      live: 'https://trend-watcher-pro.onrender.com/',
     },
   ];
   
