@@ -8,6 +8,7 @@ import datingapp from "../asset/gym-dating-app.png"
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [expanded, setExpanded] = useState({});
   
   const filters = ['All', 'Web', 'Mobile', 'API'];
   
@@ -49,6 +50,11 @@ export default function Projects() {
   const filteredProjects = activeFilter === 'All' 
     ? projects 
     : projects.filter(project => project.tags.includes(activeFilter));
+
+  // Helper to toggle expanded state for a project
+  const toggleExpand = (title) => {
+    setExpanded(prev => ({ ...prev, [title]: !prev[title] }));
+  };
 
   return (
     <section id="projects" className="py-0">
@@ -124,7 +130,21 @@ export default function Projects() {
                     </div>
                   </div>
                   
-                  <p className="text-foreground/70 text-sm mb-4">{project.description}</p>
+                  <p className="text-foreground/70 text-sm mb-4">
+                    {expanded[project.title] || project.description.length <= 180
+                      ? project.description
+                      : `${project.description.slice(0, 180)}... `}
+                    {project.description.length > 180 && (
+                      <button
+                        className="text-primary underline underline-offset-2 font-mono text-xs ml-1 focus:outline-none"
+                        onClick={() => toggleExpand(project.title)}
+                        aria-label={expanded[project.title] ? 'Show less' : 'Read more'}
+                        type="button"
+                      >
+                        {expanded[project.title] ? 'Show Less' : 'Read More'}
+                      </button>
+                    )}
+                  </p>
                   
                   <div className="flex flex-wrap gap-2 mt-auto mb-4">
                     {project.tags.map(tag => (
