@@ -17,25 +17,25 @@ export default function About() {
       name: 'Front-end Development', 
       icon: <Layout className="h-6 w-6" />, 
       description: 'Building responsive and intuitive user interfaces with React, Vue, and modern CSS frameworks.',
-      techs: ['JavaScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'shadcn/ui', 'React Native', 'Expo']
+      techs: ['JavaScript', 'TypeScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'shadcn/ui', 'React Native', 'Expo']
     },
     { 
       name: 'Back-end Development', 
       icon: <Server className="h-6 w-6" />, 
       description: 'Creating robust server-side applications using Node.js and modern backend services.',
-      techs: ['Node.js', 'Express', 'Firebase', 'Supabase', 'REST APIs']
+      techs: ['Node.js', 'Express', 'Firebase', 'Supabase', 'RESTful APIs', 'Authentication']
     },
     { 
       name: 'Database Management', 
       icon: <Database className="h-6 w-6" />, 
       description: 'Designing and optimizing databases for performance and scalability.',
-      techs: ['MongoDB', 'MySQL', 'Firebase', 'Supabase']
+      techs: ['MongoDB', 'MySQL', 'Firebase', 'Supabase', 'Cloud Functions', 'Vercel', 'Netlify']
     },
     { 
       name: 'Software Architecture', 
       icon: <Code className="h-6 w-6" />, 
       description: 'Designing scalable and maintainable software architectures.',
-      techs: ['System Design', 'Microservices', 'Figma', 'Git', 'RESTful APIs',  'Version Control']
+      techs: ['System Design', 'Microservices', 'Figma', 'Git', 'RESTful APIs',  'Version Control', 'Test-Driven Development', 'Docker']
     }
   ];
 
