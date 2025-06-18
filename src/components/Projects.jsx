@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink, Github, ArrowRight } from 'lucide-react';
 import trend from "../asset/trend.png"
 import holo from "../asset/holo.png"
@@ -9,6 +9,19 @@ import datingapp from "../asset/gym-dating-app.png"
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [expanded, setExpanded] = useState({});
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Hook to detect mobile vs desktop
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint in Tailwind
+    };
+    
+    checkIsMobile();
+    window.addEventListener('resize', checkIsMobile);
+    
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
   
   const filters = ['All', 'Web', 'Mobile', 'API'];
   
@@ -131,19 +144,29 @@ export default function Projects() {
                   </div>
                   
                   <p className="text-foreground/70 text-sm mb-4">
-                    {expanded[project.title] || project.description.length <= 180
-                      ? project.description
-                      : `${project.description.slice(0, 180)}... `}
-                    {project.description.length > 180 && (
-                      <button
-                        className="text-primary underline underline-offset-2 font-mono text-xs ml-1 focus:outline-none"
-                        onClick={() => toggleExpand(project.title)}
-                        aria-label={expanded[project.title] ? 'Show less' : 'Read more'}
-                        type="button"
-                      >
-                        {expanded[project.title] ? 'Show Less' : 'Read More'}
-                      </button>
-                    )}
+                    {(() => {
+                      const charLimit = isMobile ? 140 : 180;
+                      const shouldTruncate = project.description.length > charLimit;
+                      
+                      if (expanded[project.title] || !shouldTruncate) {
+                        return project.description;
+                      }
+                      
+                      return `${project.description.slice(0, charLimit)}... `;
+                    })()}
+                    {(() => {
+                      const charLimit = isMobile ? 140 : 180;
+                      return project.description.length > charLimit && (
+                        <button
+                          className="text-primary underline underline-offset-2 font-mono text-xs ml-1 focus:outline-none"
+                          onClick={() => toggleExpand(project.title)}
+                          aria-label={expanded[project.title] ? 'Show less' : 'Read more'}
+                          type="button"
+                        >
+                          {expanded[project.title] ? 'Show Less' : 'Read More'}
+                        </button>
+                      );
+                    })()}
                   </p>
                   
                   <div className="flex flex-wrap gap-2 mt-auto mb-4">
