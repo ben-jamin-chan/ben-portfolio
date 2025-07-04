@@ -45,24 +45,46 @@ export default function About() {
         <h2 className="section-heading pb-4 font-mono" data-aos="fade-up">About Me</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-          <div className="space-y-4" data-aos="fade-right" data-aos-delay="100">
+          <div className="space-y-6" data-aos="fade-right" data-aos-delay="100">
             <h3 className="text-2xl font-mono font-bold">Who I Am</h3>
-            <p className="text-foreground/80 leading-relaxed">
-              I'm a dedicated software engineer passionate about building efficient, scalable, and user-focused digital solutions. With experience in both front-end and back-end technologies, I help businesses solve complex problems with clean, modern software.
-            </p>
-            <p className="text-foreground/80 leading-relaxed">
-              As an independent developer, I bring a consultative approach to each project, working closely with clients to understand their unique requirements and translate them into technical specifications. My commitment to clean code practices and continuous learning ensures that I implement the latest industry standards and best practices.
-            </p>
-            <p className="text-foreground/80 leading-relaxed">
-              My goal is to be more than just a developer—I aim to be a trusted technology partner who understands your business objectives and delivers solutions that drive real value. Whether you need a complete web application, API integration, or performance optimization, I'm dedicated to exceeding expectations with every line of code.
-            </p>
-            <p className="text-foreground/80 leading-relaxed">
-            Let's chat! I'm always open to cool projects or just geeking out about tech.
-            </p>
-            <div className="pt-4">
-              <a href="#get-in-touch" className="modern-btn-primary font-mono" onClick={(e) => scrollToSection(e, 'get-in-touch')}>
-              <Send className="h-4 w-4 mr-2" />Get In Touch
+            
+            {/* Quick intro with highlights */}
+            <div className="space-y-4">
+              <p className="text-lg text-foreground/90 leading-relaxed">
+                I'm a <span className="text-primary font-semibold">fullstack developer</span> specializing in high-converting landing pages and user experiences that drive measurable business results and customer engagement.
+              </p>
+              
+              {/* Key strengths as visual badges */}
+              <div className="flex flex-wrap gap-2 my-4">
+              <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
+                  React Developer
+                </span>
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
+                  Modern Web Builder
+                </span>
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
+                  Enterprise Solutions
+                </span>
+                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
+                  UI/UX Design
+                </span>
+                
+              </div>
+
+              <p className="text-foreground/80 leading-relaxed">
+                As an independent fullstack developer, I create end-to-end digital solutions that convert visitors into customers. From responsive frontend designs to robust backend systems, I deliver complete web applications with performance optimization and user-centered interfaces that align with your business goals and maximize conversion rates.
+              </p>
+            </div>
+
+            {/* Call to action */}
+            <div className="flex flex-col sm:flex-row gap-3 pt-2">
+              <a href="#get-in-touch" className="modern-btn-primary font-mono flex items-center justify-center" onClick={(e) => scrollToSection(e, 'get-in-touch')}>
+                <Send className="h-4 w-4 mr-2" />Get In Touch
               </a>
+              <div className="text-sm text-foreground/60 flex items-center">
+              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+              Available for new projects
+              </div>
             </div>
           </div>
           
