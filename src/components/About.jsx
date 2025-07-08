@@ -63,7 +63,7 @@ export default function About() {
                   Modern Web Builder
                 </span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  Enterprise Solutions
+                  Custom Web Apps
                 </span>
                 <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
                   UI/UX Design
