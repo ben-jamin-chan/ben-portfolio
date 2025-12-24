@@ -30,7 +30,7 @@ export default function ThemeToggle({ className = '' }) {
       }}
     >
       <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-amber-400 animate-pulse' : 'text-amber-400 animate-pulse'}`} />
-      <Switch 
+      <Switch
         checked={theme === 'dark'}
         onCheckedChange={toggleTheme} // Call toggleTheme directly when switch changes
         className="data-[state=checked]:bg-primary/90"

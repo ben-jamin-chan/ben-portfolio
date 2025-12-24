@@ -53,7 +53,7 @@ const navLinks = [
           data-aos="fade-right"
           data-aos-delay="100"
         >
-          {"</>"} Benjamin Chan(陳)<span className="animate-blink">_</span>
+          {"</>"} Benjamin. C(陳)<span className="animate-blink">_</span>
         </a>
         
         {/* Desktop Navigation */}
