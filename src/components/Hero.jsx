@@ -34,20 +34,19 @@ export default function Hero() {
             data-aos-delay="200"
           >
             <div className="space-y-2" data-aos="fade-up" data-aos-delay="300">
-              <p className="font-mono text-primary text-xl">👋 Hello, I'm</p>
+              <p className="font-mono text-primary text-xl">👋 Hello! I'm</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
                 Benjamin Chan(陳)
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
-                Software Engineer{" "}
-                <span className="text-primary animate-blink">|</span>
+                Software Engineer{""}
+                <span className="text-primary animate-blink">_</span>
               </p>
             </div>
 
             <p className="text-lg text-foreground/70 max-w-xl" data-aos="fade-up" data-aos-delay="400">
-              I craft elegant solutions through clean code. Specializing in
-              building exceptional digital experiences that combine form and
-              function.
+            I craft elegant digital solutions through code. 
+            Specializing in web-to-app digital experiences that combines design and functionality.
             </p>
 
             <div className="flex flex-row gap-3 sm:gap-3 pt-4" data-aos="fade-up" data-aos-delay="500">
