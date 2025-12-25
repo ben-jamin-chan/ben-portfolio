@@ -35,7 +35,7 @@ export default function Hero() {
           >
             <div className="space-y-2" data-aos="fade-up" data-aos-delay="300">
               <p className="font-mono text-primary text-xl">👋 Hello! I'm</p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
                 Benjamin Chan(陳)
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
