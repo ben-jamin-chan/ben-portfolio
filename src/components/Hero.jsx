@@ -1,12 +1,10 @@
 import React from 'react';
 import { ArrowDown, Github, Instagram, Mail } from 'lucide-react';
-import ben1 from "../asset/Ben.jpeg"
 import ben2 from "../asset/benn.jpeg"
-import ben3 from "../asset/ben3.jpeg"
-import ben4 from "../asset/ben4.jpeg"
-import ben5 from "../asset/ben5.jpeg"
-import ben6 from "../asset/IMG_6863.jpeg"
-import ben7 from "../asset/ben6.jpeg"
+import ben3 from "../asset/bencanva.png"
+import ben4 from "../asset/ben4.png"
+import ben6 from "../asset/ben6.jpeg"
+
 
 export default function Hero() {
   // Function to handle smooth scrolling
@@ -96,7 +94,7 @@ export default function Hero() {
           <div className="md:w-2/4 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="400">
             <div className="relative border-2 border-foreground p-1 rounded-md bg-muted/50 animate-float ">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
-                <img src={ben2} className="h-full w-full object-cover" />
+                <img src={ben4} className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
