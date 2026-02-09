@@ -39,7 +39,7 @@ export default function Hero() {
                 Benjamin Chan(陳)
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
-                Software Engineer{""}
+                Software Developer{""}
                 <span className="text-primary animate-blink">_</span>
               </p>
             </div>
