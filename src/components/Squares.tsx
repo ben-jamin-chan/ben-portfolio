@@ -1,6 +1,22 @@
 import { useRef, useEffect } from 'react';
 import './Squares.css';
 
+type SquaresDirection = 'right' | 'left' | 'up' | 'down' | 'diagonal';
+
+type SquaresProps = {
+  direction?: SquaresDirection;
+  speed?: number;
+  borderColor?: string;
+  squareSize?: number;
+  hoverFillColor?: string;
+  className?: string;
+};
+
+type HoveredSquare = {
+  x: number;
+  y: number;
+};
+
 const Squares = ({
   direction = 'right',
   speed = 1,
@@ -8,17 +24,24 @@ const Squares = ({
   squareSize = 40,
   hoverFillColor = '#222',
   className = ''
-}) => {
-  const canvasRef = useRef(null);
-  const requestRef = useRef(null);
-  const numSquaresX = useRef();
-  const numSquaresY = useRef();
+}: SquaresProps) => {
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const requestRef = useRef<number | null>(null);
+  const numSquaresX = useRef(0);
+  const numSquaresY = useRef(0);
   const gridOffset = useRef({ x: 0, y: 0 });
-  const hoveredSquare = useRef(null);
+  const hoveredSquare = useRef<HoveredSquare | null>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
+    if (!canvas) {
+      return;
+    }
+
     const ctx = canvas.getContext('2d');
+    if (!ctx) {
+      return;
+    }
 
     const resizeCanvas = () => {
       canvas.width = canvas.offsetWidth;
@@ -96,7 +119,7 @@ const Squares = ({
       requestRef.current = requestAnimationFrame(updateAnimation);
     };
 
-    const handleMouseMove = event => {
+    const handleMouseMove = (event: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       const mouseX = event.clientX - rect.left;
       const mouseY = event.clientY - rect.top;
@@ -127,13 +150,15 @@ const Squares = ({
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
-      cancelAnimationFrame(requestRef.current);
+      if (requestRef.current !== null) {
+        cancelAnimationFrame(requestRef.current);
+      }
       canvas.removeEventListener('mousemove', handleMouseMove);
       canvas.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [direction, speed, borderColor, hoverFillColor, squareSize]);
 
-  return <canvas ref={canvasRef} className={`squares-canvas ${className}`}></canvas>;
+  return <canvas ref={canvasRef} className={`squares-canvas ${className}`} />;
 };
 
 export default Squares;

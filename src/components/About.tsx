@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Server, Layout, Database, Send } from 'lucide-react';
 
 export default function About() {

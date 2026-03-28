@@ -1,10 +1,6 @@
-import React from 'react';
 import { ArrowDown, Github, Instagram, Mail } from 'lucide-react';
-import ben2 from "../asset/benn.jpeg"
-import ben3 from "../asset/bencanva.png"
 import ben4 from "../asset/ben4.png"
-import ben6 from "../asset/ben6.jpeg"
-
+import { siteProfile } from "@/lib/site";
 
 export default function Hero() {
   // Function to handle smooth scrolling
@@ -34,7 +30,7 @@ export default function Hero() {
             <div className="space-y-2" data-aos="fade-up" data-aos-delay="300">
               <p className="font-mono text-primary text-xl">👋 Hello! I'm</p>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
-                Benjamin Chan(陳)
+                {siteProfile.brandName}
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
                 Software Developer{""}
@@ -65,24 +61,24 @@ export default function Hero() {
 </div>
 
             <div className="flex items-center gap-4 pt-2" data-aos="fade-up" data-aos-delay="600">
-              <a
-                href="https://github.com/ben-jamin-chan/"
+                <a
+                href={siteProfile.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
               >
                 <Github className="h-5 w-5" />
               </a>
-              <a
-                href="https://instagram.com/neb.neb.neb.neb"
+                <a
+                href={siteProfile.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </a>
-              <a
-                href="mailto:chanbenjamin.tl@gmail.com"
+                <a
+                href={`mailto:${siteProfile.email}`}
                 className="w-10 h-10 rounded-full bg-foreground/5 hover:bg-primary/10 flex items-center justify-center transition-colors"
                 aria-label="Email"
               >
@@ -94,7 +90,7 @@ export default function Hero() {
           <div className="md:w-2/4 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="400">
             <div className="relative border-2 border-foreground p-1 rounded-md bg-muted/50 animate-float ">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
-                <img src={ben4} className="h-full w-full object-cover" />
+                <img src={ben4} alt="Benjamin Chan portrait" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>

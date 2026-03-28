@@ -1,5 +1,5 @@
-import React from 'react';
-import { Heart, ArrowUp, Github, Instagram, Mail } from 'lucide-react';
+import { ArrowUp } from 'lucide-react';
+import { siteProfile } from "@/lib/site";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -31,7 +31,7 @@ export default function Footer() {
               className="font-pixel text-[1.2rem] text-primary"
               onClick={(e) => scrollToSection(e, 'home')}
             >
-            {"</>"} Benjamin Chan(陳)<span className="animate-blink">_</span>
+            {"</>"} {siteProfile.brandName}<span className="animate-blink">_</span>
             </a>
             <p className="text-sm text-foreground/60 mt-2">
               Crafting digital experiences through elegant code.
@@ -56,9 +56,9 @@ export default function Footer() {
                 onClick={(e) => scrollToSection(e, 'projects')}
               >Projects</a>
               <a 
-                href="#contact" 
+                href="#get-in-touch" 
                 className="text-sm hover:text-primary transition-colors"
-                onClick={(e) => scrollToSection(e, 'contact')}
+                onClick={(e) => scrollToSection(e, 'get-in-touch')}
               >Contact</a>
             </nav>
             
@@ -112,7 +112,7 @@ export default function Footer() {
         
         <div className="border-t border-border/50 mt-6 pt-6 text-center" data-aos="fade-up" data-aos-delay="300">
           <p className="text-sm text-foreground/60">
-            © {currentYear} Benjamin Chan. All rights reserved.
+            © {currentYear} {siteProfile.fullName}. All rights reserved.
           </p>
         </div>
       </div>
