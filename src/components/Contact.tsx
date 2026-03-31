@@ -67,10 +67,17 @@ export default function Contact() {
     e.preventDefault();
 
     if (!isEmailJsConfigured) {
+      const mailtoUrl = `mailto:${siteProfile.email}?subject=${encodeURIComponent(
+        `Portfolio inquiry from ${formData.name || "Website visitor"}`
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+      )}`;
+
+      window.location.href = mailtoUrl;
       toast({
-        title: "Contact form unavailable",
-        description: `Please email me directly at ${siteProfile.email} while the form is being configured.`,
-        variant: "destructive",
+        title: "Opening your email app",
+        description: `A draft will be prepared for ${siteProfile.email}.`,
+        variant: "success",
       });
       return;
     }
@@ -285,7 +292,7 @@ export default function Contact() {
               {!isEmailJsConfigured && (
                 <div className="mb-6 p-4 bg-amber-500/10 border border-amber-500/30 rounded-xl relative z-20">
                   <p className="text-sm text-foreground/80">
-                    The form is temporarily using email fallback. Reach me directly at{" "}
+                    Reach me directly at{" "}
                     <a href={`mailto:${siteProfile.email}`} className="font-semibold text-primary underline underline-offset-4">
                       {siteProfile.email}
                     </a>
@@ -347,7 +354,7 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  disabled={isSubmitting || !isEmailJsConfigured}
+                  disabled={isSubmitting}
                   className="w-full modern-btn-primary disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-lg relative z-30"
                 >
                   {isSubmitting ? (
@@ -358,7 +365,7 @@ export default function Contact() {
                   ) : (
                     <div className="flex items-center justify-center gap-2 font-mono">
                       <Send className="h-5 w-5" />
-                      {isEmailJsConfigured ? "Send Message" : "Email Setup Required"}
+                      {isEmailJsConfigured ? "Send Message" : "Send via Email App"}
                     </div>
                   )}
                 </button>
