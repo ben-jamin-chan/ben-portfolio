@@ -1,5 +1,8 @@
 import { ArrowDown, Github, Instagram, Mail } from 'lucide-react';
 import ben4 from "../asset/ben4.png"
+import ben8 from "../asset/ben8.jpeg"
+import ben7 from "../asset/ben7.png"
+import ben5 from "../asset/ben5.png"
 import { siteProfile } from "@/lib/site";
 
 export default function Hero() {
@@ -33,7 +36,7 @@ export default function Hero() {
                 {siteProfile.brandName}
               </h1>
               <p className="text-2xl md:text-3xl font-mono mt-2 text-foreground/80">
-                Software Developer{""}
+                Software/Web Developer{""}
                 <span className="text-primary animate-blink">_</span>
               </p>
             </div>
@@ -90,7 +93,7 @@ export default function Hero() {
           <div className="md:w-2/4 flex justify-center md:justify-end" data-aos="fade-left" data-aos-delay="400">
             <div className="relative border-2 border-foreground p-1 rounded-md bg-muted/50 animate-float ">
               <div className="w-full h-full rounded bg-primary/10 flex items-center justify-center overflow-hidden">
-                <img src={ben4} alt="Benjamin Chan portrait" className="h-full w-full object-cover" />
+                <img src={ben5} alt="Benjamin Chan portrait" className="h-full w-full object-cover" />
               </div>
             </div>
           </div>
