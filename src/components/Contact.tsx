@@ -205,41 +205,47 @@ export default function Contact() {
           ))}
         </div>
 
-        <div id="get-in-touch" className="grid grid-cols-1 xl:grid-cols-5 gap-12">
+        <div id="get-in-touch" className="grid grid-cols-1 gap-8 xl:grid-cols-5 xl:gap-12">
           <div className="xl:col-span-2 space-y-8" data-aos="fade-right" data-aos-delay="400">
-            <div className="modern-card">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center">
+            <div className="modern-card p-5 sm:p-6 md:p-8">
+              <div className="mb-6 flex items-center gap-3 sm:gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-accent/10 sm:h-14 sm:w-14">
                   <MailIcon className="h-5 w-5 text-accent" />
                 </div>
-                <h3 className="text-2xl font-semibold font-mono decoration-primary underline decoration-2 underline-offset-8">Get in Touch</h3>
+                <h3 className="text-[1.9rem] leading-none font-mono font-semibold decoration-primary underline decoration-2 underline-offset-8 sm:text-2xl">
+                  Get in Touch
+                </h3>
               </div>
 
-              <p className="text-foreground/80 leading-relaxed mb-8">
+              <p className="mb-8 text-foreground/80 leading-relaxed">
                 Have a project in mind or want to discuss potential opportunities?
                 I'd love to hear from you. Feel free to reach out through the form or using my contact information below.
               </p>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-5">
                 {contactInfo.map((info, index) => (
                   <div key={info.label} className="group" data-aos="fade-up" data-aos-delay={500 + (index * 100)}>
-                    <div className="flex items-start gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors duration-300">
-                      <div className="w-12 h-12 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center text-primary transition-colors duration-300">
+                    <div className="flex items-center gap-3 rounded-2xl bg-muted/20 p-3 transition-colors duration-300 hover:bg-primary/5 sm:items-start sm:gap-4 sm:p-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/20 sm:h-14 sm:w-14">
                         {info.icon}
                       </div>
-                      <div className="flex-1">
-                        <p className="text-sm text-foreground/60 font-medium mb-1">{info.label}</p>
+                      <div className="min-w-0 flex-1">
+                        <p className="mb-1 text-sm font-medium text-foreground/60">{info.label}</p>
                         {info.href ? (
                           <a
                             href={info.href}
-                            className="font-medium hover:text-primary transition-colors duration-300 block"
+                            className={`block font-medium leading-snug transition-colors duration-300 hover:text-primary ${
+                              info.label === 'Email'
+                                ? 'break-words text-[0.98rem] font-medium leading-snug sm:text-xl'
+                                : 'break-words text-[0.98rem] sm:text-xl'
+                            }`}
                           >
                             {info.value}
                           </a>
                         ) : (
-                          <p className="font-medium">{info.value}</p>
+                          <p className="break-words text-[0.98rem] font-medium leading-snug sm:text-xl">{info.value}</p>
                         )}
-                        <p className="text-xs text-foreground/60 mt-1">{info.description}</p>
+                        <p className="mt-2 text-sm text-foreground/60">{info.description}</p>
                       </div>
                     </div>
                   </div>
@@ -247,13 +253,13 @@ export default function Contact() {
               </div>
 
               <div className="mt-8 pt-6 border-t border-border/20" data-aos="fade-up" data-aos-delay="800">
-                <h4 className="text-lg font-bold mb-4">Let's Connect:</h4>
-                <div className="flex items-center gap-3">
+                <h4 className="mb-4 text-lg font-bold">Let's Connect:</h4>
+                <div className="flex flex-wrap items-center gap-3">
                   <a
                     href={siteProfile.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card/80 transition-all duration-300 hover:scale-110 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg group"
                     aria-label="GitHub"
                   >
                     <Github className="h-5 w-5 group-hover:text-primary transition-colors" />
@@ -262,14 +268,14 @@ export default function Contact() {
                     href={siteProfile.instagramUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card/80 transition-all duration-300 hover:scale-110 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg group"
                     aria-label="Instagram"
                   >
                     <Instagram className="h-5 w-5 group-hover:text-primary transition-colors" />
                   </a>
                   <a
                     href={`mailto:${siteProfile.email}`}
-                    className="w-12 h-12 rounded-xl bg-card/80 border border-border/50 hover:border-primary/30 hover:bg-primary/5 flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-lg group"
+                    className="flex h-12 w-12 items-center justify-center rounded-xl border border-border/50 bg-card/80 transition-all duration-300 hover:scale-110 hover:border-primary/30 hover:bg-primary/5 hover:shadow-lg group"
                     aria-label="Email"
                   >
                     <Mail className="h-5 w-5 group-hover:text-primary transition-colors" />
