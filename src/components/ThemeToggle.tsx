@@ -6,7 +6,7 @@ import { Switch } from '@/components/ui/switch';
 export default function ThemeToggle({ className = '' }) {
   const { theme, toggleTheme } = useTheme();
   
-  const handleToggle = (e) => {
+  const handleToggle = (e?: React.SyntheticEvent) => {
     // Prevent default action and stop propagation
     if (e) {
       e.preventDefault();
@@ -32,7 +32,7 @@ export default function ThemeToggle({ className = '' }) {
       <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-amber-400 animate-pulse' : 'text-amber-400 animate-pulse'}`} />
       <Switch
         checked={theme === 'dark'}
-        onCheckedChange={toggleTheme} // Call toggleTheme directly when switch changes
+        onCheckedChange={() => toggleTheme()}
         className="data-[state=checked]:bg-primary/90"
         aria-label="Toggle theme"
         onClick={(e) => {
