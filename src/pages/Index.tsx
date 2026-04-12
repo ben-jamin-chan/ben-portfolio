@@ -29,7 +29,7 @@ const Index = () => {
   }, [theme]);
 
   return (
-    <div className="min-h-screen overflow-hidden">
+    <div className="page-shell min-h-screen overflow-hidden">
       <ThemePreferencePrompt />
       <Navbar />
       <Hero />

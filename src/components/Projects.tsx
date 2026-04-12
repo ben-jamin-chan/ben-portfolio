@@ -1,166 +1,180 @@
-import { useState, useEffect } from 'react';
-import { ExternalLink, Github, ArrowRight } from 'lucide-react';
-import { projectFilters, projects, siteProfile, type ProjectFilter } from "@/lib/site";
+import { useEffect, useState } from 'react';
+import { ArrowRight, ExternalLink, Github } from 'lucide-react';
+import { projectFilters, projects, siteProfile, type ProjectFilter } from '@/lib/site';
 
 export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<ProjectFilter>('All');
   const [expanded, setExpanded] = useState<Record<string, boolean>>({});
   const [isMobile, setIsMobile] = useState(false);
 
-  // Hook to detect mobile vs desktop
   useEffect(() => {
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint in Tailwind
+      setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkIsMobile();
     window.addEventListener('resize', checkIsMobile);
-    
     return () => window.removeEventListener('resize', checkIsMobile);
   }, []);
-  
-  const filteredProjects = activeFilter === 'All' 
-    ? projects 
-    : projects.filter(project => project.tags.includes(activeFilter));
 
-  // Helper to toggle expanded state for a project
-  const toggleExpand = (title) => {
-    setExpanded(prev => ({ ...prev, [title]: !prev[title] }));
+  const filteredProjects =
+    activeFilter === 'All' ? projects : projects.filter((project) => project.tags.includes(activeFilter));
+
+  const toggleExpand = (title: string) => {
+    setExpanded((prev) => ({ ...prev, [title]: !prev[title] }));
   };
 
   return (
-    <section id="projects" className="py-0">
-      <div className="container mx-auto px-6">
-        <h2 className="section-heading pb-4 font-mono" data-aos="fade-up">My Projects</h2>
-        <p className="text-lg text-foreground/70 mb-10 max-w-2xl" data-aos="fade-up" data-aos-delay="100">
-          A showcase of my recent work, featuring full-stack applications, mobile apps, and API integrations that solve real-world problems.
-        </p>
-        
-        <div className="flex flex-wrap justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
-          {projectFilters.map(filter => (
-            <button
-              key={filter}
-              className={`px-4 py-2 rounded-full font-mono text-sm transition-all ${
-                activeFilter === filter 
-                  ? 'bg-primary text-primary-foreground' 
-                  : 'bg-foreground/5 hover:bg-foreground/10'
-              }`}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {filteredProjects.map((project, index) => (
-            <div 
-              key={project.title} 
-              className="group h-full"
+    <section id="projects" className="relative px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="container relative">
+        <div className="mx-auto max-w-6xl">
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+            <div className="max-w-3xl" data-aos="fade-up">
+              <p className="section-kicker">Projects</p>
+              <h2 className="section-heading mt-3">Selected work with a more product-led presentation.</h2>
+              <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
+                A mix of mobile apps, web platforms, and API-backed products designed to feel clear, useful, and
+                visually refined from the first interaction.
+              </p>
+            </div>
+
+            <div
+              className="flex flex-wrap gap-2 rounded-[1.6rem] border border-border/60 bg-background/72 p-2 backdrop-blur"
               data-aos="fade-up"
-              data-aos-delay={100 * (index + 3)}
+              data-aos-delay="100"
             >
-              <div className="pixel-card h-full flex flex-col">
-                <div className="relative overflow-hidden rounded-md mb-4 aspect-video">
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block w-full h-full"
-                    aria-label={`Open ${project.title}`}
-                  >
-                    <img 
-                      src={project.image} 
-                      alt={project.title} 
-                      className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105 cursor-pointer"
-                    />
-                  </a>
-                </div>
-                
-                <div className="flex-1 flex flex-col">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-bold">{project.title}</h3>
-                    <div className="flex space-x-2">
-                      {project.github && (
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="text-foreground/70 hover:text-primary transition-colors"
-                          aria-label={`View ${project.title} source code`}
-                        >
-                          <Github className="h-5 w-5" />
-                        </a>
-                      )}
-                      <a 
-                        href={project.live} 
-                        target="_blank" 
+              {projectFilters.map((filter) => (
+                <button
+                  key={filter}
+                  type="button"
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                    activeFilter === filter
+                      ? 'bg-primary text-primary-foreground shadow-lg shadow-primary/20'
+                      : 'text-foreground/68 hover:bg-primary/8 hover:text-primary'
+                  }`}
+                  onClick={() => setActiveFilter(filter)}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {filteredProjects.map((project, index) => {
+              const charLimit = isMobile ? 120 : 170;
+              const shouldTruncate = project.description.length > charLimit;
+              const isExpanded = expanded[project.title];
+              const preview = isExpanded || !shouldTruncate
+                ? project.description
+                : `${project.description.slice(0, charLimit)}...`;
+
+              return (
+                <article
+                  key={project.title}
+                  className="group overflow-hidden rounded-[2rem] border border-border/60 bg-background/78 shadow-xl shadow-primary/5 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-2xl hover:shadow-primary/10"
+                  data-aos="fade-up"
+                  data-aos-delay={140 + index * 80}
+                >
+                  <div className="relative overflow-hidden border-b border-border/50 bg-gradient-to-br from-primary/6 via-transparent to-primary/10 p-3 sm:p-5">
+                    <div className="overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/80">
+                      <a
+                        href={project.live}
+                        target="_blank"
                         rel="noopener noreferrer"
-                        className="text-foreground/70 hover:text-primary transition-colors"
+                        className="block"
                         aria-label={`Open ${project.title}`}
                       >
-                        <ExternalLink className="h-5 w-5" />
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                        />
                       </a>
                     </div>
                   </div>
-                  
-                  <p className="text-foreground/70 text-sm mb-4">
-                    {(() => {
-                      const charLimit = isMobile ? 140 : 180;
-                      const shouldTruncate = project.description.length > charLimit;
-                      
-                      if (expanded[project.title] || !shouldTruncate) {
-                        return project.description;
-                      }
-                      
-                      return `${project.description.slice(0, charLimit)}... `;
-                    })()}
-                    {(() => {
-                      const charLimit = isMobile ? 140 : 180;
-                      return project.description.length > charLimit && (
-                        <button
-                          className="text-primary underline underline-offset-2 font-mono text-xs ml-1 focus:outline-none"
-                          onClick={() => toggleExpand(project.title)}
-                          aria-label={expanded[project.title] ? 'Show less' : 'Read more'}
-                          type="button"
+
+                  <div className="p-4 sm:p-6">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{project.title}</h3>
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="rounded-full border border-primary/15 bg-primary/10 px-3 py-1 text-xs font-medium text-primary"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-2">
+                        {project.github && (
+                          <a
+                            href={project.github}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-border/60 bg-background/80 transition-all duration-300 hover:border-primary/20 hover:bg-primary/8 hover:text-primary"
+                            aria-label={`View ${project.title} source code`}
+                          >
+                            <Github className="h-4 w-4" />
+                          </a>
+                        )}
+                        <a
+                          href={project.live}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-border/60 bg-background/80 transition-all duration-300 hover:border-primary/20 hover:bg-primary/8 hover:text-primary"
+                          aria-label={`Open ${project.title}`}
                         >
-                          {expanded[project.title] ? 'Show Less' : 'Read More'}
+                          <ExternalLink className="h-4 w-4" />
+                        </a>
+                      </div>
+                    </div>
+
+                    <p className="mt-5 text-sm leading-7 text-foreground/66 sm:text-base">
+                      {preview}
+                      {shouldTruncate && (
+                        <button
+                          type="button"
+                          onClick={() => toggleExpand(project.title)}
+                          className="ml-2 inline-flex text-sm font-medium text-primary underline underline-offset-4"
+                        >
+                          {isExpanded ? 'Show less' : 'Read more'}
                         </button>
-                      );
-                    })()}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2 mt-auto mb-4">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-xs bg-primary/10 text-primary rounded-full px-2 py-1">
-                        {tag}
-                      </span>
-                    ))}
+                      )}
+                    </p>
+
+                    <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center text-sm font-semibold text-primary"
+                      >
+                        {project.liveLabel ?? 'View project'}
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                      </a>
+                      <p className="text-xs uppercase tracking-[0.2em] text-foreground/42">Built for real users, not just demos</p>
+                    </div>
                   </div>
-                  
-                  <a 
-                    href={project.live} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="flex items-center font-mono text-sm underline underline-offset-4 font-medium text-primary hover:underline mt-auto"
-                  >
-                    {project.liveLabel ?? 'View Project'} <ArrowRight className="h-4 w-4 ml-1" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="text-center mt-12" data-aos="fade-up" data-aos-delay="400">
-          <a 
-            href={siteProfile.githubUrl}
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="pixel-btn bg-primary text-primary-foreground modern-btn-primary"
-          >
-            See More on GitHub
-          </a>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="mt-10 flex justify-center" data-aos="fade-up" data-aos-delay="300">
+            <a
+              href={siteProfile.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="modern-btn-primary"
+            >
+              See more on GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>

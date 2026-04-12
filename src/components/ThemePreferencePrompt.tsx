@@ -41,7 +41,7 @@ export default function ThemePreferencePrompt() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_hsl(var(--primary)/0.22),_transparent_42%),linear-gradient(135deg,_hsl(var(--background))_0%,_hsl(var(--card))_55%,_hsl(var(--background))_100%)]" />
         <div className="relative p-5 sm:p-8 md:p-10">
           <div className="mx-auto mb-6 max-w-xl text-center sm:mb-8">
-            {/* FIXME: */}
+            {/* TODO: HOW TO CHECK GITHUB'S CURRENT MAIN BRANCH CODE AND TAKE SOME TO MERGE WITH FEATURE BRANCH? */}
             <p className="font-mono font-medium text-sm uppercase tracking-[0.3em] text-primary sm:text-lg ">
               Display Preference
             </p>

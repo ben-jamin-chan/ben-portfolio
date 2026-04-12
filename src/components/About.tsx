@@ -1,207 +1,192 @@
-import { Code, Server, Layout, Database, Send } from 'lucide-react';
+import { ArrowRight, Code, Database, Layout, Send, Server } from 'lucide-react';
+import type { MouseEvent, ReactNode } from 'react';
+
+type Skill = {
+  name: string;
+  icon: ReactNode;
+  description: string;
+  techs: string[];
+};
+
+type Stat = {
+  label: string;
+  value: string;
+};
+
+const stats: Stat[] = [
+  { value: 'Full-stack', label: 'From product concept to launch-ready implementation.' },
+  { value: 'Mobile-ready', label: 'Interfaces shaped for handheld use first, then scaled up.' },
+  { value: 'Business-minded', label: 'Design and development choices tied to real outcomes.' },
+];
+
+const skills: Skill[] = [
+  {
+    name: 'Front-end Development',
+    icon: <Layout className="h-5 w-5" />,
+    description: 'Responsive interfaces with strong hierarchy, motion, and polished interaction details.',
+    techs: ['React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'React Native', 'Expo'],
+  },
+  {
+    name: 'Back-end Development',
+    icon: <Server className="h-5 w-5" />,
+    description: 'Robust backend services, integrations, and delivery flows that support production use.',
+    techs: ['Node.js', 'Express', 'Firebase', 'Supabase', 'REST APIs', 'Authentication'],
+  },
+  {
+    name: 'Database Management',
+    icon: <Database className="h-5 w-5" />,
+    description: 'Data models and cloud workflows built for performance, maintainability, and scale.',
+    techs: ['MongoDB', 'MySQL', 'Cloud Functions', 'Supabase', 'Vercel', 'Netlify'],
+  },
+  {
+    name: 'Product Architecture',
+    icon: <Code className="h-5 w-5" />,
+    description: 'Systems that balance speed of shipping with long-term clarity and flexibility.',
+    techs: ['System Design', 'Figma', 'Git', 'Docker', 'Testing', 'Version Control'],
+  },
+];
 
 export default function About() {
-  // Function to handle smooth scrolling
-  const scrollToSection = (e, targetId) => {
-    e.preventDefault();
-    
+  const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
+
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const skills = [
-    { 
-      name: 'Front-end Development', 
-      icon: <Layout className="h-6 w-6" />, 
-      description: 'Building responsive and intuitive user interfaces with React, Vue, and modern CSS frameworks.',
-      techs: ['JavaScript', 'TypeScript', 'React', 'HTML/CSS', 'Bootstrap', 'Tailwind CSS', 'shadcn/ui', 'React Native', 'Expo']
-    },
-    { 
-      name: 'Back-end Development', 
-      icon: <Server className="h-6 w-6" />, 
-      description: 'Creating robust server-side applications using Node.js and modern backend services.',
-      techs: ['Node.js', 'Express', 'Firebase', 'Supabase', 'RESTful APIs', 'Authentication']
-    },
-    { 
-      name: 'Database Management', 
-      icon: <Database className="h-6 w-6" />, 
-      description: 'Designing and optimizing databases for performance and scalability.',
-      techs: ['MongoDB', 'MySQL', 'Firebase', 'Supabase', 'Cloud Functions', 'Vercel', 'Netlify']
-    },
-    { 
-      name: 'Software Architecture', 
-      icon: <Code className="h-6 w-6" />, 
-      description: 'Designing scalable and maintainable software architectures.',
-      techs: ['System Design', 'Microservices', 'Figma', 'Git', 'RESTful APIs',  'Version Control', 'Test-Driven Development', 'Docker']
-    }
-  ];
-
   return (
-    <section id="about" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-6">
-        <h2 className="section-heading pb-4 font-mono" data-aos="fade-up">
-          About Me
-        </h2>
+    <section id="about" className="relative px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+      <div className="container relative">
+        <div className="mx-auto max-w-6xl space-y-10">
+          <div className="max-w-3xl" data-aos="fade-up">
+            <p className="section-kicker">About</p>
+            <h2 className="section-heading mt-3">A portfolio built like a product landing page.</h2>
+            <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
+              I help businesses and founders turn ideas into clean, high-converting digital experiences. That
+              means combining thoughtful design, reliable engineering, and mobile-first execution so every screen
+              feels intentional.
+            </p>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mt-12">
-          <div className="space-y-6" data-aos="fade-right" data-aos-delay="100">
-            <h3 className="text-2xl font-mono font-bold">Who I Am</h3>
-
-            {/* Quick intro with highlights */}
-            <div className="space-y-4">
-              <p className="text-lg text-foreground/90 leading-relaxed">
-                I'm a{" "}
-                <span className="text-primary font-semibold">
-                  fullstack developer
-                </span>{" "}
-                specializing in high-converting landing pages and user
-                experiences that drive measurable business results and customer
-                engagement.
-              </p>
-
-              {/* Key strengths as visual badges */}
-              <div className="flex flex-wrap justify-center gap-2 my-4">
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  Web & Mobile App Development
+          <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="modern-card p-5 sm:p-8" data-aos="fade-right">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-primary">
+                  Who I am
                 </span>
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  Custom Applications
-                </span>
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  UI/UX Prototyping
-                </span>
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  Performance & Responsive Design
-                </span>
-                <span className="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-medium border border-primary/20">
-                  <span className="font-mono font-bold bg-gradient-to-r from-primary to-purple-500 bg-clip-text text-transparent">
-                    AI
-                  </span>{" "}-
-                  Integrated Applications
+                <span className="rounded-full border border-border/50 bg-background/70 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-foreground/50">
+                  Developer + builder
                 </span>
               </div>
 
-              <p className="text-foreground/80 leading-relaxed">
-                As an independent fullstack developer, I create end-to-end
-                digital solutions that convert visitors into customers. From
-                responsive frontend designs to robust backend systems, I deliver
-                complete web applications with performance optimization and
-                user-centered interfaces that align with your business goals and
-                maximize conversion rates.
-              </p>
+              <div className="mt-6 space-y-4">
+                <p className="text-lg leading-8 text-foreground/88">
+                  I specialize in websites, web apps, and mobile products that feel crisp, modern, and easy to
+                  trust. My work leans on strong UX, careful performance decisions, and interfaces that guide users
+                  naturally.
+                </p>
+                <p className="text-base leading-7 text-foreground/68">
+                  From landing pages and e-commerce experiences to API-backed applications, I focus on creating
+                  systems that are not only visually sharp but also practical to maintain and scale.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-3 sm:grid-cols-3">
+                {stats.map((stat, index) => (
+                  <div
+                    key={stat.value}
+                    className="rounded-2xl border border-border/60 bg-background/75 p-4"
+                    data-aos="fade-up"
+                    data-aos-delay={100 + index * 80}
+                  >
+                    <p className="text-lg font-semibold tracking-tight">{stat.value}</p>
+                    <p className="mt-2 text-sm leading-6 text-foreground/65">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#get-in-touch"
+                  className="modern-btn-primary w-full sm:w-auto"
+                  onClick={(event) => scrollToSection(event, 'get-in-touch')}
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Let&apos;s build something
+                </a>
+                <a
+                  href="#projects"
+                  className="modern-btn-secondary w-full sm:w-auto"
+                  onClick={(event) => scrollToSection(event, 'projects')}
+                >
+                  Explore work
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              </div>
             </div>
 
-            {/* Call to action */}
-            <div className="flex flex-col sm:flex-row gap-3 pt-2">
-              <a
-                href="#get-in-touch"
-                className="modern-btn-primary font-mono flex items-center justify-center"
-                onClick={(e) => scrollToSection(e, "get-in-touch")}
-              >
-                <Send className="h-4 w-4 mr-2" />
-                Get In Touch
-              </a>
-              {/* <div className="text-sm text-foreground/60 flex items-center">
-              <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
-              Available for new projects
-              </div> */}
+            <div className="glass-panel p-5 sm:p-8" data-aos="fade-left">
+              <p className="section-kicker">Experience</p>
+              <div className="mt-6 space-y-6">
+                <div className="rounded-2xl border border-primary/15 bg-primary/6 p-5">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold">Independent Full-Stack Developer</h3>
+                      <p className="mt-1 text-sm uppercase tracking-[0.2em] text-foreground/45">2023 - Present</p>
+                    </div>
+                    <span className="rounded-full border border-primary/20 bg-background/80 px-3 py-1 text-xs font-medium text-primary">
+                      Current
+                    </span>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-foreground/68">
+                    Designing and developing custom websites, web applications, and digital products for SMEs with a
+                    focus on usability, visual polish, and practical business results.
+                  </p>
+                </div>
+
+                <div className="space-y-4">
+                  <div className="rounded-2xl border border-border/60 bg-background/72 p-5">
+                    <h4 className="font-semibold">Partner Resource Manager</h4>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-foreground/45">Majorel Group • 2021 - 2023</p>
+                    <p className="mt-3 text-sm leading-7 text-foreground/65">
+                      Managed strategic partnerships and operational alignment between teams, giving me a strong view
+                      into stakeholder communication and delivery discipline.
+                    </p>
+                  </div>
+
+                  <div className="rounded-2xl border border-border/60 bg-background/72 p-5">
+                    <h4 className="font-semibold">Resource Coordinator</h4>
+                    <p className="mt-1 text-sm uppercase tracking-[0.2em] text-foreground/45">Majorel Group • 2020 - 2021</p>
+                    <p className="mt-3 text-sm leading-7 text-foreground/65">
+                      Supported planning, workflow coordination, and team execution, building the operational habits
+                      that now shape how I approach product delivery.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div
-            className="glass-panel p-6"
-            data-aos="fade-left"
-            data-aos-delay="300"
-          >
-            <h3 className="text-2xl font-mono font-bold mb-6">My Experience</h3>
-            <div className="space-y-4">
-              <div
-                className="border-l-2 border-primary pl-4 pb-6"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <h4 className="font-bold">Full-Stack Developer</h4>
-                <p className="text-sm text-foreground/70 font-mono">
-                  Independent • 2023 - Present
-                </p>
-                <p className="mt-2 text-foreground/80">
-                  Design and developing custom web applications and digital
-                  solutions for SMEs using modern technologies including React,
-                  Node.js, and modern web technologies. Collaborating with
-                  clients to build tailored digital solutions that enhance
-                  business operations and drive growth.
-                </p>
-              </div>
-              <div
-                className="border-l-2 border-primary/80 pl-4 pb-6"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <h4 className="font-bold">Partner Resource Manager</h4>
-                <p className="text-sm text-foreground/70 font-mono">
-                  Majorel Group • 2021 - 2023
-                </p>
-                <p className="mt-2 text-foreground/80">
-                  Managed strategic technology partnerships and resource
-                  allocation for enterprise clients, ensuring technical
-                  alignment with business objectives. Facilitated collaboration
-                  between development teams and business stakeholders,
-                  overseeing partnership initiatives to drive project success.
-                </p>
-              </div>
-              <div
-                className="border-l-2 border-primary/60 pl-4"
-                data-aos="fade-up"
-                data-aos-delay="600"
-              >
-                <h4 className="font-bold">Resource Coordinator</h4>
-                <p className="text-sm text-foreground/70 font-mono">
-                  Majorel Group • 2020 - 2021
-                </p>
-                <p className="mt-2 text-foreground/80">
-                  Optimized resource planning for developers and distribution to
-                  support project timelines and business objectives.
-                  Collaborated with cross-functional teams to assess resource
-                  needs, streamline workflows, and enhance operational
-                  efficiency. Ensured effective communication between
-                  stakeholders to maximize productivity and project's
-                  deliveries.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-20">
-          <h3
-            className="text-2xl font-mono font-bold mb-10 text-center"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            Technical Skills
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {skills.map((skill, index) => (
               <div
                 key={skill.name}
-                className="pixel-card"
+                className="group rounded-[1.75rem] border border-border/60 bg-background/78 p-5 shadow-lg shadow-primary/5 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-primary/20 hover:shadow-2xl hover:shadow-primary/10"
                 data-aos="fade-up"
-                data-aos-delay={100 * (index + 3)}
+                data-aos-delay={120 + index * 90}
               >
-                <div className="flex items-center mb-3">
-                  <div className="text-primary mr-2">{skill.icon}</div>
-                  <h4 className="font-bold">{skill.name}</h4>
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary/15">
+                  {skill.icon}
                 </div>
-                <p className="text-sm text-foreground/70 mb-4">
-                  {skill.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="mt-5 text-lg font-semibold">{skill.name}</h3>
+                <p className="mt-3 text-sm leading-7 text-foreground/66">{skill.description}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
                   {skill.techs.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs bg-foreground/5 rounded-full px-2 py-1 border border-foreground/10"
+                      className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-xs font-medium text-foreground/68"
                     >
                       {tech}
                     </span>
