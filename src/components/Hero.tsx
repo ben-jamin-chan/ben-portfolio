@@ -137,7 +137,7 @@ export default function Hero() {
           <div className="order-1 flex justify-center lg:order-2 lg:justify-end" data-aos="fade-left" data-aos-delay="250">
             <div className="relative w-full max-w-[22rem] sm:max-w-sm lg:max-w-[30rem]">
               <div className="absolute inset-6 rounded-[2rem] bg-primary/15 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-background/85 p-3 shadow-[0_30px_80px_-24px_rgba(249,115,22,0.35)] backdrop-blur-xl">
+              <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-background/85 p-3 shadow-[0_30px_80px_-24px_hsl(var(--primary)/0.35)] backdrop-blur-xl">
                 <div className="absolute inset-x-6 top-4 flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-primary/55" />
                   <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />

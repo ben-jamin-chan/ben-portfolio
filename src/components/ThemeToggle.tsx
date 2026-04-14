@@ -29,7 +29,7 @@ export default function ThemeToggle({ className = '' }) {
         }
       }}
     >
-      <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-amber-400 animate-pulse' : 'text-amber-400 animate-pulse'}`} />
+      <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-emerald-500 animate-pulse' : 'text-emerald-500 animate-pulse'}`} />
       <Switch
         checked={theme === 'dark'}
         onCheckedChange={() => toggleTheme()}

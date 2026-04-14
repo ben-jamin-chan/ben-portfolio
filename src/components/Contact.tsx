@@ -289,7 +289,7 @@ export default function Contact() {
               </div>
 
               {!isEmailJsConfigured && (
-                <div className="mt-6 rounded-2xl border border-amber-500/25 bg-amber-500/10 p-4 text-sm leading-7 text-foreground/75">
+                <div className="mt-6 rounded-2xl border border-emerald-500/25 bg-emerald-500/10 p-4 text-sm leading-7 text-foreground/75">
                   EmailJS is not configured yet, so the form will open your email app with a prepared draft to{' '}
                   <a href={`mailto:${siteProfile.email}`} className="font-semibold text-primary underline underline-offset-4">
                     {siteProfile.email}

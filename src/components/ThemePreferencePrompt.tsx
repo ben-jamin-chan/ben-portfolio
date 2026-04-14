@@ -61,7 +61,7 @@ export default function ThemePreferencePrompt() {
             >
               <div className="flex h-full flex-col">
                 <div className="mb-5 flex items-center justify-between">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-100 text-amber-500 shadow-sm shadow-amber-200/70 dark:bg-amber-200/10 dark:shadow-none">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-600 shadow-sm shadow-emerald-200/70 dark:bg-emerald-200/10 dark:shadow-none">
                     <Sun className="h-6 w-6" />
                   </span>
                   <span className="rounded-full border border-border/80 px-3 py-1 font-mono text-xs uppercase tracking-[0.2em] text-foreground/60">
@@ -76,7 +76,7 @@ export default function ThemePreferencePrompt() {
                 </div>
                 <div className="mt-6 grid grid-cols-3 gap-2">
                   <div className="h-12 rounded-2xl border border-border/70 bg-white shadow-sm" />
-                  <div className="h-12 rounded-2xl border border-amber-200 bg-amber-100/80" />
+                  <div className="h-12 rounded-2xl border border-emerald-200 bg-emerald-100/80" />
                   <div className="h-12 rounded-2xl border border-border/70 bg-zinc-100" />
                 </div>
                 <span className="mt-auto pt-6 font-mono text-xs uppercase tracking-[0.25em] text-primary opacity-0 transition-opacity duration-300 group-hover:opacity-100">
