@@ -6,7 +6,7 @@ import trendImage from "@/asset/trend.png";
 export const siteProfile = {
   fullName: "Benjamin Chan",
   brandName: "Benjamin Chan(陳)",
-  role: "Software Developer",
+  role: "Software/Web Developer",
   siteUrl: "https://benjamin-chan.com/",
   portfolioRepositoryUrl: "https://github.com/ben-jamin-chan/ben-portfolio",
   githubUrl: "https://github.com/ben-jamin-chan/",

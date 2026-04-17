@@ -1,6 +1,5 @@
 import { ArrowDown, ArrowRight, Github, Instagram, Mail, Sparkles } from 'lucide-react';
 import type { MouseEvent } from 'react';
-import ben5 from '../asset/ben5.png';
 import ben8 from '../asset/ben8.jpeg'
 import { siteProfile } from '@/lib/site';
 
@@ -33,24 +32,27 @@ export default function Hero() {
             data-aos="fade-right"
             data-aos-delay="100"
           >
-            <div
+            {/* <div
               className="mx-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-primary shadow-sm shadow-primary/10 backdrop-blur md:text-sm lg:mx-0"
               data-aos="fade-up"
             >
               <Sparkles className="h-3.5 w-3.5" />
               Building polished digital products
-            </div>
+            </div> */}
 
             <div className="space-y-5" data-aos="fade-up" data-aos-delay="150">
-              <p className="font-mono text-sm uppercase tracking-[0.35em] text-foreground/55 sm:text-base">
-                Software Developer
+              <p className="font-mono text-sm text-primary sm:text-base">
+                Hello! I'm
               </p>
               <h1 className="text-balance text-4xl font-semibold tracking-[-0.05em] text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-                Modern web experiences for brands that want to stand out.
+                {siteProfile.brandName}
               </h1>
+              <p className="font-mono text-xl tracking-[0.18em] text-foreground/68 sm:text-2xl">
+                {siteProfile.role}<span className='animate-blink'>_</span>
+              </p>
               <p className="mx-auto max-w-2xl text-pretty text-base leading-7 text-foreground/72 sm:text-lg sm:leading-8 lg:mx-0">
-                I am {siteProfile.fullName}, a full-stack developer crafting conversion-focused websites,
-                app experiences, and product interfaces that feel fast, clear, and premium across every screen.
+                I’m {siteProfile.fullName}, a full-stack developer crafting polished websites, app experiences,
+                and product interfaces that feel fast, clear, and personal across every screen.
               </p>
             </div>
 

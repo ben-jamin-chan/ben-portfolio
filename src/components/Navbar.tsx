@@ -113,7 +113,7 @@ export default function Navbar() {
             <Sparkles className="h-4 w-4" />
             
           </span> */}
-          <span className="text-balance text-primary">
+          <span className="text-balance text-primary text-[1rem]">
            Benjamin Chan(陳)<span className="animate-blink">_</span>
           </span>
         </a>
