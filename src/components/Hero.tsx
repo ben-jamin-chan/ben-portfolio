@@ -56,7 +56,7 @@ export default function Hero() {
               </p>
             </div>
 
-            <div
+            {/* <div
               className="grid gap-3 sm:mx-auto sm:max-w-xl sm:grid-cols-3 lg:mx-0 lg:max-w-none"
               data-aos="fade-up"
               data-aos-delay="250"
@@ -73,7 +73,7 @@ export default function Hero() {
                 <p className="text-2xl font-semibold tracking-tight">Clean systems</p>
                 <p className="mt-1 text-sm text-foreground/65">Thoughtful structure that scales from launch to iteration.</p>
               </div>
-            </div>
+            </div> */}
 
             <div
               className="flex flex-col gap-3 sm:flex-row sm:justify-center lg:justify-start"

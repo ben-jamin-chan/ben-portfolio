@@ -166,7 +166,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="get-in-touch" className="relative overflow-hidden px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section id="contact" className="relative overflow-hidden px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-[-4rem] top-12 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 right-[-5rem] h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
@@ -199,7 +199,6 @@ export default function Contact() {
               </div>
             ))}
           </div>
-
           <div className="mt-8 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
             <div className="modern-card p-5 sm:p-8" data-aos="fade-right">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-primary">
@@ -277,7 +276,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="modern-card p-5 sm:p-8" data-aos="fade-left">
+            <div id="get-in-touch" className="modern-card scroll-mt-24 p-5 sm:p-8" data-aos="fade-left">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Send className="h-5 w-5" />
