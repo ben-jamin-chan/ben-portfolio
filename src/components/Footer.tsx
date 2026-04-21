@@ -30,29 +30,44 @@ export default function Footer() {
               <a
                 href="#home"
                 className="text-lg font-semibold tracking-[0.12em] text-foreground"
-                onClick={(event) => scrollToSection(event, 'home')}
+                onClick={(event) => scrollToSection(event, "home")}
               >
-                {siteProfile.fullName}
+                <span className="text-balance text-primary text-[1rem]">
+                  Benjamin Chan(陳)<span className="animate-blink">_</span>
+                </span>
               </a>
               <p className="mt-3 text-sm leading-7 text-foreground/62 sm:text-base">
-                Crafting digital experiences with modern structure, strong visual rhythm, and mobile-first product thinking.
+                Crafting digital experiences with modern structure, strong
+                visual rhythm, and mobile-first product thinking.
               </p>
             </div>
 
             <div className="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between lg:gap-8">
               <nav className="flex flex-wrap gap-4 text-sm font-medium text-foreground/65">
-                <a href="#home" onClick={(event) => scrollToSection(event, 'home')} className="transition-colors hover:text-primary">
+                <a
+                  href="#home"
+                  onClick={(event) => scrollToSection(event, "home")}
+                  className="transition-colors hover:text-primary"
+                >
                   Home
                 </a>
-                <a href="#about" onClick={(event) => scrollToSection(event, 'about')} className="transition-colors hover:text-primary">
+                <a
+                  href="#about"
+                  onClick={(event) => scrollToSection(event, "about")}
+                  className="transition-colors hover:text-primary"
+                >
                   About
                 </a>
-                <a href="#projects" onClick={(event) => scrollToSection(event, 'projects')} className="transition-colors hover:text-primary">
+                <a
+                  href="#projects"
+                  onClick={(event) => scrollToSection(event, "projects")}
+                  className="transition-colors hover:text-primary"
+                >
                   Projects
                 </a>
                 <a
                   href="#get-in-touch"
-                  onClick={(event) => scrollToSection(event, 'get-in-touch')}
+                  onClick={(event) => scrollToSection(event, "get-in-touch")}
                   className="transition-colors hover:text-primary"
                 >
                   Contact
