@@ -65,6 +65,7 @@ export default function Projects() {
               const charLimit = isMobile ? 120 : 170;
               const shouldTruncate = project.description.length > charLimit;
               const isExpanded = expanded[project.title];
+              const usesContainedImage = project.imageDisplay === 'contain';
               const preview = isExpanded || !shouldTruncate
                 ? project.description
                 : `${project.description.slice(0, charLimit)}...`;
@@ -72,29 +73,41 @@ export default function Projects() {
               return (
                 <article
                   key={project.title}
-                  className="group overflow-hidden rounded-[2rem] border border-border/60 bg-background/78 shadow-xl shadow-primary/5 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-2xl hover:shadow-primary/10"
+                  className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-border/60 bg-background/78 shadow-xl shadow-primary/5 backdrop-blur transition-all duration-500 hover:-translate-y-2 hover:border-primary/25 hover:shadow-2xl hover:shadow-primary/10"
                   data-aos="fade-up"
                   data-aos-delay={140 + index * 80}
                 >
                   <div className="relative overflow-hidden border-b border-border/50 bg-gradient-to-br from-primary/6 via-transparent to-primary/10 p-3 sm:p-5">
-                    <div className="overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/80">
+                    <div
+                      className={`overflow-hidden rounded-[1.4rem] border border-border/60 bg-background/80 ${
+                        usesContainedImage ? 'px-4 py-5 sm:px-6 sm:py-6' : ''
+                      }`}
+                    >
                       <a
                         href={project.live}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block"
+                        className={`block ${
+                          usesContainedImage
+                            ? 'mx-auto flex aspect-[9/14] items-center justify-center sm:aspect-[10/14] lg:aspect-[16/10] lg:min-h-[21rem]'
+                            : ''
+                        }`}
                         aria-label={`Open ${project.title}`}
                       >
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+                          className={`w-full transition-transform duration-700 ${
+                            usesContainedImage
+                              ? 'h-full max-h-[30rem] w-auto max-w-full rounded-[1.4rem] object-contain group-hover:scale-[1.02] sm:max-h-[32rem] lg:max-h-[19rem]'
+                              : 'aspect-[16/10] object-cover group-hover:scale-[1.04]'
+                          }`}
                         />
                       </a>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-6">
+                  <div className="flex flex-1 flex-col p-4 sm:p-6">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{project.title}</h3>
@@ -134,7 +147,7 @@ export default function Projects() {
                       </div>
                     </div>
 
-                    <p className="mt-5 text-sm leading-7 text-foreground/66 sm:text-base">
+                    <p className="mt-5 flex-1 text-sm leading-7 text-foreground/66 sm:text-base">
                       {preview}
                       {shouldTruncate && (
                         <button

@@ -30,6 +30,7 @@ export type Project = {
   live: string;
   liveLabel?: string;
   github?: string;
+  imageDisplay?: "cover" | "contain";
 };
 
 export const projects: Project[] = [
@@ -48,6 +49,7 @@ export const projects: Project[] = [
       "A mobile-first Expo app for fitness enthusiasts with profile discovery, swiping, and chat flows tailored to an active social experience.",
     image: datingAppImage,
     tags: ["Mobile"],
+    imageDisplay: "contain",
     live: "https://expo.dev/preview/update?message=Fixed%20firebase%20connectivity%20for%20Superlike%20and%20Messages&updateRuntimeVersion=1.0.0&createdAt=2025-06-16T09%3A19%3A48.040Z&slug=exp&projectId=2d488a1a-eb72-4455-b6b1-7c5c29c8ddcd&group=ef4d4b4f-342e-42bd-99ba-50daabaa0b50",
     liveLabel: "Open Expo Preview",
   },
