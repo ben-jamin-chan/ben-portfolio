@@ -62,11 +62,10 @@ export default function About() {
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="max-w-3xl" data-aos="fade-up">
             <p className="section-kicker">About</p>
-            <h2 className="section-heading mt-3">A portfolio built like a product landing page.</h2>
+            <h2 className="section-heading mt-3">I build the parts of a product users actually feel.</h2>
             <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
-              I help businesses and founders turn ideas into clean, high-converting digital experiences. That
-              means combining thoughtful design, reliable engineering, and mobile-first execution so every screen
-              feels intentional.
+              I help businesses and founders turn rough ideas, outdated websites, and early SaaS concepts into
+              clean interfaces that are useful, fast, and ready to ship.
             </p>
           </div>
 
@@ -83,9 +82,9 @@ export default function About() {
 
               <div className="mt-6 space-y-4">
                 <p className="text-lg leading-8 text-foreground/88">
-                  I specialize in websites, web apps, and mobile products that feel crisp, modern, and easy to
-                  trust. My work leans on strong UX, careful performance decisions, and interfaces that guide users
-                  naturally.
+                  I specialize in websites, web apps, and mobile products that feel crisp, modern, and easy to trust.
+                  My work combines front-end craft, backend awareness, and product judgment so the final result is
+                  more than a nice screen.
                 </p>
                 <p className="text-base leading-7 text-foreground/68">
                   From landing pages and e-commerce experiences to API-backed applications, I focus on creating

@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowRight, Github, Instagram, Mail, Sparkles } from 'lucide-react';
+import { ArrowDown, ArrowRight, Github, Instagram, Mail } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import ben8 from '../asset/ben8.jpeg'
 import { siteProfile } from '@/lib/site';
@@ -51,8 +51,7 @@ export default function Hero() {
                 {siteProfile.role}<span className='animate-blink'>_</span>
               </p>
               <p className="mx-auto max-w-2xl text-pretty text-base leading-7 text-foreground/72 sm:text-lg sm:leading-8 lg:mx-0">
-                I’m {siteProfile.fullName}, a full-stack developer crafting polished websites, app experiences,
-                and product interfaces that feel fast, clear, and personal across every screen.
+              I build polished web and mobile experiences with modern design, scalable architecture, and smooth interactions that help products feel intuitive and refined from end to end.
               </p>
             </div>
 
@@ -93,7 +92,7 @@ export default function Hero() {
                 className="modern-btn-secondary min-h-[3.5rem] w-full text-sm sm:w-auto"
                 onClick={(event) => scrollToSection(event, 'get-in-touch')}
               >
-                Start a Conversation
+                Start a Project
               </a>
             </div>
 

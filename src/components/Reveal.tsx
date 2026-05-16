@@ -1,6 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
 import type { ReactNode } from "react";
-import { fadeInUp, premiumTransition, viewport } from "@/lib/motion";
 
 type RevealProps = {
   children: ReactNode;
@@ -13,21 +11,14 @@ export default function Reveal({
   children,
   className,
   delay = 0,
-  y = 24,
+  y: _y = 24,
 }: RevealProps) {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <motion.div
+    <div
       className={className}
-      variants={prefersReducedMotion ? undefined : fadeInUp}
-      initial={prefersReducedMotion ? false : "hidden"}
-      whileInView={prefersReducedMotion ? undefined : "visible"}
-      viewport={viewport}
-      transition={{ ...premiumTransition, delay }}
-      custom={y}
+      style={delay ? { transitionDelay: `${delay}s` } : undefined}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }

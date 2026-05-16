@@ -33,8 +33,8 @@ export default function Projects() {
               <p className="section-kicker">Projects</p>
               <h2 className="section-heading mt-3">Selected work with a more product-led presentation.</h2>
               <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
-                A mix of mobile apps, web platforms, and API-backed products designed to feel clear, useful, and
-                visually refined from the first interaction.
+                A mix of mobile apps, web platforms, and API-backed products, shown through what I owned, what I
+                shipped, and the technical stack behind each build.
               </p>
             </div>
 
@@ -159,6 +159,34 @@ export default function Projects() {
                         </button>
                       )}
                     </p>
+
+                    <div className="mt-5 rounded-2xl border border-border/60 bg-muted/25 p-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground/45">Role</p>
+                      <p className="mt-2 text-sm leading-6 text-foreground/72">{project.role}</p>
+                    </div>
+
+                    <div className="mt-4">
+                      <p className="text-xs font-semibold uppercase tracking-[0.22em] text-foreground/45">Stack</p>
+                      <div className="mt-3 flex flex-wrap gap-2">
+                        {project.stack.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-full border border-border/60 bg-background/80 px-3 py-1 text-xs font-medium text-foreground/65"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <ul className="mt-5 space-y-3">
+                      {project.proof.map((point) => (
+                        <li key={point} className="flex gap-3 text-sm leading-6 text-foreground/68">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                       <a

@@ -176,10 +176,10 @@ export default function Contact() {
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl" data-aos="fade-up">
             <p className="section-kicker">Contact</p>
-            <h2 className="section-heading mt-3">A SaaS-style closing section, but still personal.</h2>
+            <h2 className="section-heading mt-3">Have a product, site, or app that needs a sharper build?</h2>
             <p className="mt-5 text-base leading-7 text-foreground/70 sm:text-lg sm:leading-8">
-              If you need a landing page refresh, a custom product build, or help tightening the experience across
-              mobile and desktop, let&apos;s talk through it.
+              Send over what you are trying to launch or improve. I can help shape the scope, tighten the user
+              experience, and build the production-ready interface.
             </p>
           </div>
 
