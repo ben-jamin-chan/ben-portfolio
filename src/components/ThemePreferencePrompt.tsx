@@ -2,15 +2,8 @@ import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { setTheme } from '../utils/useTheme';
 
-const THEME_PROMPT_SESSION_KEY = 'theme-prompt-shown';
-
 export default function ThemePreferencePrompt() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const hasShownPromptThisSession = window.sessionStorage.getItem(THEME_PROMPT_SESSION_KEY) === 'true';
-    setIsOpen(!hasShownPromptThisSession);
-  }, []);
+  const [isOpen, setIsOpen] = useState(true);
 
   useEffect(() => {
     if (!isOpen) {
@@ -26,7 +19,6 @@ export default function ThemePreferencePrompt() {
   }, [isOpen]);
 
   const handleSelectTheme = (theme: 'light' | 'dark') => {
-    window.sessionStorage.setItem(THEME_PROMPT_SESSION_KEY, 'true');
     setTheme(theme, { silent: true });
     setIsOpen(false);
   };
