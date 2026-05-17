@@ -135,9 +135,9 @@ export default function About() {
                       <h3 className="text-lg font-semibold">Independent Full-Stack Developer</h3>
                       <p className="mt-1 text-sm uppercase tracking-[0.2em] text-foreground/45">2023 - Present</p>
                     </div>
-                    <span className="rounded-full border border-primary/20 bg-background/80 px-3 py-1 text-xs font-medium text-primary">
+                    {/* <span className="rounded-full border border-primary/20 bg-background/80 px-3 py-1 text-xs font-medium text-primary">
                       Current
-                    </span>
+                    </span> */}
                   </div>
                   <p className="mt-4 text-sm leading-7 text-foreground/68">
                     Designing and developing custom websites, web applications, and digital products for SMEs with a
