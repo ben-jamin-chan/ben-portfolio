@@ -86,6 +86,7 @@ export const projects: Project[] = [
     imageDisplay: "contain",
     live: "https://expo.dev/preview/update?message=Fixed%20firebase%20connectivity%20for%20Superlike%20and%20Messages&updateRuntimeVersion=1.0.0&createdAt=2025-06-16T09%3A19%3A48.040Z&slug=exp&projectId=2d488a1a-eb72-4455-b6b1-7c5c29c8ddcd&group=ef4d4b4f-342e-42bd-99ba-50daabaa0b50",
     liveLabel: "Open Expo Preview",
+    github: "https://github.com/ben-jamin-chan/fitness-dating-app",
     role: "Mobile app UX, Expo implementation, Firebase integration",
     stack: ["Expo", "React Native", "Firebase", "Mobile UX"],
     proof: [
@@ -117,6 +118,7 @@ export const projects: Project[] = [
     image: trendImage,
     tags: ["Web", "Mobile", "API"],
     live: "https://trend-watcher-pro.onrender.com/",
+    github: "https://github.com/ben-jamin-chan/trend-watcher-pro",
     role: "Full-stack product build, dashboard UX, API-backed workflows",
     stack: ["React", "Node.js", "APIs", "Render"],
     proof: [
