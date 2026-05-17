@@ -140,8 +140,7 @@ export default function About() {
                     </span> */}
                   </div>
                   <p className="mt-4 text-sm leading-7 text-foreground/68">
-                    Designing and developing custom websites, web applications, and digital products for SMEs with a
-                    focus on usability, visual polish, and practical business results.
+                  Designing and developing modern websites, web/mobile applications, and digital products with a focus on usability, polished interfaces, performance, and real-world user experience.
                   </p>
                 </div>
 
@@ -150,8 +149,7 @@ export default function About() {
                     <h4 className="font-semibold">Partner Resource Manager</h4>
                     <p className="mt-1 text-sm uppercase tracking-[0.2em] text-foreground/45">Majorel Group • 2021 - 2023</p>
                     <p className="mt-3 text-sm leading-7 text-foreground/65">
-                      Managed strategic partnerships and operational alignment between teams, giving me a strong view
-                      into stakeholder communication and delivery discipline.
+                    Led partner resource coordination and cross-functional operational support, ensuring effective stakeholder alignment, seamless communication, and consistent delivery across fast-paced business operations.
                     </p>
                   </div>
 
