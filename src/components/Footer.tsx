@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-6 border-t border-border/50 pt-5 text-sm text-foreground/50">
-            © {currentYear} {siteProfile.fullName}. All rights reserved.
+            © {currentYear} {siteProfile.fullName}(陳). All rights reserved.
           </div>
         </div>
       </div>

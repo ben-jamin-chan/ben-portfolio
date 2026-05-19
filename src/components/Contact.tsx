@@ -202,7 +202,7 @@ export default function Contact() {
           <div className="mt-8 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
             <div className="modern-card p-5 sm:p-8" data-aos="fade-right">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-primary">
-                Available for selected work
+              Available for new projects
               </div>
               <h3 className="mt-6 text-2xl font-semibold tracking-tight sm:text-3xl">
                 Let&apos;s make the next version of your digital presence feel sharper.
