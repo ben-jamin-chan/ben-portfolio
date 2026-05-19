@@ -103,7 +103,7 @@ export default function Hero() {
             >
               <div className="text-center sm:text-left">
                 <p className="text-sm font-medium text-foreground/55">Based in Kuala Lumpur, working globally</p>
-                <p className="mt-1 text-sm text-foreground/72">Web, mobile, and API-backed products for startups and small teams.</p>
+                <p className="mt-1 text-sm text-foreground/72">From concept to deployment — building modern apps for the web and mobile.</p>
               </div>
               <div className="flex items-center gap-3">
                 <a
