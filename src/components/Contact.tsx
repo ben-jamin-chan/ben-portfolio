@@ -1,13 +1,10 @@
 import { useState, type ChangeEvent, type FormEvent, type ReactNode } from 'react';
 import {
-  CheckCircle,
-  Clock,
   Github,
   Instagram,
   Mail,
   MailIcon,
   MapPin,
-  MessageCircle,
   PhoneIcon,
   Send,
 } from 'lucide-react';
@@ -26,12 +23,6 @@ type ContactInfoItem = {
   label: string;
   value: string;
   href: string | null;
-  description: string;
-};
-
-type BenefitItem = {
-  icon: ReactNode;
-  title: string;
   description: string;
 };
 
@@ -70,24 +61,6 @@ const contactInfo: ContactInfoItem[] = [
     value: siteProfile.location,
     href: null,
     description: 'Based in Malaysia and open to remote work.',
-  },
-];
-
-const benefits: BenefitItem[] = [
-  {
-    icon: <Clock className="h-5 w-5" />,
-    title: 'Fast replies',
-    description: 'I aim to respond quickly so momentum does not stall.',
-  },
-  {
-    icon: <MessageCircle className="h-5 w-5" />,
-    title: 'Friendly discovery',
-    description: 'Happy to talk through ideas, timelines, and the right scope.',
-  },
-  {
-    icon: <CheckCircle className="h-5 w-5" />,
-    title: 'Thoughtful delivery',
-    description: 'Clear communication, practical builds, and a polished final result.',
   },
 ];
 
@@ -183,23 +156,7 @@ export default function Contact() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-3">
-            {benefits.map((benefit, index) => (
-              <div
-                key={benefit.title}
-                className="rounded-[1.6rem] border border-border/60 bg-background/78 p-5 shadow-lg shadow-primary/5 backdrop-blur"
-                data-aos="fade-up"
-                data-aos-delay={100 + index * 80}
-              >
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
-                  {benefit.icon}
-                </div>
-                <h3 className="mt-4 text-lg font-semibold">{benefit.title}</h3>
-                <p className="mt-2 text-sm leading-7 text-foreground/65">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
+          <div className="mt-10 grid gap-6 xl:grid-cols-[0.9fr_1.1fr]">
             <div className="modern-card p-5 sm:p-8" data-aos="fade-right">
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.24em] text-primary">
               Available for new projects
