@@ -57,7 +57,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="relative px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section id="about" className="relative scroll-mt-32 px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="container relative">
         <div className="mx-auto max-w-6xl space-y-10">
           <div className="max-w-3xl" data-aos="fade-up">

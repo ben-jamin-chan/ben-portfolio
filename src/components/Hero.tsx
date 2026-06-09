@@ -1,6 +1,6 @@
 import { ArrowDown, ArrowRight, Github, Instagram, Mail } from 'lucide-react';
 import type { MouseEvent } from 'react';
-import ben8 from '../asset/ben8.jpeg'
+import ben8 from '@/asset/ben8.jpeg';
 import { siteProfile } from '@/lib/site';
 
 export default function Hero() {
@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="container relative">
         <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div
-            className="order-2 space-y-8 text-center lg:order-1 lg:text-left"
+            className="order-1 space-y-8 text-center lg:text-left"
             data-aos="fade-right"
             data-aos-delay="100"
           >
@@ -135,7 +135,7 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="order-1 flex justify-center lg:order-2 lg:justify-end" data-aos="fade-left" data-aos-delay="250">
+          <div className="order-2 flex justify-center lg:justify-end" data-aos="fade-up" data-aos-delay="250">
             <div className="relative w-full max-w-[22rem] sm:max-w-sm lg:max-w-[30rem]">
               <div className="absolute inset-6 rounded-[2rem] bg-primary/15 blur-3xl" />
               <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-background/85 p-3 shadow-[0_30px_80px_-24px_hsl(var(--primary)/0.35)] backdrop-blur-xl">

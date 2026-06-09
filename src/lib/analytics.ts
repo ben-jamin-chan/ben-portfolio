@@ -1,9 +1,11 @@
 const GA_MEASUREMENT_ID = "G-93JDFXL6PX";
 
+type AnalyticsCommand = ["js", Date] | ["config", string];
+
 declare global {
   interface Window {
-    dataLayer: unknown[];
-    gtag?: (...args: unknown[]) => void;
+    dataLayer: AnalyticsCommand[];
+    gtag?: (...args: AnalyticsCommand) => void;
   }
 }
 
@@ -19,7 +21,7 @@ export function bootstrapAnalytics() {
   window.dataLayer = window.dataLayer || [];
   window.gtag =
     window.gtag ||
-    function gtag(...args: unknown[]) {
+    function gtag(...args: AnalyticsCommand) {
       window.dataLayer.push(args);
     };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useTheme } from '../utils/useTheme';
 import { Switch } from '@/components/ui/switch';
+import { useTheme } from '@/utils/useTheme';
 
 export default function ThemeToggle({ className = '' }) {
   const { theme, toggleTheme } = useTheme();

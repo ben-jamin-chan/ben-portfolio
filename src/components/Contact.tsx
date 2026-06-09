@@ -126,8 +126,7 @@ export default function Contact() {
         variant: 'success',
       });
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('EmailJS error:', error);
+    } catch {
       toast({
         title: 'Error',
         description: 'There was an error sending your message. Please try again or email me directly.',
@@ -139,7 +138,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative overflow-hidden px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section id="contact" className="relative scroll-mt-32 overflow-hidden px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="absolute inset-0 -z-10">
         <div className="absolute left-[-4rem] top-12 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
         <div className="absolute bottom-0 right-[-5rem] h-80 w-80 rounded-full bg-accent/10 blur-3xl" />
@@ -233,7 +232,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div id="get-in-touch" className="modern-card scroll-mt-24 p-5 sm:p-8" data-aos="fade-left">
+            <div id="get-in-touch" className="modern-card scroll-mt-44 p-5 sm:scroll-mt-36 sm:p-8" data-aos="fade-up">
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-primary">
                   <Send className="h-5 w-5" />

@@ -1,7 +1,7 @@
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import type { MouseEvent, TouchEvent } from "react";
 import { useEffect, useRef, useState } from "react";
-import ThemeToggle from "./ThemeToggle";
+import ThemeToggle from "@/components/ThemeToggle";
 
 type NavLink = {
   name: string;
@@ -12,6 +12,7 @@ type NavLink = {
 const navLinks: NavLink[] = [
   { name: "Home", href: "#home", targetId: "home" },
   { name: "About", href: "#about", targetId: "about" },
+  { name: "Services", href: "#services", targetId: "services" },
   { name: "Projects", href: "#projects", targetId: "projects" },
   { name: "Contact", href: "#get-in-touch", targetId: "get-in-touch" },
 ];
@@ -124,7 +125,7 @@ export default function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm font-medium text-foreground/70 transition-all duration-300 hover:bg-primary/10 hover:text-primary"
+                className="rounded-full px-3 py-2 text-sm font-medium text-foreground/70 transition-all duration-300 hover:bg-primary/10 hover:text-primary lg:px-4"
                 onClick={(event) => scrollToSection(event, link.targetId)}
               >
                 {link.name}

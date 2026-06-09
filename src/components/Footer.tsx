@@ -59,6 +59,13 @@ export default function Footer() {
                   About
                 </a>
                 <a
+                  href="#services"
+                  onClick={(event) => scrollToSection(event, "services")}
+                  className="transition-colors hover:text-primary"
+                >
+                  Services
+                </a>
+                <a
                   href="#projects"
                   onClick={(event) => scrollToSection(event, "projects")}
                   className="transition-colors hover:text-primary"

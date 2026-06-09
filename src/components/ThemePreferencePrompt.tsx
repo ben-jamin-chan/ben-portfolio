@@ -1,6 +1,6 @@
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import { setTheme } from '../utils/useTheme';
+import { setTheme } from '@/utils/useTheme';
 
 export default function ThemePreferencePrompt() {
   const [isOpen, setIsOpen] = useState(true);
