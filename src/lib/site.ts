@@ -17,7 +17,7 @@ export const siteProfile = {
   location: "Kuala Lumpur, Malaysia",
 } as const;
 
-export const projectFilters = ["All", "Landing Page", "Mobile App", "E-commerce", "SaaS", "API"] as const;
+export const projectFilters = ["All", "Web", "Mobile", "API"] as const;
 
 export type ProjectFilter = (typeof projectFilters)[number];
 export type ProjectTag = Exclude<ProjectFilter, "All">;
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     description:
       "A customer-facing florist platform shaped around service discovery, booking intent, and clear mobile browsing.",
     image: petalImage,
-    tags: ["Landing Page", "API"],
+    tags: ["Web", "Mobile", "API"],
     live: "https://ben-jamin-chan.github.io/lynn-florist-website",
     github: "https://github.com/ben-jamin-chan/lynn-florist-website",
     role: "Product design, front-end build, responsive implementation",
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     description:
       "A mobile-first Expo app for fitness enthusiasts with profile discovery, swiping, and chat-oriented social flows.",
     image: datingAppImage,
-    tags: ["Mobile App"],
+    tags: ["Mobile"],
     imageDisplay: "contain",
     live: "https://expo.dev/preview/update?message=Fixed%20firebase%20connectivity%20for%20Superlike%20and%20Messages&updateRuntimeVersion=1.0.0&createdAt=2025-06-16T09%3A19%3A48.040Z&slug=exp&projectId=2d488a1a-eb72-4455-b6b1-7c5c29c8ddcd&group=ef4d4b4f-342e-42bd-99ba-50daabaa0b50",
     liveLabel: "Open Expo Preview",
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     description:
       "A responsive skincare storefront focused on product browsing, polished visual presentation, and smooth shopping paths.",
     image: holoImage,
-    tags: ["E-commerce"],
+    tags: ["Web", "Mobile"],
     live: "https://ben-jamin-chan.github.io/holobeauty/",
     github: "https://github.com/ben-jamin-chan/holobeauty",
     role: "Storefront design, front-end implementation, responsive QA",
@@ -116,7 +116,7 @@ export const projects: Project[] = [
     description:
       "A data-focused web app for tracking, saving, and comparing trend topics through dashboard-style workflows.",
     image: trendImage,
-    tags: ["SaaS", "API"],
+    tags: ["Web", "Mobile", "API"],
     live: "https://trend-watcher-pro.onrender.com/",
     github: "https://github.com/ben-jamin-chan/trend-watcher-pro",
     role: "Full-stack product build, dashboard UX, API-backed workflows",

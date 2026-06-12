@@ -25,7 +25,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="relative scroll-mt-32 px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+    <section id="projects" className="relative px-1 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
       <div className="container relative">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
