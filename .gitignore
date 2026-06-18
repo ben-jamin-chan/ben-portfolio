@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.tsbuildinfo
 .superpowers/
+.worktrees/
 .env
 .env.*
 !.env.example
