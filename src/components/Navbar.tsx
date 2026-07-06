@@ -99,7 +99,7 @@ export default function Navbar() {
       data-aos-duration="600"
     >
       <div
-        className={`mx-auto flex max-w-6xl items-center justify-between rounded-[1.6rem] border px-3 py-3 transition-all duration-300 sm:px-5 ${
+        className={`mx-auto flex max-w-6xl items-center justify-between gap-2 rounded-[1.6rem] border px-3 py-3 transition-all duration-300 sm:px-5 ${
           isScrolled
             ? "border-border/60 bg-background/82 shadow-xxl shadow-primary/10 backdrop-blur-xl"
             : "border-transparent bg-background/55 backdrop-blur-md"
@@ -107,14 +107,14 @@ export default function Navbar() {
       >
         <a
           href="#home"
-          className="flex items-center gap-2 text-sm font-semibold tracking-[0.18em] text-foreground sm:text-base"
+          className="min-w-0 flex-1 text-sm font-semibold tracking-[0.12em] text-foreground sm:flex-none sm:tracking-[0.18em] sm:text-base"
           onClick={(event) => scrollToSection(event, "home")}
         >
           {/* <span className="rounded-full bg-primary/10 p-1.5 text-primary">
             <Sparkles className="h-4 w-4" />
             
           </span> */}
-          <span className="text-balance text-primary text-[1rem]">
+          <span className="block truncate text-primary text-[0.95rem] sm:text-[1rem]">
            Benjamin Chan(陳)<span className="animate-blink">_</span>
           </span>
         </a>
@@ -137,7 +137,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex shrink-0 items-center gap-2 md:hidden">
           <div onClick={(event) => event.stopPropagation()}>
             <ThemeToggle />
           </div>
@@ -170,23 +170,28 @@ export default function Navbar() {
             className="mx-auto w-full max-w-none rounded-[2rem] border border-border/60 bg-background/95 p-3 shadow-2xl shadow-primary/10"
             onClick={(event) => event.stopPropagation()}
           >
-            <div className="mb-3 flex items-center justify-between px-2">
-              <div>
+            <div className="mb-3 flex items-start justify-between gap-3 px-2">
+              <div className="min-w-0 flex-1">
                 <p className="text-xs font-medium uppercase tracking-[0.24em] text-foreground/45">
                   Menu
                 </p>
-                <p className="mt-1 text-sm text-foreground/70">
+                <p className="mt-1 truncate text-sm text-foreground/70">
                   Explore the portfolio
                 </p>
               </div>
-              <button
-                type="button"
-                onClick={closeMenu}
-                className="rounded-2xl border border-border/60 bg-background/80 p-2 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5"
-                aria-label="Close menu"
-              >
-                <X className="h-4 w-4" />
-              </button>
+              <div className="flex shrink-0 items-center gap-2">
+                <div onClick={(event) => event.stopPropagation()}>
+                  <ThemeToggle />
+                </div>
+                <button
+                  type="button"
+                  onClick={closeMenu}
+                  className="rounded-2xl border border-border/60 bg-background/80 p-2 transition-all duration-300 hover:border-primary/30 hover:bg-primary/5"
+                  aria-label="Close menu"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
             </div>
             <div className="space-y-2">
               {navLinks.map((link, index) => (

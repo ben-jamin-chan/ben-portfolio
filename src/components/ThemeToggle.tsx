@@ -17,7 +17,7 @@ export default function ThemeToggle({ className = '' }) {
   
   return (
     <div 
-      className={`flex items-center gap-2 hover:text-primary transition-colors cursor-pointer ${className}`}
+      className={`flex shrink-0 items-center gap-2 hover:text-primary transition-colors cursor-pointer ${className}`}
       onClick={handleToggle}
       role="button"
       tabIndex={0}
@@ -29,7 +29,7 @@ export default function ThemeToggle({ className = '' }) {
         }
       }}
     >
-      <Sun className={`h-5 w-5 ${theme === 'light' ? 'text-emerald-500 animate-pulse' : 'text-emerald-500 animate-pulse'}`} />
+      <Sun className="h-5 w-5 text-emerald-500 animate-pulse" />
       <Switch
         checked={theme === 'dark'}
         onCheckedChange={() => toggleTheme()}
@@ -41,7 +41,7 @@ export default function ThemeToggle({ className = '' }) {
           e.stopPropagation();
         }}
       />
-      <Moon className={`h-5 w-5 ${theme === 'dark' ? 'text-primary animate-pulse' : 'text-primary animate-pulse'}`} />
+      <Moon className="h-5 w-5 animate-pulse text-primary" />
       <span className="sr-only md:not-sr-only md:inline-block text-base font-mono ml-1 whitespace-nowrap">
         {theme === 'light' ? 'Light Mode' : 'Dark Mode'}
       </span>
