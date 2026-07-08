@@ -1,7 +1,13 @@
 import { ArrowDown, ArrowRight, Github, Instagram, Mail } from 'lucide-react';
 import type { MouseEvent } from 'react';
-import ben8 from '../asset/ben8.jpeg'
+import { Badge } from '@/components/ui/badge';
+import { Card, CardContent } from '@/components/ui/card';
+import heroPortrait480 from '@/asset/optimized/hero-portrait-480.avif';
+import heroPortrait720 from '@/asset/optimized/hero-portrait-720.avif';
+import heroPortrait960 from '@/asset/optimized/hero-portrait-960.avif';
 import { siteProfile } from '@/lib/site';
+
+const portraitBadges = ['Product UI', 'React + TypeScript', 'Expo + Firebase'];
 
 export default function Hero() {
   const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -147,32 +153,56 @@ export default function Hero() {
           </div>
 
           <div className="order-2 flex justify-center lg:order-2 lg:justify-end" data-aos="fade-up" data-aos-delay="250">
-            <div className="relative w-full max-w-[18rem] min-[390px]:max-w-[20rem] sm:max-w-sm lg:max-w-[30rem]">
-              <div className="absolute inset-6 rounded-[2rem] bg-primary/15 blur-3xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-border/60 bg-background/85 p-3 shadow-[0_30px_80px_-24px_hsl(var(--primary)/0.35)] backdrop-blur-xl">
-                <div className="absolute inset-x-6 top-4 flex items-center gap-2">
-                  <span className="h-2.5 w-2.5 rounded-full bg-primary/55" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-foreground/20" />
-                  <span className="h-2.5 w-2.5 rounded-full bg-foreground/10" />
-                </div>
-                <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-border/50 bg-gradient-to-br from-primary/8 via-transparent to-primary/12">
-                  <img
-                    src={ben8}
-                    alt="Benjamin Chan portrait"
-                    className="aspect-[4/5] h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="mt-4 grid grid-cols-2 gap-3">
-                  <div className="rounded-2xl border border-border/60 bg-background/80 p-3">
-                    <p className="text-xs uppercase tracking-[0.24em] text-foreground/50">Focus</p>
-                    <p className="mt-2 text-sm font-medium text-foreground/80">Web and mobile product builds</p>
+            <div className="relative w-full max-w-[18.5rem] min-[390px]:max-w-[20.5rem] sm:max-w-sm lg:max-w-[28rem]">
+              <Card className="overflow-hidden rounded-2xl border-border/70 bg-card/80 p-2 shadow-[0_30px_90px_-38px_hsl(var(--primary)/0.42)] backdrop-blur-xl sm:p-3">
+                <CardContent className="p-0">
+                  <div className="relative overflow-hidden rounded-xl bg-muted">
+                    <picture>
+                      <source
+                        type="image/avif"
+                        srcSet={`${heroPortrait480} 480w, ${heroPortrait720} 720w, ${heroPortrait960} 960w`}
+                        sizes="(min-width: 1024px) 28rem, (min-width: 640px) 24rem, 21rem"
+                      />
+                      <img
+                        src={heroPortrait720}
+                        alt="Benjamin Chan portrait"
+                        width="720"
+                        height="1080"
+                        decoding="async"
+                        className="aspect-[4/5] h-full w-full object-cover object-center transition-transform duration-700 hover:scale-[1.025]"
+                      />
+                    </picture>
+                    {/* <div className="absolute left-3 top-3 rounded-md border border-white/20 bg-black/35 px-2.5 py-1 font-mono text-[0.65rem] uppercase tracking-[0.16em] text-white/90 backdrop-blur">
+                      Product builder
+                    </div> */}
                   </div>
-                  <div className="rounded-2xl border border-border/60 bg-background/80 p-3">
-                    <p className="text-xs uppercase tracking-[0.24em] text-foreground/50">Stack</p>
-                    <p className="mt-2 text-sm font-medium text-foreground/80">React, TypeScript, Expo, Firebase</p>
+
+                  <div className="px-1.5 py-3 sm:px-2 sm:py-4">
+                    <div className="flex flex-wrap gap-2">
+                      {portraitBadges.map((badge) => (
+                        <Badge
+                          key={badge}
+                          variant="secondary"
+                          className="rounded-md border border-border/70 bg-background/72 px-2.5 py-1 font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-foreground/70 hover:bg-background/80"
+                        >
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="mt-4 grid grid-cols-2 gap-4 border-t border-border/50 pt-4">
+                      <div>
+                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/45">Builds</p>
+                        <p className="mt-1 text-sm font-medium leading-5 text-foreground/80">Web and mobile products</p>
+                      </div>
+                      <div>
+                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/45">Location</p>
+                        <p className="mt-1 text-sm font-medium leading-5 text-foreground/80">Kuala Lumpur / remote</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
