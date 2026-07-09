@@ -2,12 +2,24 @@ import { ArrowDown, ArrowRight, Github, Instagram, Mail } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 import heroPortrait480 from '@/asset/optimized/hero-portrait-480.avif';
 import heroPortrait720 from '@/asset/optimized/hero-portrait-720.avif';
 import heroPortrait960 from '@/asset/optimized/hero-portrait-960.avif';
 import { siteProfile } from '@/lib/site';
 
-const portraitBadges = ['Product UI', 'React + TypeScript', 'Expo + Firebase'];
+const portraitCapabilities = [
+  {
+    label: 'Interfaces',
+    detail: 'React, TypeScript, polished product UI',
+  },
+  {
+    label: 'Apps',
+    detail: 'Expo, Firebase, web and mobile flows',
+  },
+];
+
+const portraitBadges = ['Product UI', 'Mobile UX', 'API-backed apps'];
 
 export default function Hero() {
   const scrollToSection = (event: MouseEvent<HTMLAnchorElement>, targetId: string) => {
@@ -177,28 +189,48 @@ export default function Hero() {
                     </div> */}
                   </div>
 
-                  <div className="px-1.5 py-3 sm:px-2 sm:py-4">
-                    <div className="flex flex-wrap gap-2">
+                  <div className="px-2 py-3.5 sm:px-3 sm:py-4">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-primary">Software Developer</p>
+                        <p className="mt-1 text-sm font-medium leading-5 text-foreground/80">
+                          Designing and shipping web and mobile product surfaces.
+                        </p>
+                      </div>
+                      {/* <div className="mt-1 flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/10 px-2 py-1">
+                        <span className="size-1.5 rounded-full bg-primary" />
+                        <span className="font-mono text-[0.58rem] uppercase tracking-[0.14em] text-primary">Online</span>
+                      </div> */}
+                    </div>
+
+                    <div className="mt-3 flex flex-wrap gap-2">
                       {portraitBadges.map((badge) => (
                         <Badge
                           key={badge}
-                          variant="secondary"
-                          className="rounded-md border border-border/70 bg-background/72 px-2.5 py-1 font-mono text-[0.65rem] font-medium uppercase tracking-[0.12em] text-foreground/70 hover:bg-background/80"
+                          variant="outline"
+                          className="rounded-full border-border/70 bg-background/60 px-2.5 py-1 font-mono text-[0.62rem] font-medium uppercase tracking-[0.12em] text-foreground/65"
                         >
                           {badge}
                         </Badge>
                       ))}
                     </div>
 
-                    <div className="mt-4 grid grid-cols-2 gap-4 border-t border-border/50 pt-4">
-                      <div>
-                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/45">Builds</p>
-                        <p className="mt-1 text-sm font-medium leading-5 text-foreground/80">Web and mobile products</p>
-                      </div>
-                      <div>
-                        <p className="font-mono text-[0.68rem] uppercase tracking-[0.18em] text-foreground/45">Location</p>
-                        <p className="mt-1 text-sm font-medium leading-5 text-foreground/80">Kuala Lumpur / remote</p>
-                      </div>
+                    <Separator className="my-4 bg-border/55" />
+
+                    <div className="grid gap-2">
+                      {portraitCapabilities.map((capability) => (
+                        <div
+                          key={capability.label}
+                          className="grid grid-cols-[5.5rem_1fr] items-start gap-3 rounded-lg border border-border/50 bg-background/45 px-3 py-2.5"
+                        >
+                          <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-foreground/45">
+                            {capability.label}
+                          </p>
+                          <p className="text-sm font-medium leading-5 text-foreground/75">
+                            {capability.detail}
+                          </p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </CardContent>
