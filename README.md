@@ -57,7 +57,7 @@ The light and dark palettes, compact page width, and Fraunces/Geist typography a
 
 Edit profile details, projects, and experience in `src/lib/site.ts`, introductory copy in `src/components/Hero.tsx`, and the downloadable CV at `public/resume.pdf`.
 
-The current résumé file is empty, so the CV button offers an email request. Add a PDF at that path and restart the dev server or rebuild to automatically enable the download.
+The current résumé file is empty, so the button says “Contact me” and opens the Contact page. Add a PDF at that path and restart the dev server or rebuild to automatically enable the CV download.
 
 ## Deployment
 

@@ -18,10 +18,10 @@ export default function Hero() {
   return (
     <div className="home-content">
       <header className="profile-heading">
-        <picture className="profile-portrait">
+        {/* <picture className="profile-portrait">
           <source srcSet={portraitAvif} type="image/avif" />
           <img src={portraitWebp} alt={siteProfile.fullName} width={52} height={52} />
-        </picture>
+        </picture> */}
         <div>
           <h1>{siteProfile.fullName}</h1>
           <p className="profile-role">Software &amp; Web Developer</p>
@@ -39,11 +39,11 @@ export default function Hero() {
         From a florist’s booking experience to a fitness dating app, I take care of the
         design, development, and details that make a product ready to ship.
       </p>
-      <p className="intro-paragraph">
+      {/* <p className="intro-paragraph">
         Previously, I worked in partner and resource management at <strong>Majorel Group</strong>.
         That experience still shapes how I build: clear communication, thoughtful planning,
         and a focus on the people using the product.
-      </p>
+      </p> */}
 
       <section className="featured-project" aria-labelledby="featured-project-title">
         <div className="featured-heading">

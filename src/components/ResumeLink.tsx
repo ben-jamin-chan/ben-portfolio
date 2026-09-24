@@ -1,16 +1,22 @@
 import { ArrowDown, Mail } from 'lucide-react';
-import { siteProfile } from '@/lib/site';
+import { Link } from 'react-router-dom';
 
 export default function ResumeLink() {
+  if (!__HAS_RESUME__) {
+    return (
+      <Link className="pill-button primary-button" to="/contact">
+        Contact me <Mail aria-hidden="true" />
+      </Link>
+    );
+  }
+
   return (
     <a
       className="pill-button primary-button"
-      href={__HAS_RESUME__
-        ? import.meta.env.BASE_URL + 'resume.pdf'
-        : 'mailto:' + siteProfile.email + '?subject=CV%20request'}
-      download={__HAS_RESUME__ ? 'Benjamin-Chan-CV.pdf' : undefined}
+      href={import.meta.env.BASE_URL + 'resume.pdf'}
+      download="Benjamin-Chan-CV.pdf"
     >
-      {__HAS_RESUME__ ? <>Download CV <ArrowDown aria-hidden="true" /></> : <>Request CV <Mail aria-hidden="true" /></>}
+      Download CV <ArrowDown aria-hidden="true" />
     </a>
   );
 }
