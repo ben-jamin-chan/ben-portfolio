@@ -64,8 +64,8 @@ export default {
 				sm: 'calc(var(--radius) - 4px)'
 			},
 			fontFamily: {
-				mono: ['Space Mono', 'monospace'],
-				sans: ['Inter', 'sans-serif'],
+				mono: ['Geist Mono', 'monospace'],
+				sans: ['Geist', 'sans-serif'],
 				pixel: ['Press Start 2P', 'cursive']
 			},
 			keyframes: {

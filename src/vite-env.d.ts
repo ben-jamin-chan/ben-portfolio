@@ -1,5 +1,7 @@
 /// <reference types="vite/client" />
 
+declare const __HAS_RESUME__: boolean;
+
 interface ImportMetaEnv {
   readonly VITE_EMAILJS_PUBLIC_KEY?: string;
   readonly VITE_EMAILJS_SERVICE_ID?: string;

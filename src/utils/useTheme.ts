@@ -5,17 +5,26 @@ type Theme = 'light' | 'dark';
 
 const THEME_STORAGE_KEY = 'theme';
 const listeners = new Set<() => void>();
+let inMemoryTheme: Theme | null = null;
 
 const getStoredTheme = (): Theme | null => {
   if (typeof window === 'undefined') {
     return null;
   }
 
-  const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
-  return storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : null;
+  try {
+    const storedTheme = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return storedTheme === 'dark' || storedTheme === 'light' ? storedTheme : inMemoryTheme;
+  } catch {
+    return inMemoryTheme;
+  }
 };
 
-const getThemeSnapshot = (): Theme => getStoredTheme() ?? 'light';
+const getThemeSnapshot = (): Theme => getStoredTheme() ?? (
+  typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+);
 
 const applyThemeToDocument = (theme: Theme) => {
   if (typeof document === 'undefined') {
@@ -38,7 +47,12 @@ export const setTheme = (theme: Theme, options?: { silent?: boolean }) => {
     return;
   }
 
-  window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  inMemoryTheme = theme;
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  } catch {
+    // Theme switching still works when browser storage is unavailable.
+  }
   applyThemeToDocument(theme);
   emitThemeChange();
 
@@ -55,16 +69,23 @@ const subscribe = (listener: () => void) => {
   listeners.add(listener);
 
   const handleStorage = (event: StorageEvent) => {
-    if (event.key === THEME_STORAGE_KEY) {
+    if (event.key === THEME_STORAGE_KEY || event.key === null) {
+      inMemoryTheme = null;
       listener();
     }
   };
 
   window.addEventListener('storage', handleStorage);
+  const colorScheme = window.matchMedia('(prefers-color-scheme: dark)');
+  const handleColorScheme = () => {
+    if (!getStoredTheme()) listener();
+  };
+  colorScheme.addEventListener('change', handleColorScheme);
 
   return () => {
     listeners.delete(listener);
     window.removeEventListener('storage', handleStorage);
+    colorScheme.removeEventListener('change', handleColorScheme);
   };
 };
 
@@ -76,7 +97,7 @@ export const useTheme = () => {
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === 'light' ? 'dark' : 'light', { silent: true });
   };
 
   return { theme, setTheme, toggleTheme, hasSavedThemePreference };

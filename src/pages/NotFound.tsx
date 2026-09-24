@@ -1,24 +1,13 @@
-import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import PageHeading from '@/components/PageHeading';
 
-const NotFound = () => {
+export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="max-w-md w-full glass-panel p-12 text-center">
-        <h1 className="text-6xl font-pixel mb-6 text-primary">404</h1>
-        <h2 className="text-2xl font-mono font-bold mb-4">Page Not Found</h2>
-        <p className="text-foreground/70 mb-8">
-          The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
-        </p>
-        <Link 
-          to="/" 
-          className="pixel-btn bg-primary text-primary-foreground inline-flex items-center"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" /> Return to Home
-        </Link>
-      </div>
-    </div>
+    <>
+      <PageHeading title="Page not found" />
+      <p className="intro-paragraph">This page doesn’t exist. You can head home to find my work and contact details.</p>
+      <Link to="/" className="pill-button not-found-link"><ArrowLeft size={16} aria-hidden="true" /> Back to home</Link>
+    </>
   );
-};
-
-export default NotFound;
+}

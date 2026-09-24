@@ -13,6 +13,7 @@ dist-ssr
 *.tsbuildinfo
 .superpowers/
 .worktrees/
+.playwright-cli/
 .env
 .env.*
 !.env.example

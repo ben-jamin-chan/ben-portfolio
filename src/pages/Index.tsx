@@ -1,46 +1,5 @@
-import { useEffect } from 'react';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import About from '@/components/About';
-import Contact from '@/components/Contact';
-import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar';
-import Projects from '@/components/Projects';
-import Services from '@/components/Services';
-import ThemePreferencePrompt from '@/components/ThemePreferencePrompt';
-import { useTheme } from '@/utils/useTheme';
 
-const Index = () => {
-  // Initialize theme on page load
-  const { theme } = useTheme();
-  
-  // Initialize AOS
-  useEffect(() => {
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 50,
-      delay: 100,
-    });
-    
-    // Refresh AOS when theme changes
-    AOS.refresh();
-  }, [theme]);
-
-  return (
-    <div className="page-shell min-h-screen overflow-hidden">
-      <ThemePreferencePrompt />
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Contact />
-      <Footer />
-    </div>
-  );
-};
-
-export default Index;
+export default function Index() {
+  return <Hero />;
+}

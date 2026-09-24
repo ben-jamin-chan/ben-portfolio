@@ -24,6 +24,7 @@ export type ProjectTag = Exclude<ProjectFilter, "All">;
 
 export type Project = {
   title: string;
+  featured?: boolean;
   description: string;
   image: string;
   tags: ProjectTag[];
@@ -112,7 +113,8 @@ export const projects: Project[] = [
     ],
   },
   {
-    title: "Trend Watcher App",
+    title: "Trend Watcher Pro",
+    featured: true,
     description:
       "A data-focused web app for tracking, saving, and comparing trend topics through dashboard-style workflows.",
     image: trendImage,
