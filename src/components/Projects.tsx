@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
 import PageHeading from '@/components/PageHeading';
-import { projectFilters, projects, type ProjectFilter } from '@/lib/site';
+import { projectFilters, projects, siteProfile, type ProjectFilter } from '@/lib/site';
 
 export default function Projects() {
   const [filter, setFilter] = useState<ProjectFilter>('All');
@@ -42,6 +42,20 @@ export default function Projects() {
             </div>
           </article>
         ))}
+      </div>
+      <div className="project-more">
+        <p>Explore more projects and experiments.</p>
+        <a
+          href={`${siteProfile.githubUrl}?tab=repositories`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="pill-button primary-button"
+        >
+          <Github aria-hidden="true" />
+          View more on GitHub
+          <ArrowUpRight aria-hidden="true" />
+          <span className="sr-only"> (opens in a new tab)</span>
+        </a>
       </div>
     </>
   );
