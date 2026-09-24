@@ -4,6 +4,20 @@
     <link rel="icon" type="image/x-icon" href="https://benjamin-chan.com/favicon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f6f1e7" />
+    <link rel="preload" href="https://benjamin-chan.com/fonts/geist-sans.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://benjamin-chan.com/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      try {
+        var savedTheme = localStorage.getItem('theme');
+        var initialTheme = savedTheme === 'dark' || savedTheme === 'light'
+          ? savedTheme
+          : window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.classList.add(initialTheme);
+      } catch (_) {
+        document.documentElement.classList.add('light');
+      }
+    </script>
     <title>Benjamin Chan | Software Developer</title>
     <meta name="description" content="Benjamin Chan is a full-stack developer in Kuala Lumpur building React, mobile, and API-backed products for startups, founders, and small businesses." />
     <meta name="author" content="Benjamin Chan" />
@@ -17,8 +31,8 @@
     <!-- <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
-    <script type="module" crossorigin src="https://benjamin-chan.com/assets/index-CT7lpbC1.js"></script>
-    <link rel="stylesheet" crossorigin href="https://benjamin-chan.com/assets/index-CL9GmQOe.css">
+    <script type="module" crossorigin src="https://benjamin-chan.com/assets/index-Nod2D3jp.js"></script>
+    <link rel="stylesheet" crossorigin href="https://benjamin-chan.com/assets/index-euM4ZIsV.css">
   </head>
 
   <body>
