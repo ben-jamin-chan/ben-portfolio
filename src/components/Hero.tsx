@@ -18,10 +18,10 @@ export default function Hero() {
   return (
     <div className="home-content">
       <header className="profile-heading">
-        {/* <picture className="profile-portrait">
+        <picture className="profile-portrait">
           <source srcSet={portraitAvif} type="image/avif" />
           <img src={portraitWebp} alt={siteProfile.fullName} width={52} height={52} />
-        </picture> */}
+        </picture>
         <div>
           <h1>{siteProfile.fullName}</h1>
           <p className="profile-role">Software &amp; Web Developer</p>

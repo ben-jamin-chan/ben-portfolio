@@ -147,8 +147,8 @@
   .profile-portrait {
     display: block;
     flex-shrink: 0;
-    width: 3.25rem;
-    height: 3.25rem;
+    width: 7.25rem;
+    height: 7.25rem;
     overflow: hidden;
     border: 1px solid var(--page-border);
     border-radius: 50%;
