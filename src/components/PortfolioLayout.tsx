@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import ThemeToggle from '@/components/ThemeToggle';
+import AppearancePrompt from '@/components/AppearancePrompt';
 import { siteProfile } from '@/lib/site';
 
 const pageTitles: Record<string, string> = {
@@ -40,6 +41,7 @@ export default function PortfolioLayout() {
         </div>
       </main>
       <Navbar />
+      <AppearancePrompt focusTargetRef={mainRef} />
     </div>
   );
 }
