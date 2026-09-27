@@ -4,7 +4,7 @@ import petalImage from "@/asset/petal-optimized.png";
 import trendImage from "@/asset/trend-optimized.png";
 
 export const siteProfile = {
-  fullName: "Benjamin Chan (陳)",
+  fullName: "Benjamin Chan",
   brandName: "Benjamin Chan(陳)",
   role: "Software/Web Developer",
   siteUrl: "https://benjamin-chan.com/",
